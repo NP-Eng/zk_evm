@@ -211,6 +211,8 @@ pub mod extension_tower;
 pub mod testing_utils;
 pub mod util;
 
+mod circuit_sizes;
+
 use mpt_trie::partial_trie::HashedPartialTrie;
 
 // Public definitions and re-exports
