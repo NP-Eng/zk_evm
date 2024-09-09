@@ -8,7 +8,10 @@ use evm_arithmetization::generation::{GenerationInputs, TrieInputs};
 use evm_arithmetization::proof::{BlockHashes, BlockMetadata, TrieRoots};
 use evm_arithmetization::prover::prove;
 use evm_arithmetization::testing_utils::{
-    beacon_roots_account_nibbles, beacon_roots_contract_from_storage, eth_to_wei, ger_account_nibbles, init_logger, preinitialized_state_and_storage_tries, update_beacon_roots_account_storage, BEACON_ROOTS_CONTRACT_CODE, BEACON_ROOTS_CONTRACT_CODE_HASH, GLOBAL_EXIT_ROOT_ACCOUNT
+    beacon_roots_account_nibbles, beacon_roots_contract_from_storage, eth_to_wei,
+    ger_account_nibbles, init_logger, preinitialized_state_and_storage_tries,
+    update_beacon_roots_account_storage, BEACON_ROOTS_CONTRACT_CODE,
+    BEACON_ROOTS_CONTRACT_CODE_HASH, GLOBAL_EXIT_ROOT_ACCOUNT,
 };
 use evm_arithmetization::verifier::verify_proof;
 use evm_arithmetization::{AllStark, Node, StarkConfig};
@@ -55,7 +58,11 @@ fn test_simple_transfer() -> anyhow::Result<()> {
 
     // TODO remove
     println!("How many storage tries: {}", storage_tries.len());
-    println!("Keccak coincides? {}", keccak(rlp::NULL_RLP).as_bytes() == hex!("56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"));
+    println!(
+        "Keccak coincides? {}",
+        keccak(rlp::NULL_RLP).as_bytes()
+            == hex!("56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421")
+    );
 
     let mut beacon_roots_account_storage = storage_tries[0].1.clone();
     state_trie_before.insert(sender_nibbles, rlp::encode(&sender_account_before).to_vec())?;
