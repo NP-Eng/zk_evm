@@ -119,7 +119,7 @@ pub(crate) fn ctl_arithmetic_rows<F: Field>() -> TableWithColumns<F> {
 /// Structure representing the `Arithmetic` STARK, which carries out all the
 /// arithmetic operations.
 #[derive(Copy, Clone, Default)]
-pub(crate) struct ArithmeticStark<F, const D: usize> {
+pub struct ArithmeticStark<F, const D: usize> {
     pub f: PhantomData<F>,
 }
 
@@ -155,7 +155,7 @@ impl<F: RichField, const D: usize> ArithmeticStark<F, D> {
         }
     }
 
-    pub(crate) fn generate_trace(&self, operations: Vec<Operation>) -> Vec<PolynomialValues<F>> {
+    pub fn generate_trace(&self, operations: Vec<Operation>) -> Vec<PolynomialValues<F>> {
         // The number of rows reserved is the smallest value that's
         // guaranteed to avoid a reallocation: The only ops that use
         // two rows are the modular operations and DIV, so the only
@@ -416,6 +416,15 @@ mod tests {
         let ops: Vec<Operation> = vec![add, mulmod, addmod, mul, modop, lt1, lt2, lt3, div, byte];
 
         let pols = stark.generate_trace(ops);
+
+        println!("Add: {:?}", pols[0].values.len());
+        println!("MulMod: {:?}", pols[1].values.len());
+        println!("AddMod: {:?}", pols[2].values.len());
+        println!("Mul: {:?}", pols[3].values.len());
+        println!("Mod: {:?}", pols[4].values.len());
+        println!("Lt1: {:?}", pols[5].values.len());
+        println!("Lt2: {:?}", pols[6].values.len());
+        println!("Lt3: {:?}", pols[7].values.len());
 
         // Trace should always have NUM_ARITH_COLUMNS columns and
         // min(RANGE_MAX, operations.len()) rows. In this case there

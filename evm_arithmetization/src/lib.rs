@@ -206,6 +206,7 @@ pub mod generation;
 pub mod witness;
 
 // Utility modules
+pub mod bench_utils;
 pub mod curve_pairings;
 pub mod extension_tower;
 pub mod testing_utils;

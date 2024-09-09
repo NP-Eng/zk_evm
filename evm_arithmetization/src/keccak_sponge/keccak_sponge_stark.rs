@@ -231,27 +231,27 @@ pub(crate) fn ctl_looking_keccak_filter<F: Field>() -> Filter<F> {
 
 /// Information about a Keccak sponge operation needed for witness generation.
 #[derive(Clone, Debug)]
-pub(crate) struct KeccakSpongeOp {
+pub struct KeccakSpongeOp {
     /// The base address at which inputs are read.
-    pub(crate) base_address: MemoryAddress,
+    pub base_address: MemoryAddress,
 
     /// The timestamp at which inputs are read.
-    pub(crate) timestamp: usize,
+    pub timestamp: usize,
 
     /// The input that was read.
-    pub(crate) input: Vec<u8>,
+    pub input: Vec<u8>,
 }
 
 /// Structure representing the `KeccakSponge` STARK, which carries out the
 /// sponge permutation.
 #[derive(Copy, Clone, Default)]
-pub(crate) struct KeccakSpongeStark<F, const D: usize> {
+pub struct KeccakSpongeStark<F, const D: usize> {
     f: PhantomData<F>,
 }
 
 impl<F: RichField + Extendable<D>, const D: usize> KeccakSpongeStark<F, D> {
     /// Generates the trace polynomial values for the `KeccakSponge`STARK.
-    pub(crate) fn generate_trace(
+    pub fn generate_trace(
         &self,
         operations: Vec<KeccakSpongeOp>,
         min_rows: usize,

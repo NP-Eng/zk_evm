@@ -25,7 +25,7 @@ pub(crate) mod columns;
 /// `Shl` and `Shr` are handled differently, by leveraging `Mul` and `Div`
 /// respectively.
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
-pub(crate) enum BinaryOperator {
+pub enum BinaryOperator {
     Add,
     Mul,
     Sub,
@@ -115,7 +115,7 @@ impl BinaryOperator {
 /// An enum representing different ternary operations.
 #[allow(clippy::enum_variant_names)]
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
-pub(crate) enum TernaryOperator {
+pub enum TernaryOperator {
     AddMod,
     MulMod,
     SubMod,
@@ -147,7 +147,7 @@ impl TernaryOperator {
 /// ternary.
 #[allow(clippy::enum_variant_names)]
 #[derive(Debug)]
-pub(crate) enum Operation {
+pub enum Operation {
     BinaryOperation {
         operator: BinaryOperator,
         input0: U256,
@@ -186,7 +186,7 @@ impl Operation {
     ///
     /// See witness/operation.rs::append_shift() for an example (indeed
     /// the only call site for such inputs).
-    pub(crate) fn binary(operator: BinaryOperator, input0: U256, input1: U256) -> Self {
+    pub fn binary(operator: BinaryOperator, input0: U256, input1: U256) -> Self {
         let result = operator.result(input0, input1);
         Self::BinaryOperation {
             operator,
@@ -197,12 +197,7 @@ impl Operation {
     }
 
     /// Creates a ternary operator with given inputs.
-    pub(crate) fn ternary(
-        operator: TernaryOperator,
-        input0: U256,
-        input1: U256,
-        input2: U256,
-    ) -> Self {
+    pub fn ternary(operator: TernaryOperator, input0: U256, input1: U256, input2: U256) -> Self {
         let result = operator.result(input0, input1, input2);
         Self::TernaryOperation {
             operator,

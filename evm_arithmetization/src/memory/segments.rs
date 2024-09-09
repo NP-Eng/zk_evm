@@ -5,7 +5,7 @@ pub(crate) const SEGMENT_SCALING_FACTOR: usize = 32;
 /// segment / virtual) bundling in the kernel.
 #[allow(clippy::enum_clike_unportable_variant)]
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Ord, PartialOrd, Debug)]
-pub(crate) enum Segment {
+pub enum Segment {
     /// Contains EVM bytecode.
     // The Kernel has optimizations relying on the Code segment being 0.
     // This shouldn't be changed!

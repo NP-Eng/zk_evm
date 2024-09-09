@@ -41,7 +41,7 @@ pub struct MemoryAddress {
 }
 
 impl MemoryAddress {
-    pub(crate) const fn new(context: usize, segment: Segment, virt: usize) -> Self {
+    pub const fn new(context: usize, segment: Segment, virt: usize) -> Self {
         Self {
             context,
             // segment is scaled

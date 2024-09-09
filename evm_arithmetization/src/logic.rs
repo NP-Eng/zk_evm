@@ -114,13 +114,13 @@ pub(crate) fn ctl_filter<F: Field>() -> Filter<F> {
 
 /// Structure representing the Logic STARK, which computes all logic operations.
 #[derive(Copy, Clone, Default)]
-pub(crate) struct LogicStark<F, const D: usize> {
+pub struct LogicStark<F, const D: usize> {
     pub f: PhantomData<F>,
 }
 
 /// Logic operations.
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
-pub(crate) enum Op {
+pub enum Op {
     And,
     Or,
     Xor,
@@ -140,7 +140,7 @@ impl Op {
 /// A logic operation over `U256`` words. It contains an operator,
 /// either `AND`, `OR` or `XOR`, two inputs and its expected result.
 #[derive(Debug)]
-pub(crate) struct Operation {
+pub struct Operation {
     operator: Op,
     input0: U256,
     input1: U256,
@@ -150,7 +150,7 @@ pub(crate) struct Operation {
 impl Operation {
     /// Computes the expected result of an operator with the two provided
     /// inputs, and returns the associated logic `Operation`.
-    pub(crate) fn new(operator: Op, input0: U256, input1: U256) -> Self {
+    pub fn new(operator: Op, input0: U256, input1: U256) -> Self {
         let result = operator.result(input0, input1);
         Operation {
             operator,
@@ -162,7 +162,7 @@ impl Operation {
 
     /// Given an `Operation`, fills a row with the corresponding flag, inputs
     /// and output.
-    fn into_row<F: Field>(self) -> [F; NUM_COLUMNS] {
+    pub(crate) fn into_row<F: Field>(self) -> [F; NUM_COLUMNS] {
         let Operation {
             operator,
             input0,
@@ -190,7 +190,7 @@ impl Operation {
 
 impl<F: RichField, const D: usize> LogicStark<F, D> {
     /// Generates the trace polynomials for `LogicStark`.
-    pub(crate) fn generate_trace(
+    pub fn generate_trace(
         &self,
         operations: Vec<Operation>,
         min_rows: usize,

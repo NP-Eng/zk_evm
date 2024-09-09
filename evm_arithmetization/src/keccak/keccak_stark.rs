@@ -59,7 +59,7 @@ pub(crate) fn ctl_filter_outputs<F: Field>() -> Filter<F> {
 }
 
 #[derive(Copy, Clone, Default)]
-pub(crate) struct KeccakStark<F, const D: usize> {
+pub struct KeccakStark<F, const D: usize> {
     pub(crate) f: PhantomData<F>,
 }
 
@@ -233,7 +233,7 @@ impl<F: RichField + Extendable<D>, const D: usize> KeccakStark<F, D> {
         row[out_reg_hi] = F::from_canonical_u64(row[in_reg_hi].to_canonical_u64() ^ rc_hi);
     }
 
-    pub(crate) fn generate_trace(
+    pub fn generate_trace(
         &self,
         inputs: Vec<([u64; NUM_INPUTS], usize)>,
         min_rows: usize,
