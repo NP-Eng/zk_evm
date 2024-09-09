@@ -43,13 +43,13 @@ static_assertions = { workspace = true }
 hashbrown = { workspace = true }
 tiny-keccak = { workspace = true }
 serde_json = { workspace = true }
+criterion = { workspace = true }
 
 # Local dependencies
 mpt_trie = { workspace = true }
 zk_evm_proc_macro = { workspace = true }
 
 [dev-dependencies]
-criterion = { workspace = true }
 hex = { workspace = true }
 ripemd = { workspace = true }
 
@@ -75,6 +75,21 @@ harness = false
 name = "fibonacci_25m_gas"
 harness = false
 
+[[bench]]
+name = "arithmetic_stark"
+harness = false
+
+[[bench]]
+name = "logic_stark"
+harness = false
+
+[[bench]]
+name = "keccak_sponge_stark"
+harness = false
+
+[[bench]]
+name = "keccak_stark"
+harness = false
 
 # Display math equations properly in documentation
 [package.metadata.docs.rs]
