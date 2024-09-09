@@ -8,9 +8,7 @@ use evm_arithmetization::generation::{GenerationInputs, TrieInputs};
 use evm_arithmetization::proof::{BlockHashes, BlockMetadata, TrieRoots};
 use evm_arithmetization::prover::prove;
 use evm_arithmetization::testing_utils::{
-    beacon_roots_account_nibbles, beacon_roots_contract_from_storage, eth_to_wei,
-    ger_account_nibbles, init_logger, preinitialized_state_and_storage_tries,
-    update_beacon_roots_account_storage, GLOBAL_EXIT_ROOT_ACCOUNT,
+    beacon_roots_account_nibbles, beacon_roots_contract_from_storage, eth_to_wei, ger_account_nibbles, init_logger, preinitialized_state_and_storage_tries, update_beacon_roots_account_storage, BEACON_ROOTS_CONTRACT_CODE, BEACON_ROOTS_CONTRACT_CODE_HASH, GLOBAL_EXIT_ROOT_ACCOUNT
 };
 use evm_arithmetization::verifier::verify_proof;
 use evm_arithmetization::{AllStark, Node, StarkConfig};
@@ -20,6 +18,7 @@ use mpt_trie::nibbles::Nibbles;
 use mpt_trie::partial_trie::{HashedPartialTrie, PartialTrie};
 use plonky2::field::goldilocks_field::GoldilocksField;
 use plonky2::plonk::config::KeccakGoldilocksConfig;
+use plonky2::timed;
 use plonky2::util::timing::TimingTree;
 
 type F = GoldilocksField;
@@ -53,6 +52,11 @@ fn test_simple_transfer() -> anyhow::Result<()> {
     let to_account_before = AccountRlp::default();
 
     let (mut state_trie_before, storage_tries) = preinitialized_state_and_storage_tries()?;
+
+    // TODO remove
+    println!("How many storage tries: {}", storage_tries.len());
+    println!("Keccak coincides? {}", keccak(rlp::NULL_RLP).as_bytes() == hex!("56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"));
+
     let mut beacon_roots_account_storage = storage_tries[0].1.clone();
     state_trie_before.insert(sender_nibbles, rlp::encode(&sender_account_before).to_vec())?;
 
@@ -97,6 +101,8 @@ fn test_simple_transfer() -> anyhow::Result<()> {
         let beacon_roots_account =
             beacon_roots_contract_from_storage(&beacon_roots_account_storage);
 
+        // TODO: why gas_used * 10?
+
         let sender_account_after = AccountRlp {
             balance: sender_account_before.balance - value - gas_used * 10,
             nonce: sender_account_before.nonce + 1,
@@ -130,6 +136,8 @@ fn test_simple_transfer() -> anyhow::Result<()> {
     };
     let mut receipts_trie = HashedPartialTrie::from(Node::Empty);
     receipts_trie.insert(
+        // TODO remove
+        // This is the same as Nibbles::from_bytes_be(&rlp::NULL_RLP).unwrap(),
         Nibbles::from_str("0x80").unwrap(),
         rlp::encode(&receipt_0).to_vec(),
     )?;
@@ -162,9 +170,17 @@ fn test_simple_transfer() -> anyhow::Result<()> {
         },
     };
 
-    let mut timing = TimingTree::new("prove", log::Level::Debug);
+    let mut timing = TimingTree::new("prove", log::Level::Info);
     let proof = prove::<F, C, D>(&all_stark, &config, inputs, &mut timing, None)?;
     timing.filter(Duration::from_millis(100)).print();
 
-    verify_proof(&all_stark, proof, &config)
+    let mut timing_verify = TimingTree::new("verify", log::Level::Info);
+    let output = timed!(
+        timing_verify,
+        "Verification time",
+        verify_proof(&all_stark, proof, &config)
+    );
+    timing_verify.filter(Duration::from_millis(100)).print();
+
+    output
 }
