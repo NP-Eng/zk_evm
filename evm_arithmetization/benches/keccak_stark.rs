@@ -1,6 +1,6 @@
 use criterion::{criterion_group, criterion_main, Criterion};
 use evm_arithmetization::{
-    bench_utils::bench_stark, keccak::keccak_stark::KeccakStark, stark_config,
+    bench_utils::bench_ctl_stark, keccak::keccak_stark::KeccakStark, stark_config,
 };
 use plonky2::{
     field::{extension::Extendable, goldilocks_field::GoldilocksField},
@@ -11,7 +11,7 @@ use plonky2::{
 };
 use starky::config::StarkConfig;
 
-const MIN_ROWS: usize = 100;
+const BENCH_MIN_ROWS: usize = 8;
 const D: usize = 2;
 type C = PoseidonGoldilocksConfig;
 type F = GoldilocksField;
@@ -45,8 +45,8 @@ fn bench_keccak_stark_with_input_length(
         "KeccakStark (input length: {}) with {}",
         input_length_bits, config_str
     );
-    let trace = stark.generate_trace(input, 8, &mut TimingTree::default());
-    bench_stark::<F, C, S, D>(c, stark, trace, config, &tag);
+    let trace = stark.generate_trace(input, BENCH_MIN_ROWS, &mut TimingTree::default());
+    bench_ctl_stark::<F, C, S, D>(c, stark, trace, config, &tag);
 }
 
 criterion_group! {

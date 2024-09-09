@@ -1,6 +1,6 @@
 use criterion::{criterion_group, criterion_main, Criterion};
 use evm_arithmetization::{
-    bench_utils::{bench_stark, rand_u256},
+    bench_utils::{bench_ctl_stark, rand_u256},
     logic::{LogicStark, Op, Operation},
     stark_config,
 };
@@ -13,6 +13,7 @@ use plonky2::{
 };
 use starky::config::StarkConfig;
 
+const BENCH_MIN_ROWS: usize = 1 << 10;
 const D: usize = 2;
 type C = PoseidonGoldilocksConfig;
 type F = GoldilocksField;
@@ -49,8 +50,8 @@ fn bench_logic_operation(
 ) {
     let stark = LogicStark::<F, 2>::default();
     let tag = format!("LogicStark ({:?}) with {}", op_str, config_str);
-    let trace = stark.generate_trace(vec![op], 512, &mut TimingTree::default());
-    bench_stark::<F, C, S, D>(c, stark, trace, config, &tag);
+    let trace = stark.generate_trace(vec![op], BENCH_MIN_ROWS, &mut TimingTree::default());
+    bench_ctl_stark::<F, C, S, D>(c, stark, trace, config, &tag);
 }
 
 criterion_group! {
