@@ -261,29 +261,29 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
     );
 
     // TODO remove
-    for (i, storage_pair) in storage_tries_after_txn1.iter().enumerate() {
-        println!("----\n\tStorage trie {i} key: {:?}", storage_pair.0);
-        println!("\tStorage trie {i} value: {:?}", storage_pair.1);
-        println!("\tStorage trie {i}: {:?}", storage_pair.1.hash());
-    }
-    let nibbles = [
-        (beacon_roots_account_nibbles(), "beacon_roots_account"),
-        (ger_account_nibbles(), "ger_account"),
-        (beneficiary_nibbles, "beneficiary"),
-        (sender_txn1_nibbles, "sender_txn1"),
-        (to_txn1_nibbles, "to_txn1"),
-        (sender_txn2_nibbles, "sender_txn2"),
-    ];
-    for (nibs, name) in nibbles.iter() {
-        println!("- Account: {name}, {:?}", nibs);
-        let account = state_trie_after_txn1.get(*nibs).unwrap();
-        let decoded_account = rlp::decode::<AccountRlp>(account).unwrap();
-        println!("   Storage root: {:?}", decoded_account.storage_root);
-    }
+    // for (i, storage_pair) in storage_tries_after_txn1.iter().enumerate() {
+    //     println!("----\n\tStorage trie {i} key: {:?}", storage_pair.0);
+    //     println!("\tStorage trie {i} value: {:?}", storage_pair.1);
+    //     println!("\tStorage trie {i}: {:?}", storage_pair.1.hash());
+    // }
+    // let nibbles = [
+    //     (beacon_roots_account_nibbles(), "beacon_roots_account"),
+    //     (ger_account_nibbles(), "ger_account"),
+    //     (beneficiary_nibbles, "beneficiary"),
+    //     (sender_txn1_nibbles, "sender_txn1"),
+    //     (to_txn1_nibbles, "to_txn1"),
+    //     (sender_txn2_nibbles, "sender_txn2"),
+    // ];
+    // for (nibs, name) in nibbles.iter() {
+    //     println!("- Account: {name}, {:?}", nibs);
+    //     let account = state_trie_after_txn1.get(*nibs).unwrap();
+    //     let decoded_account = rlp::decode::<AccountRlp>(account).unwrap();
+    //     println!("   Storage root: {:?}", decoded_account.storage_root);
+    // }
 
     let receipt_0 = LegacyReceiptRlp {
         status: true,
-        cum_gas_used: 0xa868u64.into(),
+        cum_gas_used: gas_used_txn1,
         bloom: vec![0; 256].into(),
         logs: vec![],
     };
@@ -300,11 +300,12 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
     // .into();
     let mut receipts_trie_after_txn1 = HashedPartialTrie::from(Node::Empty);
     receipts_trie_after_txn1.insert(
+        // Same as: Nibbles::from_str("0x80").unwrap(),
         Nibbles::from_bytes_be(&rlp::encode(&b'\x00')).unwrap(),
-        // Nibbles::from_str("0x80").unwrap(),
         rlp::encode(&receipt_0).to_vec(),
     )?;
     let transactions_trie_after_txn1: HashedPartialTrie = Node::Leaf {
+        // Same as: nibbles: Nibbles::from_str("0x80").unwrap(),
         nibbles: Nibbles::from_bytes_be(&rlp::encode(&b'\x00')).unwrap(),
         value: txn1.to_vec(),
     }
@@ -334,45 +335,45 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         },
     };
 
-    // let mut timing = TimingTree::new("prove", log::Level::Info);
-    // let proof = prove::<F, C, D>(&all_stark, &config, inputs_txn1, &mut timing,
-    // None)?; timing.filter(Duration::from_millis(100)).print();
+    let mut timing = TimingTree::new("prove", log::Level::Info);
+    let proof = prove::<F, C, D>(&all_stark, &config, inputs_txn1, &mut timing, None)?;
+    timing.filter(Duration::from_millis(100)).print();
 
-    // let mut timing_verify_txn1 = TimingTree::new("verify", log::Level::Info);
-    // timed!(
-    //     timing_verify_txn1,
-    //     "Verification time",
-    //     verify_proof(&all_stark, proof, &config)
-    // )?;
-    // timing_verify_txn1.filter(Duration::from_millis(100)).print();
+    let mut timing_verify_txn1 = TimingTree::new("verify", log::Level::Info);
+    timed!(
+        timing_verify_txn1,
+        "Verification time",
+        verify_proof(&all_stark, proof, &config)
+    )?;
+    timing_verify_txn1
+        .filter(Duration::from_millis(100))
+        .print();
 
     /**************************** Second transaction ************************* */
 
-    // Accounts created above
-
-    let mut beacon_roots_account_storage = storage_tries_after_txn1[0].1.clone();
+    // Accounts already created above
 
     // TODO REMOVE
-    println!("state_trie_after_txn1");
-    println!(
-        "Beacons account storage hash in storage_tries_after_txn1: {:?}",
-        storage_tries_after_txn1[0].1.hash()
-    );
-    println!(
-        "Beacons account storage hash in state_trie_after_txn1: {:?}",
-        rlp::decode::<AccountRlp>(
-            state_trie_after_txn1
-                .get(beacon_roots_account_nibbles())
-                .unwrap()
-        )
-        .unwrap()
-        .storage_root
-    );
+    // println!("state_trie_after_txn1");
+    // println!(
+    //     "Beacons account storage hash in storage_tries_after_txn1: {:?}",
+    //     storage_tries_after_txn1[0].1.hash()
+    // );
+    // println!(
+    //     "Beacons account storage hash in state_trie_after_txn1: {:?}",
+    //     rlp::decode::<AccountRlp>(
+    //         state_trie_after_txn1
+    //             .get(beacon_roots_account_nibbles())
+    //             .unwrap()
+    //     )
+    //     .unwrap()
+    //     .storage_root
+    // );
 
     let tries_after_tx1 = TrieInputs {
         state_trie: state_trie_after_txn1.clone(),
-        transactions_trie: HashedPartialTrie::from(Node::Empty),
-        receipts_trie: HashedPartialTrie::from(Node::Empty),
+        transactions_trie: transactions_trie_after_txn1.clone(),
+        receipts_trie: receipts_trie_after_txn1.clone(),
         storage_tries: storage_tries_after_txn1,
     };
 
@@ -424,7 +425,7 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
 
     let receipt_1 = LegacyReceiptRlp {
         status: true,
-        cum_gas_used: U256::from(21032) + receipt_0.cum_gas_used,
+        cum_gas_used: gas_used_txn1 + gas_used_txn2,
         bloom: vec![0; 256].into(),
         logs: vec![],
     };
@@ -437,7 +438,7 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         rlp::encode(&receipt_1).to_vec(),
     )?;
 
-    println!("ENCODING OF 0: {:?}", rlp::encode(&b'\0'));
+    // println!("ENCODING OF 0: {:?}", rlp::encode(&b'\0'));
 
     let mut transactions_trie_after_txn2 = transactions_trie_after_txn1;
     transactions_trie_after_txn2.insert(
