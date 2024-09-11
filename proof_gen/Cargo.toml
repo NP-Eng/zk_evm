@@ -17,3 +17,11 @@ serde = { workspace = true }
 
 # Local dependencies
 evm_arithmetization = { workspace = true }
+
+[dev-dependencies]
+anyhow = { workspace = true }
+rlp = { workspace = true }
+ethereum-types = { workspace = true }
+hex-literal = { workspace = true }
+keccak-hash = { workspace = true }
+mpt_trie = { workspace = true }

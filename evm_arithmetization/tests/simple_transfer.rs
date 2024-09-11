@@ -10,8 +10,7 @@ use evm_arithmetization::prover::prove;
 use evm_arithmetization::testing_utils::{
     beacon_roots_account_nibbles, beacon_roots_contract_from_storage, eth_to_wei,
     ger_account_nibbles, init_logger, preinitialized_state_and_storage_tries,
-    update_beacon_roots_account_storage, BEACON_ROOTS_CONTRACT_CODE,
-    BEACON_ROOTS_CONTRACT_CODE_HASH, GLOBAL_EXIT_ROOT_ACCOUNT,
+    update_beacon_roots_account_storage, GLOBAL_EXIT_ROOT_ACCOUNT,
 };
 use evm_arithmetization::verifier::verify_proof;
 use evm_arithmetization::{AllStark, Node, StarkConfig};

@@ -20,6 +20,7 @@ use mpt_trie::nibbles::Nibbles;
 use mpt_trie::partial_trie::{HashedPartialTrie, PartialTrie};
 use plonky2::field::goldilocks_field::GoldilocksField;
 use plonky2::plonk::config::KeccakGoldilocksConfig;
+use plonky2::timed;
 use plonky2::util::timing::TimingTree;
 
 type F = GoldilocksField;
@@ -80,6 +81,28 @@ fn add11_yml() -> anyhow::Result<()> {
         receipts_trie: Node::Empty.into(),
         storage_tries,
     };
+
+    /*
+       {
+           "chainId": "-4",
+           "type": "LegacyTransaction",
+           "valid": true,
+           "nonce": "0",
+           "gasPrice": "10" (0a),
+           "gasLimit": "400000" (061a80),
+           "from": "0xa94f5374Fce5edBC8E2a8697C15331677e6EbF0B",
+           "to": "0x095e7baea6a6c7c4c2dfeb977efac326af552d87",
+           "value": "100000" (0186a0),
+
+           --> hash of the above = "0xeda4d6763740fbccc99cc8873ff09b8504d192e83f73bd16ccf5feb053a4e3cd",
+           --> signature of the hash =
+               "v": "1b",
+               "r": "ffb600e63115a7362e7811894a91d8ba4330e526f22121c994c4692035dfdfd5",
+               "s": "6198379fcac8de3dbfac48b165df4bf88e2088f294b61efb9a65fe2281c76e16",
+
+           Final data: original data + signature of the hash of the original data
+       }
+    */
 
     let txn = hex!("f863800a83061a8094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ba0ffb600e63115a7362e7811894a91d8ba4330e526f22121c994c4692035dfdfd5a06198379fcac8de3dbfac48b165df4bf88e2088f294b61efb9a65fe2281c76e16");
 
@@ -190,9 +213,17 @@ fn add11_yml() -> anyhow::Result<()> {
         },
     };
 
-    let mut timing = TimingTree::new("prove", log::Level::Debug);
+    let mut timing = TimingTree::new("prove", log::Level::Info);
     let proof = prove::<F, C, D>(&all_stark, &config, inputs, &mut timing, None)?;
     timing.filter(Duration::from_millis(100)).print();
 
-    verify_proof(&all_stark, proof, &config)
+    let mut timing_verify = TimingTree::new("verify", log::Level::Info);
+    let output = timed!(
+        timing_verify,
+        "Verification time",
+        verify_proof(&all_stark, proof, &config)
+    );
+    timing_verify.filter(Duration::from_millis(100)).print();
+
+    output
 }

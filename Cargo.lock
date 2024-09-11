@@ -3844,10 +3844,16 @@ dependencies = [
 name = "proof_gen"
 version = "0.4.0"
 dependencies = [
+ "anyhow",
+ "ethereum-types",
  "evm_arithmetization",
+ "hex-literal",
+ "keccak-hash 0.10.0",
  "log",
+ "mpt_trie",
  "paste",
  "plonky2",
+ "rlp",
  "serde",
 ]
 
