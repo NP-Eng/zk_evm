@@ -234,10 +234,11 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         )
     };
 
-    println!(
-        "Before pop-push: Beacons account storage hash in storage_tries_after_txn1: {:?}",
-        storage_tries_before_txn1[0].1.hash()
-    );
+    // TODO remove
+    // println!(
+    //     "Before pop-push: Beacons account storage hash in
+    // storage_tries_after_txn1: {:?}",     storage_tries_before_txn1[0].1.
+    // hash() );
 
     // Updating storage database
 
@@ -255,10 +256,11 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
     // to_txn1 storage
     storage_tries_after_txn1.push((to_txn1_state_key, to_account_storage_after_txn1));
 
-    println!(
-        "After pop-push: Beacons account storage hash in storage_tries_after_txn1: {:?}",
-        storage_tries_after_txn1[0].1.hash()
-    );
+    // TODO remove
+    // println!(
+    //     "After pop-push: Beacons account storage hash in
+    // storage_tries_after_txn1: {:?}",     storage_tries_after_txn1[0].1.hash()
+    // );
 
     // TODO remove
     // for (i, storage_pair) in storage_tries_after_txn1.iter().enumerate() {
@@ -387,15 +389,6 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
     let expected_state_trie_after_txn2: HashedPartialTrie = {
         let mut state_trie_after = state_trie_after_txn1.clone();
 
-        // TODO is this necessary?
-        // update_beacon_roots_account_storage(
-        //     &mut beacon_roots_account_storage,
-        //     block_metadata_txn2.block_timestamp,
-        //     block_metadata_txn2.parent_beacon_block_root,
-        // )?;
-        // let beacon_roots_account =
-        //     beacon_roots_contract_from_storage(&beacon_roots_account_storage);
-
         // TODO: why gas_used * 10?
 
         let sender_account_after = AccountRlp {
@@ -495,17 +488,36 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         &config,
     );
 
-    let mut timing_tree = TimingTree::default();
+    let mut timing_tree = TimingTree::new("prove", log::Level::Info);
 
     // Proving individual transactions
     let (proof_0, pv_0) =
         prover_state.prove_root(&all_stark, &config, inputs_txn1, &mut timing_tree, None)?;
+    timing_tree.filter(Duration::from_millis(100)).print();
+
+    // TODO remove
+    println!("[*] Finished proof 0");
+
+    serde_json::to_writer(std::fs::File::create("np_data/proof_0.json")?, &proof_0)?;
+
     let (proof_1, pv_1) =
         prover_state.prove_root(&all_stark, &config, inputs_txn2, &mut timing_tree, None)?;
+    timing_tree.filter(Duration::from_millis(100)).print();
+
+    // TODO remove
+    println!("[*] Finished proof 1");
+
+    serde_json::to_writer(std::fs::File::create("np_data/proof_1.json")?, &proof_1)?;
 
     // First (and only) aggregation layer
-    let (agg_proof, pv) =
-        prover_state.prove_aggregation(false, &proof_0, pv_0, false, &proof_1, pv_1)?;
+    let (agg_proof, pv) = timed!(
+        TimingTree::new("proof aggregation", log::Level::Info),
+        "Aggregation time",
+        prover_state.prove_aggregation(false, &proof_0, pv_0, false, &proof_1, pv_1)
+    )?;
+
+    // TODO remove
+    println!("[*] Finished aggregated proof");
 
     // Test retrieved public values from the proof public inputs.
     let retrieved_public_values = PublicValues::from_public_inputs(&agg_proof.public_inputs);
@@ -516,18 +528,44 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
     );
 
     // Proving verification of aggregated proof
-    let (block_proof, block_public_values) = prover_state.prove_block(
-        None, // We don't specify a previous proof, considering block 1 as the new checkpoint.
-        &agg_proof, pv,
+    let (block_proof, block_public_values) = timed!(
+        TimingTree::new("block proof", log::Level::Info),
+        "Block proof time",
+        prover_state.prove_block(
+            // We don't specify a previous proof, considering block 1 as the new checkpoint.
+            None, &agg_proof, pv,
+        )
     )?;
+
+    // TODO remove
+    println!("[*] Finished block proof");
 
     let pv_block = PublicValues::from_public_inputs(&block_proof.public_inputs);
     assert_eq!(block_public_values, pv_block);
 
-    prover_state.verify_root(proof_0.clone())?;
-    prover_state.verify_root(proof_1.clone())?;
-    prover_state.verify_aggregation(&agg_proof)?;
-    prover_state.verify_block(&block_proof)?;
+    timed!(
+        TimingTree::new("verify", log::Level::Info),
+        "First proof verification time",
+        prover_state.verify_root(proof_0)?
+    );
+
+    timed!(
+        TimingTree::new("verify", log::Level::Info),
+        "Second proof verification time",
+        prover_state.verify_root(proof_1)?
+    );
+
+    timed!(
+        TimingTree::new("verify", log::Level::Info),
+        "Aggregated proof verification time",
+        prover_state.verify_aggregation(&agg_proof)?
+    );
+
+    timed!(
+        TimingTree::new("verify", log::Level::Info),
+        "Block proof verification time",
+        prover_state.verify_block(&block_proof)?
+    );
 
     Ok(())
 }

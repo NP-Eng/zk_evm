@@ -3855,6 +3855,7 @@ dependencies = [
  "plonky2",
  "rlp",
  "serde",
+ "serde_json",
 ]
 
 [[package]]

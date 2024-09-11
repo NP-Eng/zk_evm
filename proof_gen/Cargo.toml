@@ -25,3 +25,4 @@ ethereum-types = { workspace = true }
 hex-literal = { workspace = true }
 keccak-hash = { workspace = true }
 mpt_trie = { workspace = true }
+serde_json = { workspace = true }
