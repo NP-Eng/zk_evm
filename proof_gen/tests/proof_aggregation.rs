@@ -8,7 +8,7 @@ use std::time::Duration;
 use ethereum_types::{Address, BigEndianHash, H256, U256};
 use evm_arithmetization::generation::mpt::{AccountRlp, LegacyReceiptRlp};
 use evm_arithmetization::generation::{GenerationInputs, TrieInputs};
-use evm_arithmetization::proof::{BlockHashes, BlockMetadata, TrieRoots};
+use evm_arithmetization::proof::{BlockHashes, BlockMetadata, PublicValues, TrieRoots};
 use evm_arithmetization::prover::prove;
 use evm_arithmetization::testing_utils::{
     beacon_roots_account_nibbles, beacon_roots_contract_from_storage, eth_to_wei,
@@ -16,7 +16,7 @@ use evm_arithmetization::testing_utils::{
     update_beacon_roots_account_storage, BEACON_ROOTS_ACCOUNT, GLOBAL_EXIT_ROOT_ACCOUNT,
 };
 use evm_arithmetization::verifier::verify_proof;
-use evm_arithmetization::{AllStark, Node, StarkConfig};
+use evm_arithmetization::{AllRecursiveCircuits, AllStark, Node, StarkConfig};
 use hex_literal::hex;
 use keccak_hash::keccak;
 use mpt_trie::nibbles::Nibbles;
@@ -335,19 +335,19 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         },
     };
 
-    let mut timing = TimingTree::new("prove", log::Level::Info);
-    let proof = prove::<F, C, D>(&all_stark, &config, inputs_txn1, &mut timing, None)?;
-    timing.filter(Duration::from_millis(100)).print();
+    // let mut timing = TimingTree::new("prove", log::Level::Info);
+    // let proof = prove::<F, C, D>(&all_stark, &config, inputs_txn1, &mut timing,
+    // None)?; timing.filter(Duration::from_millis(100)).print();
 
-    let mut timing_verify_txn1 = TimingTree::new("verify", log::Level::Info);
-    timed!(
-        timing_verify_txn1,
-        "Verification time",
-        verify_proof(&all_stark, proof, &config)
-    )?;
-    timing_verify_txn1
-        .filter(Duration::from_millis(100))
-        .print();
+    // let mut timing_verify_txn1 = TimingTree::new("verify", log::Level::Info);
+    // timed!(
+    //     timing_verify_txn1,
+    //     "Verification time",
+    //     verify_proof(&all_stark, proof, &config)
+    // )?;
+    // timing_verify_txn1
+    //     .filter(Duration::from_millis(100))
+    //     .print();
 
     /**************************** Second transaction ************************* */
 
@@ -470,34 +470,64 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         },
     };
 
-    let mut timing = TimingTree::new("prove", log::Level::Info);
-    let proof = prove::<F, C, D>(&all_stark, &config, inputs_txn2, &mut timing, None)?;
-    timing.filter(Duration::from_millis(100)).print();
+    // let mut timing = TimingTree::new("prove", log::Level::Info);
+    // let proof = prove::<F, C, D>(&all_stark, &config, inputs_txn2, &mut timing,
+    // None)?; timing.filter(Duration::from_millis(100)).print();
 
-    let mut timing_verify = TimingTree::new("verify", log::Level::Info);
-    let output = timed!(
-        timing_verify,
-        "Verification time",
-        verify_proof(&all_stark, proof, &config)
-    );
-    timing_verify.filter(Duration::from_millis(100)).print();
-
-    output
-
-    // //////////////////////////////
-    // // Generate all the recursive circuits needed to generate succinct proofs
-    // for blocks. // The ranges correspond to the supported table sizes for
-    // each individual STARK component. let prover_state =
-    // AllRecursiveCircuits::<F, C, D>::new(     &all_stark,
-    //     // TODO what is this? It is related to the starky machines and they
-    // say it should "be large enough for your application"     &[16..25,
-    // 10..20, 12..25, 14..25, 9..20, 12..20, 17..30],     &config,
+    // let mut timing_verify = TimingTree::new("verify", log::Level::Info);
+    // let output = timed!(
+    //     timing_verify,
+    //     "Verification time",
+    //     verify_proof(&all_stark, proof, &config)
     // );
+    // timing_verify.filter(Duration::from_millis(100)).print();
 
-    // let mut timing = TimingTree::new("prove", log::Level::Debug);
+    /****************************** Aggregation ***************************** */
 
-    // let kill_signal = None; // Useful only with distributed proving to kill
-    // hanging jobs. let (proof, public_values) =
-    //     prover_state.prove_root(&all_stark, &config, inputs, &mut timing,
-    // kill_signal);
+    // Generate all the recursive circuits needed to generate succinct proofs
+    // for blocks. The ranges correspond to the supported table sizes for
+    // each individual STARK component.
+    let prover_state = AllRecursiveCircuits::<F, C, D>::new(
+        &all_stark,
+        // TODO what is this? It is related to the starky machines and they say it should "be large
+        // enough for your application"
+        &[16..25, 10..20, 12..25, 14..25, 9..20, 12..20, 17..30],
+        &config,
+    );
+
+    let mut timing_tree = TimingTree::default();
+
+    // Proving individual transactions
+    let (proof_0, pv_0) =
+        prover_state.prove_root(&all_stark, &config, inputs_txn1, &mut timing_tree, None)?;
+    let (proof_1, pv_1) =
+        prover_state.prove_root(&all_stark, &config, inputs_txn2, &mut timing_tree, None)?;
+
+    // First (and only) aggregation layer
+    let (agg_proof, pv) =
+        prover_state.prove_aggregation(false, &proof_0, pv_0, false, &proof_1, pv_1)?;
+
+    // Test retrieved public values from the proof public inputs.
+    let retrieved_public_values = PublicValues::from_public_inputs(&agg_proof.public_inputs);
+    assert_eq!(retrieved_public_values, pv);
+    assert_eq!(
+        pv.trie_roots_before.state_root,
+        pv.extra_block_data.checkpoint_state_trie_root
+    );
+
+    // Proving verification of aggregated proof
+    let (block_proof, block_public_values) = prover_state.prove_block(
+        None, // We don't specify a previous proof, considering block 1 as the new checkpoint.
+        &agg_proof, pv,
+    )?;
+
+    let pv_block = PublicValues::from_public_inputs(&block_proof.public_inputs);
+    assert_eq!(block_public_values, pv_block);
+
+    prover_state.verify_root(proof_0.clone())?;
+    prover_state.verify_root(proof_1.clone())?;
+    prover_state.verify_aggregation(&agg_proof)?;
+    prover_state.verify_block(&block_proof)?;
+
+    Ok(())
 }
