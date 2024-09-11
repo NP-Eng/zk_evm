@@ -120,8 +120,10 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
 
     storage_tries_before_txn1.push((to_txn1_state_key, Node::Empty.into()));
 
+    let checkpoint_hash = state_trie_before_txn1.hash();
+
     let tries_before_txn1 = TrieInputs {
-        state_trie: state_trie_before_txn1,
+        state_trie: state_trie_before_txn1.clone(),
         transactions_trie: Node::Empty.into(),
         receipts_trie: Node::Empty.into(),
         storage_tries: storage_tries_before_txn1.clone(),
@@ -327,7 +329,7 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         trie_roots_after: trie_roots_after_txn1,
         contract_code,
         block_metadata: block_metadata.clone(),
-        checkpoint_state_trie_root: HashedPartialTrie::from(Node::Empty).hash(),
+        checkpoint_state_trie_root: checkpoint_hash,
         txn_number_before: 0.into(),
         gas_used_before: 0.into(),
         gas_used_after: gas_used_txn1,
@@ -452,7 +454,7 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         tries: tries_after_tx1,
         trie_roots_after: trie_roots_after_txn2,
         contract_code,
-        checkpoint_state_trie_root: HashedPartialTrie::from(Node::Empty).hash(),
+        checkpoint_state_trie_root: checkpoint_hash,
         block_metadata: block_metadata,
         txn_number_before: 1.into(),
         gas_used_before: gas_used_txn1,
@@ -484,9 +486,12 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         &all_stark,
         // TODO what is this? It is related to the starky machines and they say it should "be large
         // enough for your application"
-        &[16..25, 10..20, 12..25, 14..25, 9..20, 12..20, 17..30],
+        &[16..25, 9..20, 12..25, 14..25, 9..20, 12..20, 17..30],
         &config,
     );
+
+    // TODO remove
+    println!("[*] ...Initiating proving");
 
     let mut timing_tree = TimingTree::new("prove", log::Level::Info);
 
@@ -498,7 +503,7 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
     // TODO remove
     println!("[*] Finished proof 0");
 
-    serde_json::to_writer(std::fs::File::create("np_data/proof_0.json")?, &proof_0)?;
+    serde_json::to_writer(std::fs::File::create("../np_data/proof_0.json")?, &proof_0)?;
 
     let (proof_1, pv_1) =
         prover_state.prove_root(&all_stark, &config, inputs_txn2, &mut timing_tree, None)?;
@@ -507,13 +512,18 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
     // TODO remove
     println!("[*] Finished proof 1");
 
-    serde_json::to_writer(std::fs::File::create("np_data/proof_1.json")?, &proof_1)?;
+    serde_json::to_writer(std::fs::File::create("../np_data/proof_1.json")?, &proof_1)?;
 
     // First (and only) aggregation layer
     let (agg_proof, pv) = timed!(
-        TimingTree::new("proof aggregation", log::Level::Info),
+        timing_tree,
         "Aggregation time",
         prover_state.prove_aggregation(false, &proof_0, pv_0, false, &proof_1, pv_1)
+    )?;
+
+    serde_json::to_writer(
+        std::fs::File::create("../np_data/agg_proof.json")?,
+        &agg_proof,
     )?;
 
     // TODO remove
@@ -529,12 +539,17 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
 
     // Proving verification of aggregated proof
     let (block_proof, block_public_values) = timed!(
-        TimingTree::new("block proof", log::Level::Info),
+        timing_tree,
         "Block proof time",
         prover_state.prove_block(
             // We don't specify a previous proof, considering block 1 as the new checkpoint.
             None, &agg_proof, pv,
         )
+    )?;
+
+    serde_json::to_writer(
+        std::fs::File::create("../np_data/block_proof.json")?,
+        &block_proof,
     )?;
 
     // TODO remove
@@ -543,29 +558,44 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
     let pv_block = PublicValues::from_public_inputs(&block_proof.public_inputs);
     assert_eq!(block_public_values, pv_block);
 
+    // TODO remove
+    println!("[*] ...Initiating verification");
+
+    let mut timing_tree = TimingTree::new("verify", log::Level::Info);
+
     timed!(
-        TimingTree::new("verify", log::Level::Info),
+        timing_tree,
         "First proof verification time",
         prover_state.verify_root(proof_0)?
     );
+    timing_tree.filter(Duration::from_millis(100)).print();
 
     timed!(
-        TimingTree::new("verify", log::Level::Info),
+        timing_tree,
         "Second proof verification time",
         prover_state.verify_root(proof_1)?
     );
 
+    // TODO remove
+    println!("[*] Finished second proof verification");
+
     timed!(
-        TimingTree::new("verify", log::Level::Info),
+        timing_tree,
         "Aggregated proof verification time",
         prover_state.verify_aggregation(&agg_proof)?
     );
+
+    // TODO remove
+    println!("[*] Finished aggregated proof verification");
 
     timed!(
         TimingTree::new("verify", log::Level::Info),
         "Block proof verification time",
         prover_state.verify_block(&block_proof)?
     );
+
+    // TODO remove
+    println!("[*] Finished block proof verification");
 
     Ok(())
 }
