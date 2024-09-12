@@ -1,21 +1,16 @@
 #[cfg(test)]
 use std::collections::HashMap;
-use std::hash::{DefaultHasher, Hash};
-use std::io::Read;
-use std::str::FromStr;
 use std::time::Duration;
 
 use ethereum_types::{Address, BigEndianHash, H256, U256};
 use evm_arithmetization::generation::mpt::{AccountRlp, LegacyReceiptRlp};
 use evm_arithmetization::generation::{GenerationInputs, TrieInputs};
 use evm_arithmetization::proof::{BlockHashes, BlockMetadata, PublicValues, TrieRoots};
-use evm_arithmetization::prover::prove;
 use evm_arithmetization::testing_utils::{
     beacon_roots_account_nibbles, beacon_roots_contract_from_storage, eth_to_wei,
     ger_account_nibbles, init_logger, preinitialized_state_and_storage_tries,
-    update_beacon_roots_account_storage, BEACON_ROOTS_ACCOUNT, GLOBAL_EXIT_ROOT_ACCOUNT,
+    update_beacon_roots_account_storage, GLOBAL_EXIT_ROOT_ACCOUNT,
 };
-use evm_arithmetization::verifier::verify_proof;
 use evm_arithmetization::{AllRecursiveCircuits, AllStark, Node, StarkConfig};
 use hex_literal::hex;
 use keccak_hash::keccak;
