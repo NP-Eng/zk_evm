@@ -6,9 +6,13 @@ use anyhow::Result;
 use paladin::runtime::Runtime;
 use proof_gen::proof_types::GeneratedBlockProof;
 use prover::{BlockProverInput, ProverInput};
+use zero_bin_common::prover_state::persistence::set_circuit_cache_dir_env_if_not_set;
+use zero_bin_common::prover_state::ProverStateManager;
 
 #[tokio::test]
 async fn test_multiple_block_proofs_and_verification() -> Result<()> {
+    set_circuit_cache_dir_env_if_not_set()?;
+
     env_logger::builder().is_test(true).init();
     // Read all JSON files from /tmp/witnesses
     let witness_dir = Path::new("/tmp/witnesses");
@@ -39,8 +43,11 @@ async fn test_multiple_block_proofs_and_verification() -> Result<()> {
     // Create a ProverInput
     let prover_input = ProverInput { blocks };
 
+    ProverStateManager::default().initialize()?;
+
     log::info!("Starting proof generation");
     let runtime = Runtime::in_memory().await?;
+
     let proved_blocks = prover_input.prove(&runtime, None, false, None).await;
     runtime.close().await?;
     let proved_blocks = proved_blocks?;
