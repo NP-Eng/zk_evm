@@ -3884,10 +3884,12 @@ version = "0.1.0"
 dependencies = [
  "alloy",
  "anyhow",
+ "evm_arithmetization",
  "futures",
  "num-traits",
  "ops",
  "paladin-core",
+ "plonky2",
  "proof_gen",
  "ruint",
  "serde",
