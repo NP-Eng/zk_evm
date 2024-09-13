@@ -5,24 +5,17 @@ use anyhow::Result;
 use evm_arithmetization::{AllRecursiveCircuits, AllStark, StarkConfig};
 use plonky2::{field::goldilocks_field::GoldilocksField, plonk::config::PoseidonGoldilocksConfig};
 use prover::BlockProverInput;
-use trace_decoder::{BlockTrace, OtherBlockData};
 
 type F = GoldilocksField;
 const D: usize = 2;
 type C = PoseidonGoldilocksConfig;
-
-#[derive(serde::Deserialize)]
-struct BlockInput {
-    block_trace: BlockTrace,
-    other_data: OtherBlockData,
-}
 
 #[test]
 fn test_block_proof_and_verification() -> Result<()> {
     // Load the block input from JSON
     let file = File::open("../../trace_decoder/benches/block_input.json")?;
     let reader = BufReader::new(file);
-    let block_input: BlockInput = serde_json::from_reader(reader)?;
+    let block_input: BlockProverInput = serde_json::from_reader(reader)?;
 
     // Create a BlockProverInput
     let block_prover_input = BlockProverInput {
