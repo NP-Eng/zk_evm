@@ -1,21 +1,25 @@
 use ethereum_types::{Address, H256, U256};
 use plonky2::field::extension::Extendable;
+use plonky2::fri::proof::FriProof;
 use plonky2::hash::hash_types::RichField;
+use plonky2::hash::merkle_tree::MerkleCap;
 use plonky2::iop::target::{BoolTarget, Target};
 use plonky2::plonk::circuit_builder::CircuitBuilder;
-use plonky2::plonk::config::GenericConfig;
+use plonky2::plonk::config::{GenericConfig, Hasher};
 use plonky2::util::serialization::{Buffer, IoResult, Read, Write};
 use serde::{Deserialize, Serialize};
 use starky::config::StarkConfig;
 use starky::lookup::GrandProductChallengeSet;
-use starky::proof::{MultiProof, StarkProofChallenges};
+use starky::proof::{
+    MultiProof, StarkOpeningSet, StarkProof, StarkProofChallenges, StarkProofWithMetadata,
+};
 
 use crate::all_stark::NUM_TABLES;
 use crate::util::{get_h160, get_h256, h2u};
 
 /// A STARK proof for each table, plus some metadata used to create recursive
 /// wrapper proofs.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize)]
 pub struct AllProof<F: RichField + Extendable<D>, C: GenericConfig<D, F = F>, const D: usize> {
     /// A multi-proof containing all proofs for the different STARK modules and
     /// their cross-table lookup challenges.
@@ -23,6 +27,82 @@ pub struct AllProof<F: RichField + Extendable<D>, C: GenericConfig<D, F = F>, co
     /// Public memory values used for the recursive proofs.
     pub public_values: PublicValues,
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// NP
+
+// #[derive(Debug, Clone, Serialize)]
+// #[serde(remote = "StarkOpeningSet")]
+// pub struct StarkOpeningSetSerdeWorkaround<F: RichField + Extendable<D>, const
+// D: usize> {     /// Openings of trace polynomials at `zeta`.
+//     pub local_values: Vec<F::Extension>,
+//     /// Openings of trace polynomials at `g * zeta`.
+//     pub next_values: Vec<F::Extension>,
+//     /// Openings of lookups and cross-table lookups `Z` polynomials at
+// `zeta`.     pub auxiliary_polys: Option<Vec<F::Extension>>,
+//     /// Openings of lookups and cross-table lookups `Z` polynomials at `g *
+// zeta`.     pub auxiliary_polys_next: Option<Vec<F::Extension>>,
+//     /// Openings of cross-table lookups `Z` polynomials at `1`.
+//     pub ctl_zs_first: Option<Vec<F>>,
+//     /// Openings of quotient polynomials at `zeta`.
+//     pub quotient_polys: Option<Vec<F::Extension>>,
+// }
+
+// /// Merkle caps and openings that form the proof of a single STARK.
+// #[derive(Debug, Clone, Serialize)]
+// #[serde(remote = "StarkProof")]
+// pub struct StarkProofSerdeWorkAround<F: RichField + Extendable<D>, C:
+// GenericConfig<D, F = F>, const D: usize> {     /// Merkle cap of LDEs of
+// trace values.     pub trace_cap: MerkleCap<F, C::Hasher>,
+//     /// Optional merkle cap of LDEs of permutation Z values, if any.
+//     pub auxiliary_polys_cap: Option<MerkleCap<F, C::Hasher>>,
+//     /// Merkle cap of LDEs of trace values.
+//     pub quotient_polys_cap: Option<MerkleCap<F, C::Hasher>>,
+//     /// Purported values of each polynomial at the challenge point.
+//     #[serde(with = "StarkOpeningSetSerdeWorkaround")]
+//     pub openings: StarkOpeningSet<F, D>,
+//     /// A batch FRI argument for all openings.
+//     pub opening_proof: FriProof<F, C::Hasher, D>,
+// }
+
+// #[derive(Debug, Clone, Serialize)]
+// #[serde(remote = "StarkProofWithMetadata")]
+// pub struct StarkProofWithMetadataSerdeWorkaround<F, C, const D: usize>
+// where
+//     F: RichField + Extendable<D>,
+//     C: GenericConfig<D, F = F>,
+//     <C::Hasher as Hasher<F>>::Permutation: Serialize,
+// {
+//     /// Initial Fiat-Shamir state.
+//     pub init_challenger_state: <C::Hasher as Hasher<F>>::Permutation,
+//     /// Proof for a single STARK.
+//     #[serde(with = "StarkProofSerdeWorkAround")]
+//     pub proof: StarkProof<F, C, D>,
+// }
+
+// #[derive(Debug, Clone, Serialize)]
+// struct StarkProofWithMetadataWrapper<F, C, const D: usize>
+// (
+//     #[serde(with = "StarkProofWithMetadataSerdeWorkaround")]
+//     StarkProofWithMetadata<F, C, D>
+// )
+// where
+//     F: RichField + Extendable<D>,
+//     C: GenericConfig<D, F = F>,
+//     <C::Hasher as Hasher<F>>::Permutation: Serialize;
+
+// #[derive(Debug, Clone, Serialize)]
+// #[serde(remote = "MultiProof")]
+// pub struct MultiProofSerdeWorkaround<
+//     F: RichField + Extendable<D>,
+//     C: GenericConfig<D, F = F>,
+//     const D: usize,
+//     const N: usize,
+// > { /// Proofs for all the different STARK modules. pub stark_proofs:
+// > [StarkProofWithMetadataWrapper<F, C, D>; N], /// Cross-table lookup
+// > challenges. pub ctl_challenges: GrandProductChallengeSet<F>,
+// }
+////////////////////////////////////////////////////////////////////////////////
 
 impl<F: RichField + Extendable<D>, C: GenericConfig<D, F = F>, const D: usize> AllProof<F, C, D> {
     /// Returns the degree (i.e. the trace length) of each STARK.

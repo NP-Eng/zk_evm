@@ -1250,6 +1250,24 @@ where
         Ok((root_proof, all_proof.public_values))
     }
 
+    // NP
+    pub fn prove_transaction_starks(
+        &self,
+        all_stark: &AllStark<F, D>,
+        config: &StarkConfig,
+        generation_inputs: GenerationInputs,
+        timing: &mut TimingTree,
+        abort_signal: Option<Arc<AtomicBool>>,
+    ) -> anyhow::Result<AllProof<F, C, D>> {
+        prove::<F, C, D>(
+            all_stark,
+            config,
+            generation_inputs,
+            timing,
+            abort_signal.clone(),
+        )
+    }
+
     /// From an initial set of STARK proofs passed with their associated
     /// recursive table circuits, generate a recursive transaction proof.
     /// It is aimed at being used when preprocessed table circuits have not been

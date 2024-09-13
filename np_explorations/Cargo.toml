@@ -1,0 +1,60 @@
+[package]
+name = "np_explorations"
+version = "0.4.0"
+readme = "README.md"
+categories = ["cryptography"]
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+bytes = { workspace = true }
+env_logger = { workspace = true }
+ethereum-types = { workspace = true }
+evm_arithmetization = { workspace = true }
+hex = { workspace = true, optional = true }
+hex-literal = { workspace = true }
+itertools = { workspace = true }
+keccak-hash = { workspace = true }
+log = { workspace = true }
+plonky2_maybe_rayon = { workspace = true }
+num = { workspace = true }
+num-bigint = { workspace = true }
+once_cell = { workspace = true }
+pest = { workspace = true }
+pest_derive = { workspace = true }
+plonky2 = { workspace = true }
+plonky2_util = { workspace = true }
+starky = { workspace = true }
+rand = { workspace = true }
+rand_chacha = { workspace = true }
+rlp = { workspace = true }
+rlp-derive = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+sha2 = { workspace = true }
+static_assertions = { workspace = true }
+hashbrown = { workspace = true }
+tiny-keccak = { workspace = true }
+serde_json = { workspace = true }
+criterion = { workspace = true }
+
+# Local dependencies
+mpt_trie = { workspace = true }
+zk_evm_proc_macro = { workspace = true }
+
+[dev-dependencies]
+hex = { workspace = true }
+ripemd = { workspace = true }
+
+[features]
+default = ["parallel"]
+asmtools = ["hex"]
+parallel = [
+  "plonky2/parallel",
+  "plonky2_maybe_rayon/parallel",
+  "starky/parallel",
+]
+polygon_pos = []
