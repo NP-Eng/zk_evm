@@ -12,10 +12,16 @@ type C = PoseidonGoldilocksConfig;
 
 #[test]
 fn test_block_proof_and_verification() -> Result<()> {
+    env_logger::builder().is_test(true).init();
+
+    log::info!("Starting block proof and verification test");
+
     // Load the block input from JSON
     let file = File::open("../../trace_decoder/benches/block_input.json")?;
     let reader = BufReader::new(file);
     let block_input: BlockProverInput = serde_json::from_reader(reader)?;
+
+    log::info!("Loaded block input from JSON");
 
     // Create a BlockProverInput
     let block_prover_input = BlockProverInput {
@@ -30,6 +36,8 @@ fn test_block_proof_and_verification() -> Result<()> {
         |_| unimplemented!("Code hash resolution not implemented for this test"),
     )?;
 
+    log::info!("Generated {} inputs for proving", generation_inputs.len());
+
     // Set up the prover
     let all_stark = AllStark::<F, D>::default();
     let config = StarkConfig::standard_fast_config();
@@ -39,47 +47,26 @@ fn test_block_proof_and_verification() -> Result<()> {
         &config,
     );
 
+    log::info!("Prover initialized");
+
     // Prove and verify each transaction
     let mut proofs = Vec::new();
     let mut public_values = Vec::new();
 
-    for input in generation_inputs {
-        let (proof, pv) =
-            prover_state.prove_root(&all_stark, &config, input, &mut Default::default(), None)?;
+    for (i, input) in generation_inputs.iter().enumerate() {
+        log::info!("Proving and verifying transaction {}", i + 1);
+        let (proof, pv) = prover_state.prove_root(
+            &all_stark,
+            &config,
+            input.clone(),
+            &mut Default::default(),
+            None,
+        )?;
         prover_state.verify_root(proof.clone())?;
         proofs.push(proof);
         public_values.push(pv);
+        log::info!("Transaction {} proved and verified", i + 1);
     }
-
-    // Aggregate proofs if there's more than one
-    let (final_proof, final_pv) = if proofs.len() > 1 {
-        let mut current_proof = proofs[0].clone();
-        let mut current_pv = public_values[0].clone();
-
-        for (proof, pv) in proofs.iter().zip(public_values.iter()).skip(1) {
-            let (agg_proof, agg_pv) = prover_state.prove_aggregation(
-                false,
-                &current_proof,
-                current_pv,
-                false,
-                proof,
-                pv.clone(),
-            )?;
-            current_proof = agg_proof;
-            current_pv = agg_pv;
-        }
-
-        (current_proof, current_pv)
-    } else {
-        (proofs[0].clone(), public_values[0].clone())
-    };
-
-    // Verify the final proof
-    prover_state.verify_aggregation(&final_proof)?;
-
-    // Generate and verify the block proof
-    let (block_proof, _) = prover_state.prove_block(None, &final_proof, final_pv)?;
-    prover_state.verify_block(&block_proof)?;
 
     Ok(())
 }

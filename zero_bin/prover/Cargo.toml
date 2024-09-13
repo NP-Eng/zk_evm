@@ -27,6 +27,8 @@ num-traits = { workspace = true }
 [dev-dependencies]
 evm_arithmetization = { workspace = true }
 plonky2 = { workspace = true }
+log = { workspace = true }
+env_logger = { workspace = true }
 
 [features]
 default = []
