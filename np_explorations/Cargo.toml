@@ -62,5 +62,9 @@ parallel = [
 polygon_pos = []
 
 [[bin]]
-name = "no-recursion"
-path = "src/no_recursion.rs"
+name = "bench_1"
+path = "src/bench_1.rs"
+
+[[bin]]
+name = "bench_2"
+path = "src/bench_2.rs"
