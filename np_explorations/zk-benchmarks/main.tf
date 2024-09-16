@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "zk_instance" {
   count         = 4
   ami           = "ami-0e86e20dae9224db8" # Ubuntu Server 24.04 LTS (HVM), SSD Volume Type
-  instance_type = "c5.metal"             # Change to your desired instance type
+  instance_type = "c5.4xlarge"             # Change to your desired instance type
 
   tags = {
     Name = "zk-benchmark-${count.index + 1}"
