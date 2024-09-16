@@ -58,3 +58,7 @@ parallel = [
   "starky/parallel",
 ]
 polygon_pos = []
+
+[[bin]]
+name = "no-recursion"
+path = "src/no_recursion.rs"
