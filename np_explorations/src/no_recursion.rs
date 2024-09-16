@@ -27,11 +27,7 @@ mod exploration_2;
 #[cfg(test)]
 mod exploration_3;
 
-const TRANSACTION_IDS: [&str; 10] = [
-    "tx1", "tx2", "tx3", "tx4", "tx5", "tx6", "tx7", "tx8", "tx9", "tx10",
-];
-
-fn get_generation_inputs_from_json(nb_transactions: usize) -> Vec<GenerationInputs> {
+fn get_generation_inputs_from_json() -> Vec<GenerationInputs> {
     // Load the block input from JSON
     let file = File::open("np_explorations/data/bench_1/block_input.json").unwrap();
     let reader = BufReader::new(file);
@@ -52,9 +48,6 @@ fn get_generation_inputs_from_json(nb_transactions: usize) -> Vec<GenerationInpu
         |_| unimplemented!("Code hash resolution not implemented for this test"),
     )
     .expect("Failed to get generation inputs from JSON")
-    .into_iter()
-    .take(nb_transactions)
-    .collect()
 }
 
 const D: usize = 2;
@@ -91,23 +84,17 @@ fn main() {
         }
     };
 
-    let inputs = get_generation_inputs_from_json(TRANSACTION_IDS.len());
+    let inputs = get_generation_inputs_from_json();
 
-    assert_eq!(
-        TRANSACTION_IDS.len(),
-        inputs.len(),
-        "There are {} transaction IDs and {} transactions",
-        TRANSACTION_IDS.len(),
-        inputs.len(),
-    );
+    log::info!("Number of transactions: {}", inputs.len());
 
     let all_stark = AllStark::default();
     let stark_config = StarkConfig::new(100, 2, fri_config);
 
-    for (i, (id, generation_inputs)) in TRANSACTION_IDS.iter().zip(inputs.into_iter()).enumerate() {
-        println!("\n\n******** Transaction {id} ********");
+    for (i, generation_inputs) in inputs.into_iter().enumerate() {
+        println!("\n\n******** Transaction {i} ********");
 
-        let path = format!("np_explorations/data/bench_1/starky_proofs/{i}_{id}.json");
+        let path = format!("np_explorations/data/bench_1/starky_proofs/txn_{i}.json");
 
         match args[2].as_str() {
             "poseidon" => {
