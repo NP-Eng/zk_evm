@@ -11,10 +11,27 @@ resource "aws_instance" "zk_instance" {
     Name = "zk-benchmark-${count.index + 1}"
   }
 
-  # Optionally, add user data for initial setup
+  # User data for initial setup and running the benchmark
   user_data = <<-EOF
               #!/bin/bash
-              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-              git clone 
+              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+              source $HOME/.cargo/env
+              git clone https://github.com/NP-Eng/zk_evm.git
+              cd zk_evm
+              git switch evm-stark-benches
+              case ${count.index} in
+                0)
+                  RUST_LOG=info cargo run --release --bin no-recursion -- fri_prover keccak
+                  ;;
+                1)
+                  RUST_LOG=info cargo run --release --bin no-recursion -- fri_prover poseidon
+                  ;;
+                2)
+                  RUST_LOG=info cargo run --release --bin no-recursion -- fri_verifier keccak
+                  ;;
+                3)
+                  RUST_LOG=info cargo run --release --bin no-recursion -- fri_verifier poseidon
+                  ;;
+              esac
               EOF
 }
