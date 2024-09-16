@@ -44,6 +44,8 @@ criterion = { workspace = true }
 # Local dependencies
 mpt_trie = { workspace = true }
 zk_evm_proc_macro = { workspace = true }
+prover = { workspace = true }
+trace_decoder = { workspace = true }
 
 [dev-dependencies]
 hex = { workspace = true }
