@@ -62,16 +62,16 @@ resource "aws_instance" "zk_instance" {
               # Run the benchmark based on instance index and tee output to a file
               case ${count.index} in
                 0)
-                  RUST_LOG=info cargo run --release --bin no-recursion -- fri_prover keccak 2>&1 | tee ~/benchmark_output_prover_keccak.log
+                  RUST_LOG=info cargo run --release --bin bench_1 -- fri_prover keccak 2>&1 | tee ~/benchmark_output_prover_keccak.log
                   ;;
                 1)
-                  RUST_LOG=info cargo run --release --bin no-recursion -- fri_prover poseidon 2>&1 | tee ~/benchmark_output_prover_poseidon.log
+                  RUST_LOG=info cargo run --release --bin bench_1 -- fri_prover poseidon 2>&1 | tee ~/benchmark_output_prover_poseidon.log
                   ;;
                 2)
-                  RUST_LOG=info cargo run --release --bin no-recursion -- fri_verifier keccak 2>&1 | tee ~/benchmark_output_verifier_keccak.log
+                  RUST_LOG=info cargo run --release --bin bench_1 -- fri_verifier keccak 2>&1 | tee ~/benchmark_output_verifier_keccak.log
                   ;;
                 3)
-                  RUST_LOG=info cargo run --release --bin no-recursion -- fri_verifier poseidon 2>&1 | tee ~/benchmark_output_verifier_poseidon.log
+                  RUST_LOG=info cargo run --release --bin bench_1 -- fri_verifier poseidon 2>&1 | tee ~/benchmark_output_verifier_poseidon.log
                   ;;
               esac
               USEREOF
