@@ -1,7 +1,8 @@
 use std::{fs::metadata, os::unix::fs::MetadataExt};
 
 use evm_arithmetization::{
-    prover::prove, verifier::verify_proof, AllRecursiveCircuits, AllStark, StarkConfig,
+    prover::prove, testing_utils::init_logger, verifier::verify_proof, AllRecursiveCircuits,
+    AllStark, StarkConfig,
 };
 use itertools::Itertools;
 use plonky2::util::timing::TimingTree;
@@ -13,6 +14,8 @@ use common::{
 const TMP_PATH: &str = "np_explorations/data/bench_2/tmp.json";
 
 fn main() {
+    init_logger();
+
     let mut block =
         get_generation_inputs_from_json("np_explorations/data/bench_2/block_input.json");
     let mut n_transactions = block.len();
@@ -25,9 +28,9 @@ fn main() {
     let fast_starky_config = StarkConfig::standard_fast_config();
 
     // First measurement: no recursion (7 starky proofs + 1 CTL per transaction)
-    println!("\n\n******** Level 0: No recursion ********");
+    log::info!("\n\n******** Level 0: No recursion ********");
 
-    println!("Starky config:\n{:?}", STARKY_VERIFIER_CONFIG);
+    log::info!("Starky config:\n{:?}", STARKY_VERIFIER_CONFIG);
 
     // Measure prover time
     let block_l0 = block.clone();
@@ -37,7 +40,7 @@ fn main() {
         .into_iter()
         .enumerate()
         .map(|(i, generation_inputs)| {
-            println!(" * Transaction {i}");
+            log::info!(" * Transaction {i}");
             prove::<F, KC, D>(
                 &all_stark,
                 &STARKY_VERIFIER_CONFIG,
