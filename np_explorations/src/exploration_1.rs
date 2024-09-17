@@ -505,23 +505,9 @@ fn test_proof_aggregation() -> anyhow::Result<()> {
         &proof_0,
     )?;
 
-    // TODO remove
-    let config_1 = common::STARKY_VERIFIER_CONFIG;
     let (proof_1, pv_1) =
-        prover_state.prove_root(&all_stark, &config_1, inputs_txn2, &mut timing_tree, None)?;
+        prover_state.prove_root(&all_stark, &config, inputs_txn2, &mut timing_tree, None)?;
     timing_tree.filter(Duration::from_millis(100)).print();
-    timed!(
-        timing_tree,
-        "First proof verification time",
-        prover_state.verify_root(proof_1)?
-    );
-    timing_tree.filter(Duration::from_millis(100)).print();
-    panic!("TX2 PROVED AND VERIFIED CORRECTLY");
-    // TODO reintroduce
-    // let (proof_1, pv_1) =
-    //     prover_state.prove_root(&all_stark, &config, inputs_txn2, &mut
-    // timing_tree, None)?; timing_tree.filter(Duration::from_millis(100)).
-    // print();
 
     // TODO remove
     println!("[*] Finished proof 1");

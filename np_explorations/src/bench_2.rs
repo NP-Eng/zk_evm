@@ -13,12 +13,13 @@ use common::{
 };
 const TMP_PATH: &str = "np_explorations/data/bench_2/tmp.json";
 
+////////////////////////////////////////////////////////////////////////////////
 // Configurable parameters
 const BENCH_LEVEL_0: bool = false;
 // The pow-of-2-trimmed block will be truncated to 1/2^SHRINKING_FACTOR_LOG of
 // its original size. For instance, 2 indicates that only 1/4 of the (trimmed)
 // block will be used.
-const SHRINKING_FACTOR_LOG: usize = 2;
+const SHRINKING_FACTOR_LOG: usize = 0;
 
 fn main() {
     init_logger();
@@ -32,13 +33,15 @@ fn main() {
     block.truncate(n_transactions);
 
     // Shrinking
-    n_transactions /= n_transactions / (1 << SHRINKING_FACTOR_LOG);
+    n_transactions /= 1 << SHRINKING_FACTOR_LOG;
     block.truncate(n_transactions);
 
     let all_stark = AllStark::default();
     let fast_starky_config = StarkConfig::standard_fast_config();
 
-    let mut timing_tree = if BENCH_LEVEL_0 {
+    let mut timing_tree = TimingTree::default();
+
+    if BENCH_LEVEL_0 {
         ////////////////////////////////////////////////////////////////////////////
         // First measurement: no recursion (7 starky proofs + 1 CTL per transaction)
         log::info!("\n\n******** Level 0: No recursion ********");
@@ -48,20 +51,21 @@ fn main() {
         // Measure prover time
         let block_l0 = block.clone();
         let timer = std::time::Instant::now();
-        let mut timing_tree = TimingTree::default();
         let proofs = block_l0
             .into_iter()
             .enumerate()
             .map(|(i, generation_inputs)| {
-                log::info!(" * Transaction {i}");
-                prove::<F, KC, D>(
+                let inner_timer = std::time::Instant::now();
+                let proof = prove::<F, KC, D>(
                     &all_stark,
                     &STARKY_VERIFIER_CONFIG,
                     generation_inputs,
                     &mut timing_tree,
                     None,
                 )
-                .unwrap()
+                .unwrap();
+                log::info!("   Tx {i} proved in {:?}", inner_timer.elapsed());
+                proof
             })
             .collect::<Vec<_>>();
         let total_prover_time_l0 = timer.elapsed();
@@ -90,11 +94,7 @@ fn main() {
             total_prover_time_l0,
             total_verifier_time_l0,
         );
-
-        timing_tree
-    } else {
-        TimingTree::default()
-    };
+    }
 
     ////////////////////////////////////////////////////////////////////////////
     // Second measurement: Produce one plonky2 proof per transaction
@@ -117,8 +117,10 @@ fn main() {
 
     let root_proofs = block_l1
         .into_iter()
-        .map(|generation_inputs| {
-            prover_state
+        .enumerate()
+        .map(|(i, generation_inputs)| {
+            let inner_timer = std::time::Instant::now();
+            let proof = prover_state
                 .prove_root(
                     &all_stark,
                     &STARKY_PROVER_CONFIG,
@@ -126,7 +128,9 @@ fn main() {
                     &mut timing_tree,
                     None,
                 )
-                .unwrap()
+                .unwrap();
+            log::info!("   Tx root {i} proved in {:?}", inner_timer.elapsed());
+            proof
         })
         .collect::<Vec<_>>();
 
@@ -194,8 +198,11 @@ fn main() {
 
     let timer = std::time::Instant::now();
     let mut aggregated_proofs = aggregated_proofs;
+    let mut counter = 1;
     while aggregated_proofs.len() > 1 {
         aggregated_proofs = aggregate_proofs(&prover_state, aggregated_proofs);
+        counter += 1;
+        log::info!("Aggregation level {}", counter);
     }
     let total_prover_time_aggregation = timer.elapsed() + total_prover_time_l2;
 
@@ -250,11 +257,15 @@ pub fn aggregate_proofs(
         .into_iter()
         .chunks(2)
         .into_iter()
-        .map(|c| {
+        .enumerate()
+        .map(|(i, c)| {
+            let inner_timer = std::time::Instant::now();
             let ((proof_0, pv_0), (proof_1, pv_1)) = c.into_iter().collect_tuple().unwrap();
-            prover_state
+            let (proof, pv) = prover_state
                 .prove_aggregation(false, &proof_0, pv_0, false, &proof_1, pv_1)
-                .unwrap()
+                .unwrap();
+            log::info!("   Aggregation {i} proved in {:?}", inner_timer.elapsed());
+            (proof, pv)
         })
         .collect::<Vec<_>>()
 }
@@ -265,6 +276,7 @@ fn log_space_and_time(
     total_prover_time_l2: std::time::Duration,
     total_verifier_time_l2: std::time::Duration,
 ) {
+    log::info!(" **** Level summary ****");
     log::info!(" - Number of transactions: {:?}", n_transactions);
     log::info!(" - Total proof size: {:?} MB", total_size / 1_000_000_f32);
     log::info!(

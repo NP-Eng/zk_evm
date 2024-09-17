@@ -26,6 +26,13 @@ fn main() {
             reduction_strategy: FriReductionStrategy::ConstantArityBits(4, 5),
             num_query_rounds: 84,
         },
+        "fri_intermediate" => FriConfig {
+            rate_bits: 3,
+            cap_height: 4,
+            proof_of_work_bits: 16,
+            reduction_strategy: FriReductionStrategy::ConstantArityBits(4, 5),
+            num_query_rounds: 28,
+        },
         "fri_verifier" => FriConfig {
             rate_bits: 4,
             cap_height: 4,
@@ -34,7 +41,7 @@ fn main() {
             num_query_rounds: 21,
         },
         s @ _ => {
-            panic!("Invalid FRI config '{s}'. It should be one of {{fri_prover, fri_verifier}}")
+            panic!("Invalid FRI config '{s}'. It should be one of {{fri_prover, fri_verifier, fri_intermediate}}")
         }
     };
 
