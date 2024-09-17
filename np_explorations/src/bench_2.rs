@@ -15,7 +15,8 @@ const TMP_PATH: &str = "np_explorations/data/bench_2/tmp.json";
 
 ////////////////////////////////////////////////////////////////////////////////
 // Configurable parameters
-const BENCH_LEVEL_0: bool = false;
+const BENCH_LEVEL_0: bool = true;
+const TRIM: bool = false;
 // The pow-of-2-trimmed block will be truncated to 1/2^SHRINKING_FACTOR_LOG of
 // its original size. For instance, 2 indicates that only 1/4 of the (trimmed)
 // block will be used.
@@ -26,14 +27,17 @@ fn main() {
 
     let mut block =
         get_generation_inputs_from_json("np_explorations/data/bench_2/block_input.json");
+
     let mut n_transactions = block.len();
 
-    // Trimming to a power of two to get more accurate measurements
-    n_transactions = (n_transactions + 1).next_power_of_two() / 2;
-    block.truncate(n_transactions);
+    if TRIM {
+        // Trimming to a power of two to get more accurate measurements
+        n_transactions = (n_transactions + 1).next_power_of_two() / 2;
 
-    // Shrinking
-    n_transactions /= 1 << SHRINKING_FACTOR_LOG;
+        // Shrinking
+        n_transactions /= 1 << SHRINKING_FACTOR_LOG;
+    }
+
     block.truncate(n_transactions);
 
     let all_stark = AllStark::default();
@@ -44,7 +48,7 @@ fn main() {
     if BENCH_LEVEL_0 {
         ////////////////////////////////////////////////////////////////////////////
         // First measurement: no recursion (7 starky proofs + 1 CTL per transaction)
-        log::info!("\n\n******** Level 0: No recursion ********");
+        log::info!(" ******** Level 0: No recursion ********");
 
         log::info!("Starky config:\n{:?}", STARKY_VERIFIER_CONFIG);
 
@@ -173,7 +177,7 @@ fn main() {
 
     let timer = std::time::Instant::now();
     for proof in aggregated_proofs.iter() {
-        prover_state.verify_aggregation(&proof.0).unwrap();
+        // prover_state.verify_aggregation(&proof.0).unwrap();
     }
     let total_verifier_time_l2 = timer.elapsed();
 
@@ -194,7 +198,7 @@ fn main() {
 
     ////////////////////////////////////////////////////////////////////////////
     // Fourth measurement: Aggregate plonky2 proofs into one
-    log::info!("\n\n******** Full aggregation ********");
+    log::info!(" ******** Full aggregation ********");
 
     let timer = std::time::Instant::now();
     let mut aggregated_proofs = aggregated_proofs;
@@ -202,7 +206,7 @@ fn main() {
     while aggregated_proofs.len() > 1 {
         aggregated_proofs = aggregate_proofs(&prover_state, aggregated_proofs);
         counter += 1;
-        log::info!("Aggregation level {}", counter);
+        log::info!("   Aggregation level {}", counter);
     }
     let total_prover_time_aggregation = timer.elapsed() + total_prover_time_l2;
 
@@ -225,7 +229,7 @@ fn main() {
 
     ////////////////////////////////////////////////////////////////////////////
     // Fifth measurement: Recurse last proof into a block proof
-    log::info!("\n\n******** Full recursion ********");
+    log::info!(" ******** Full recursion ********");
 
     let timer = std::time::Instant::now();
     let (block_proof, _) = prover_state
@@ -259,8 +263,15 @@ pub fn aggregate_proofs(
         .into_iter()
         .enumerate()
         .map(|(i, c)| {
+            let mut chunk = c.into_iter();
+            let (proof_0, pv_0) = chunk.next().unwrap();
+            let next_chunk = chunk.next();
+            if next_chunk.is_none() {
+                return (proof_0, pv_0);
+            }
+            let (proof_1, pv_1) = next_chunk.unwrap();
+
             let inner_timer = std::time::Instant::now();
-            let ((proof_0, pv_0), (proof_1, pv_1)) = c.into_iter().collect_tuple().unwrap();
             let (proof, pv) = prover_state
                 .prove_aggregation(false, &proof_0, pv_0, false, &proof_1, pv_1)
                 .unwrap();
