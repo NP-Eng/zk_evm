@@ -48,6 +48,8 @@ fn main() {
     let full_block = n_transactions == block.len();
     block.truncate(n_transactions);
 
+    log::info!("Number of transactions: {:?}", n_transactions);
+
     let all_stark = AllStark::default();
     let fast_starky_config = StarkConfig::standard_fast_config();
 
