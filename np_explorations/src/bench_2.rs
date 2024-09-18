@@ -15,12 +15,15 @@ const TMP_PATH: &str = "np_explorations/data/bench_2/tmp.json";
 
 ////////////////////////////////////////////////////////////////////////////////
 // Configurable parameters
-const BENCH_LEVEL_0: bool = true;
-const TRIM: bool = false;
+const BENCH_LEVEL_0: bool = false;
 // The pow-of-2-trimmed block will be truncated to 1/2^SHRINKING_FACTOR_LOG of
 // its original size. For instance, 2 indicates that only 1/4 of the (trimmed)
 // block will be used.
-const SHRINKING_FACTOR_LOG: usize = 0;
+const SHRINKING_FACTOR_LOG: Option<usize> = None;
+// The hard limit on the number of transactions to be proved
+const HARD_LIMIT: Option<usize> = None;
+const USE_SAVED_ROOT_PROOFS: bool = false;
+const SAVE_ROOT_PROOFS: bool = false;
 
 fn main() {
     init_logger();
@@ -30,12 +33,16 @@ fn main() {
 
     let mut n_transactions = block.len();
 
-    if TRIM {
+    if let Some(shrinking_factor) = SHRINKING_FACTOR_LOG {
         // Trimming to a power of two to get more accurate measurements
         n_transactions = (n_transactions + 1).next_power_of_two() / 2;
 
         // Shrinking
-        n_transactions /= 1 << SHRINKING_FACTOR_LOG;
+        n_transactions /= 1 << shrinking_factor;
+    }
+
+    if let Some(n) = HARD_LIMIT {
+        n_transactions = n;
     }
 
     block.truncate(n_transactions);
@@ -86,9 +93,9 @@ fn main() {
         // Compute size
         let mut total_size = 0;
 
-        for proof in proofs.iter() {
-            serde_json::to_writer(std::fs::File::create(&TMP_PATH).unwrap(), &proof).unwrap();
-            let file_metadata = metadata(&TMP_PATH).unwrap();
+        for proof in proofs.iter().enumerate() {
+            serde_json::to_writer(std::fs::File::create(TMP_PATH).unwrap(), &proof).unwrap();
+            let file_metadata = metadata(TMP_PATH).unwrap();
             total_size += file_metadata.size();
         }
 
@@ -102,9 +109,13 @@ fn main() {
 
     ////////////////////////////////////////////////////////////////////////////
     // Second measurement: Produce one plonky2 proof per transaction
-    log::info!("\n\n******** Level 1: One level of recursion ********");
+    log::info!(" ******** Level 1: One level of recursion ********");
 
     log::info!("Starky config:\n{:?}", STARKY_PROVER_CONFIG);
+
+    log::info!("Generating recursive circuits");
+
+    let timer = std::time::Instant::now();
 
     let prover_state = AllRecursiveCircuits::<F, PC, D>::new(
         &all_stark,
@@ -113,28 +124,44 @@ fn main() {
         &[16..25, 9..20, 12..25, 14..25, 9..20, 12..20, 17..30],
         &STARKY_PROVER_CONFIG,
     );
+    log::info!("Recursive circuits generated in {:?}", timer.elapsed());
 
     // Measure prover time
     let block_l1 = block;
 
     let timer = std::time::Instant::now();
 
+    if USE_SAVED_ROOT_PROOFS {
+        log::info!("Loading previously saved root proofs");
+    }
+
     let root_proofs = block_l1
         .into_iter()
         .enumerate()
         .map(|(i, generation_inputs)| {
-            let inner_timer = std::time::Instant::now();
-            let proof = prover_state
-                .prove_root(
-                    &all_stark,
-                    &STARKY_PROVER_CONFIG,
-                    generation_inputs,
-                    &mut timing_tree,
-                    None,
-                )
-                .unwrap();
-            log::info!("   Tx root {i} proved in {:?}", inner_timer.elapsed());
-            proof
+            if USE_SAVED_ROOT_PROOFS {
+                println!("Loading proof for tx {i}");
+                let path = format!("np_explorations/data/bench_2/root_proofs/{i}.json");
+                let proof: (ProofWithPublicInputs<F, PC, D>, PublicValues) =
+                    serde_json::from_reader(std::fs::File::open(path).unwrap()).unwrap();
+                proof
+            } else {
+                let inner_timer = std::time::Instant::now();
+
+                log::info!("Proving root of tx {i}");
+
+                let proof = prover_state
+                    .prove_root(
+                        &all_stark,
+                        &STARKY_PROVER_CONFIG,
+                        generation_inputs,
+                        &mut timing_tree,
+                        None,
+                    )
+                    .unwrap();
+                log::info!("   Tx root {i} proved in {:?}", inner_timer.elapsed());
+                proof
+            }
         })
         .collect::<Vec<_>>();
 
@@ -148,11 +175,20 @@ fn main() {
     }
     let total_verifier_time_l1 = timer.elapsed();
 
+    if SAVE_ROOT_PROOFS {
+        log::info!("Saving all root proofs");
+    }
+
     let mut total_size = 0;
 
-    for proof in root_proofs.iter() {
-        serde_json::to_writer(std::fs::File::create(&TMP_PATH).unwrap(), &proof.0).unwrap();
-        let file_metadata = metadata(&TMP_PATH).unwrap();
+    for (i, proof) in root_proofs.iter().enumerate() {
+        let path = if SAVE_ROOT_PROOFS {
+            format!("np_explorations/data/bench_2/root_proofs/{i}.json")
+        } else {
+            TMP_PATH.to_string()
+        };
+        serde_json::to_writer(std::fs::File::create(&path).unwrap(), &proof).unwrap();
+        let file_metadata = metadata(&path).unwrap();
         total_size += file_metadata.size();
     }
 
@@ -165,7 +201,7 @@ fn main() {
 
     ////////////////////////////////////////////////////////////////////////////
     // Third measurement: Aggregate plonky2 proofs in pairs
-    log::info!("\n\n******** Level 2: Two levels of recursion ********");
+    log::info!(" ******** Level 2: Two levels of recursion ********");
 
     log::info!("Starky config:\n{:?}", STARKY_PROVER_CONFIG);
 
@@ -176,8 +212,15 @@ fn main() {
     let total_prover_time_l2 = timer.elapsed() + total_prover_time_l1;
 
     let timer = std::time::Instant::now();
-    for proof in aggregated_proofs.iter() {
-        // prover_state.verify_aggregation(&proof.0).unwrap();
+
+    let aggregated_proofs_to_verify = if n_transactions % 2 == 1 {
+        &aggregated_proofs[..aggregated_proofs.len() - 1]
+    } else {
+        &aggregated_proofs[..]
+    };
+
+    for proof in aggregated_proofs_to_verify.iter() {
+        prover_state.verify_aggregation(&proof.0).unwrap();
     }
     let total_verifier_time_l2 = timer.elapsed();
 
@@ -288,6 +331,9 @@ fn log_space_and_time(
     total_verifier_time_l2: std::time::Duration,
 ) {
     log::info!(" **** Level summary ****");
+    log::info!(
+        " (averages might be slightly inaccurate for non-power-of-two numbers of transactions"
+    );
     log::info!(" - Number of transactions: {:?}", n_transactions);
     log::info!(" - Total proof size: {:?} MB", total_size / 1_000_000_f32);
     log::info!(
