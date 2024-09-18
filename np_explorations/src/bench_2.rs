@@ -15,7 +15,7 @@ const TMP_PATH: &str = "np_explorations/data/bench_2/tmp.json";
 
 ////////////////////////////////////////////////////////////////////////////////
 // Configurable parameters
-const BENCH_LEVEL_0: bool = false;
+const BENCH_LEVEL_0: bool = true;
 // The pow-of-2-trimmed block will be truncated to 1/2^SHRINKING_FACTOR_LOG of
 // its original size. For instance, 2 indicates that only 1/4 of the (trimmed)
 // block will be used.
@@ -23,7 +23,7 @@ const SHRINKING_FACTOR_LOG: Option<usize> = None;
 // The hard limit on the number of transactions to be proved
 const HARD_LIMIT: Option<usize> = None;
 const USE_SAVED_ROOT_PROOFS: bool = false;
-const SAVE_ROOT_PROOFS: bool = false;
+const SAVE_ROOT_PROOFS: bool = true;
 
 fn main() {
     init_logger();
@@ -45,6 +45,7 @@ fn main() {
         n_transactions = n;
     }
 
+    let full_block = n_transactions == block.len();
     block.truncate(n_transactions);
 
     let all_stark = AllStark::default();
@@ -140,7 +141,6 @@ fn main() {
         .enumerate()
         .map(|(i, generation_inputs)| {
             if USE_SAVED_ROOT_PROOFS {
-                println!("Loading proof for tx {i}");
                 let path = format!("np_explorations/data/bench_2/root_proofs/{i}.json");
                 let proof: (ProofWithPublicInputs<F, PC, D>, PublicValues) =
                     serde_json::from_reader(std::fs::File::open(path).unwrap()).unwrap();
@@ -207,7 +207,7 @@ fn main() {
 
     let timer = std::time::Instant::now();
 
-    let aggregated_proofs = aggregate_proofs(&prover_state, root_proofs);
+    let aggregated_proofs = aggregate_proofs_first_level(&prover_state, root_proofs);
 
     let total_prover_time_l2 = timer.elapsed() + total_prover_time_l1;
 
@@ -245,13 +245,18 @@ fn main() {
 
     let timer = std::time::Instant::now();
     let mut aggregated_proofs = aggregated_proofs;
+    let mut last_is_agg = n_transactions % 2 == 0;
     let mut counter = 1;
+
     while aggregated_proofs.len() > 1 {
-        aggregated_proofs = aggregate_proofs(&prover_state, aggregated_proofs);
-        counter += 1;
         log::info!("   Aggregation level {}", counter);
+        (aggregated_proofs, last_is_agg) =
+            aggregate_proofs_next_levels(&prover_state, aggregated_proofs, last_is_agg);
+        counter += 1;
     }
     let total_prover_time_aggregation = timer.elapsed() + total_prover_time_l2;
+
+    log::info!("Finished aggregating proofs");
 
     let (last_level_proof, pv) = aggregated_proofs.into_iter().next().unwrap();
 
@@ -270,50 +275,49 @@ fn main() {
         total_verifier_time_aggregation,
     );
 
-    ////////////////////////////////////////////////////////////////////////////
-    // Fifth measurement: Recurse last proof into a block proof
-    log::info!(" ******** Full recursion ********");
+    if full_block {
+        ////////////////////////////////////////////////////////////////////////////
+        // Fifth measurement: Recurse last proof into a block proof
+        log::info!(" ******** Full recursion ********");
 
-    let timer = std::time::Instant::now();
-    let (block_proof, _) = prover_state
-        .prove_block(None, &last_level_proof, pv)
-        .unwrap();
-    let total_prover_time_recursion = timer.elapsed() + total_prover_time_aggregation;
+        let timer = std::time::Instant::now();
+        let (block_proof, _) = prover_state
+            .prove_block(None, &last_level_proof, pv)
+            .unwrap();
+        let total_prover_time_recursion = timer.elapsed() + total_prover_time_aggregation;
 
-    let timer = std::time::Instant::now();
-    prover_state.verify_block(&block_proof).unwrap();
-    let total_verifier_time_recursion = timer.elapsed();
+        let timer = std::time::Instant::now();
+        prover_state.verify_block(&block_proof).unwrap();
+        let total_verifier_time_recursion = timer.elapsed();
 
-    serde_json::to_writer(std::fs::File::create(&TMP_PATH).unwrap(), &block_proof).unwrap();
-    let file_metadata = metadata(&TMP_PATH).unwrap();
-    total_size = file_metadata.size();
+        serde_json::to_writer(std::fs::File::create(&TMP_PATH).unwrap(), &block_proof).unwrap();
+        let file_metadata = metadata(&TMP_PATH).unwrap();
+        total_size = file_metadata.size();
 
-    log_space_and_time(
-        n_transactions,
-        total_size as f32,
-        total_prover_time_recursion,
-        total_verifier_time_recursion,
-    );
+        log_space_and_time(
+            n_transactions,
+            total_size as f32,
+            total_prover_time_recursion,
+            total_verifier_time_recursion,
+        );
+    }
 }
 
-pub fn aggregate_proofs(
+pub fn aggregate_proofs_first_level(
     prover_state: &AllRecursiveCircuits<F, PC, D>,
     proofs: Vec<(ProofWithPublicInputs<F, PC, D>, PublicValues)>,
 ) -> Vec<(ProofWithPublicInputs<F, PC, D>, PublicValues)> {
-    proofs
+    let mut proofs = proofs;
+    let proofs_to_leave = proofs.split_off(proofs.len() - (proofs.len() % 2));
+    let proofs_to_aggregate = proofs;
+
+    proofs_to_aggregate
         .into_iter()
         .chunks(2)
         .into_iter()
         .enumerate()
         .map(|(i, c)| {
-            let mut chunk = c.into_iter();
-            let (proof_0, pv_0) = chunk.next().unwrap();
-            let next_chunk = chunk.next();
-            if next_chunk.is_none() {
-                return (proof_0, pv_0);
-            }
-            let (proof_1, pv_1) = next_chunk.unwrap();
-
+            let ((proof_0, pv_0), (proof_1, pv_1)) = c.into_iter().collect_tuple().unwrap();
             let inner_timer = std::time::Instant::now();
             let (proof, pv) = prover_state
                 .prove_aggregation(false, &proof_0, pv_0, false, &proof_1, pv_1)
@@ -321,8 +325,61 @@ pub fn aggregate_proofs(
             log::info!("   Aggregation {i} proved in {:?}", inner_timer.elapsed());
             (proof, pv)
         })
+        .chain(proofs_to_leave)
         .collect::<Vec<_>>()
 }
+
+pub fn aggregate_proofs_next_levels(
+    prover_state: &AllRecursiveCircuits<F, PC, D>,
+    proofs: Vec<(ProofWithPublicInputs<F, PC, D>, PublicValues)>,
+    last_is_agg: bool,
+) -> (Vec<(ProofWithPublicInputs<F, PC, D>, PublicValues)>, bool) {
+    let mut last_is_agg = last_is_agg;
+
+    let chunks = proofs.into_iter().chunks(2);
+    let mut chunks = chunks.into_iter().collect_vec();
+
+    let mut last_chunk = chunks.split_off(chunks.len() - 1);
+    let chunks_with_agg = chunks;
+
+    let head = chunks_with_agg.into_iter().enumerate().map(|(i, c)| {
+        let ((proof_0, pv_0), (proof_1, pv_1)) = c.into_iter().collect_tuple().unwrap();
+        let inner_timer = std::time::Instant::now();
+        let (proof, pv) = prover_state
+            .prove_aggregation(true, &proof_0, pv_0, true, &proof_1, pv_1)
+            .unwrap();
+        log::info!("   Aggregation {i} proved in {:?}", inner_timer.elapsed());
+        (proof, pv)
+    });
+
+    let last_proof = if last_chunk.len() == 1 {
+        last_chunk[0].next().unwrap()
+    } else {
+        let ((proof_0, pv_0), (proof_1, pv_1)) = last_chunk.remove(0).collect_tuple().unwrap();
+        let inner_timer = std::time::Instant::now();
+        let (proof, pv) = prover_state
+            .prove_aggregation(true, &proof_0, pv_0, last_is_agg, &proof_1, pv_1)
+            .unwrap();
+        log::info!("   Last aggregation proved in {:?}", inner_timer.elapsed());
+        last_is_agg = true;
+        (proof, pv)
+    };
+
+    (
+        head.chain(std::iter::once(last_proof)).collect::<Vec<_>>(),
+        last_is_agg,
+    )
+}
+
+// pub fn fold_aggregate_proofs(    prover_state: &AllRecursiveCircuits<F, PC,
+// D>,     proofs: Vec<(ProofWithPublicInputs<F, PC, D>, PublicValues)>,) {
+//     proofs
+//         .into_iter()
+//         .enumerate()
+//         .fold((None, false), |acc, v| {
+//             prover_state.prove_aggregation
+//         })
+//         .collect::<Vec<_>>()
 
 fn log_space_and_time(
     n_transactions: usize,
