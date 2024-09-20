@@ -1,0 +1,614 @@
+   Compiling np_explorations v0.4.0 (/home/tester/zk_evm/np_explorations)
+    Finished `release` profile [optimized] target(s) in 9.47s
+     Running `target/release/bench_2`
+[2024-09-17T16:15:39Z INFO  bench_2::common] Loaded block input from JSON
+[2024-09-17T16:15:42Z INFO  bench_2] 
+    
+    ******** Level 1: One level of recursion ********
+[2024-09-17T16:15:42Z INFO  bench_2] Starky config:
+    StarkConfig { security_bits: 100, num_challenges: 2, fri_config: FriConfig { rate_bits: 1, cap_height: 4, proof_of_work_bits: 16, reduction_strategy: ConstantArityBits(4, 5), num_query_rounds: 84 } }
+[2024-09-17T16:17:03Z INFO  evm_arithmetization::generation::state] CPU halted after 141217 cycles
+[2024-09-17T16:17:03Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:17:03Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 26552, byte_packing_len: 1597, cpu_len: 262144, keccak_len: 18360, keccak_sponge_len: 765, logic_len: 4915, memory_len: 470948 }
+[2024-09-17T16:17:19Z INFO  bench_2]    Tx root 0 proved in 16.254295536s
+[2024-09-17T16:17:20Z INFO  evm_arithmetization::generation::state] CPU halted after 379795 cycles
+[2024-09-17T16:17:20Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T16:17:20Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 65788, byte_packing_len: 5133, cpu_len: 524288, keccak_len: 37824, keccak_sponge_len: 1576, logic_len: 12905, memory_len: 1209085 }
+[2024-09-17T16:17:52Z INFO  bench_2]    Tx root 1 proved in 32.129350984s
+[2024-09-17T16:17:52Z INFO  evm_arithmetization::generation::state] CPU halted after 145921 cycles
+[2024-09-17T16:17:52Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:17:52Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 27746, byte_packing_len: 1705, cpu_len: 262144, keccak_len: 18528, keccak_sponge_len: 772, logic_len: 5423, memory_len: 482605 }
+[2024-09-17T16:18:07Z INFO  bench_2]    Tx root 2 proved in 15.630427726s
+[2024-09-17T16:18:07Z INFO  evm_arithmetization::generation::state] CPU halted after 111660 cycles
+[2024-09-17T16:18:07Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:18:07Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21851, byte_packing_len: 1198, cpu_len: 131072, keccak_len: 16152, keccak_sponge_len: 673, logic_len: 4429, memory_len: 379799 }
+[2024-09-17T16:18:20Z INFO  bench_2]    Tx root 3 proved in 12.933845448s
+[2024-09-17T16:18:20Z INFO  evm_arithmetization::generation::state] CPU halted after 114709 cycles
+[2024-09-17T16:18:20Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:18:20Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22273, byte_packing_len: 1252, cpu_len: 131072, keccak_len: 16248, keccak_sponge_len: 677, logic_len: 4454, memory_len: 387970 }
+[2024-09-17T16:18:33Z INFO  bench_2]    Tx root 4 proved in 12.988494056s
+[2024-09-17T16:18:33Z INFO  evm_arithmetization::generation::state] CPU halted after 151367 cycles
+[2024-09-17T16:18:33Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:18:33Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 28457, byte_packing_len: 1727, cpu_len: 262144, keccak_len: 18960, keccak_sponge_len: 790, logic_len: 5718, memory_len: 496266 }
+[2024-09-17T16:18:49Z INFO  bench_2]    Tx root 5 proved in 15.678952613s
+[2024-09-17T16:18:49Z INFO  evm_arithmetization::generation::state] CPU halted after 166469 cycles
+[2024-09-17T16:18:49Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:18:49Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30788, byte_packing_len: 1949, cpu_len: 262144, keccak_len: 20304, keccak_sponge_len: 846, logic_len: 6082, memory_len: 545113 }
+[2024-09-17T16:19:06Z INFO  bench_2]    Tx root 6 proved in 17.507277512s
+[2024-09-17T16:19:06Z INFO  evm_arithmetization::generation::state] CPU halted after 161592 cycles
+[2024-09-17T16:19:07Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:19:07Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30178, byte_packing_len: 1912, cpu_len: 262144, keccak_len: 20016, keccak_sponge_len: 834, logic_len: 5748, memory_len: 530867 }
+[2024-09-17T16:19:24Z INFO  bench_2]    Tx root 7 proved in 17.642829528s
+[2024-09-17T16:19:25Z INFO  evm_arithmetization::generation::state] CPU halted after 372173 cycles
+[2024-09-17T16:19:25Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T16:19:25Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 66509, byte_packing_len: 4682, cpu_len: 524288, keccak_len: 38424, keccak_sponge_len: 1601, logic_len: 11705, memory_len: 1170037 }
+[2024-09-17T16:19:57Z INFO  bench_2]    Tx root 8 proved in 33.125277681s
+[2024-09-17T16:19:57Z INFO  evm_arithmetization::generation::state] CPU halted after 329112 cycles
+[2024-09-17T16:19:57Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T16:19:57Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 58252, byte_packing_len: 4099, cpu_len: 524288, keccak_len: 31008, keccak_sponge_len: 1292, logic_len: 9792, memory_len: 1023662 }
+[2024-09-17T16:20:18Z INFO  bench_2]    Tx root 9 proved in 20.476538741s
+[2024-09-17T16:20:18Z INFO  evm_arithmetization::generation::state] CPU halted after 110400 cycles
+[2024-09-17T16:20:18Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:20:18Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21746, byte_packing_len: 1160, cpu_len: 131072, keccak_len: 16296, keccak_sponge_len: 679, logic_len: 4448, memory_len: 377955 }
+[2024-09-17T16:20:31Z INFO  bench_2]    Tx root 10 proved in 12.973859312s
+[2024-09-17T16:20:31Z INFO  evm_arithmetization::generation::state] CPU halted after 108021 cycles
+[2024-09-17T16:20:31Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:20:31Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21294, byte_packing_len: 1153, cpu_len: 131072, keccak_len: 16056, keccak_sponge_len: 669, logic_len: 4387, memory_len: 370177 }
+[2024-09-17T16:20:43Z INFO  bench_2]    Tx root 11 proved in 12.898477026s
+[2024-09-17T16:20:44Z INFO  evm_arithmetization::generation::state] CPU halted after 111284 cycles
+[2024-09-17T16:20:44Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:20:44Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21874, byte_packing_len: 1178, cpu_len: 131072, keccak_len: 16152, keccak_sponge_len: 673, logic_len: 4429, memory_len: 379062 }
+[2024-09-17T16:20:56Z INFO  bench_2]    Tx root 12 proved in 12.886329236s
+[2024-09-17T16:20:57Z INFO  evm_arithmetization::generation::state] CPU halted after 155754 cycles
+[2024-09-17T16:20:57Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:20:57Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 29114, byte_packing_len: 1749, cpu_len: 262144, keccak_len: 18888, keccak_sponge_len: 787, logic_len: 6295, memory_len: 507201 }
+[2024-09-17T16:21:12Z INFO  bench_2]    Tx root 13 proved in 15.312324081s
+[2024-09-17T16:21:12Z INFO  evm_arithmetization::generation::state] CPU halted after 110717 cycles
+[2024-09-17T16:21:12Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:21:12Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21882, byte_packing_len: 1167, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4473, memory_len: 380046 }
+[2024-09-17T16:21:26Z INFO  bench_2]    Tx root 14 proved in 14.152315726s
+[2024-09-17T16:21:26Z INFO  evm_arithmetization::generation::state] CPU halted after 110933 cycles
+[2024-09-17T16:21:26Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:21:26Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21757, byte_packing_len: 1191, cpu_len: 131072, keccak_len: 16296, keccak_sponge_len: 679, logic_len: 4444, memory_len: 378982 }
+[2024-09-17T16:21:39Z INFO  bench_2]    Tx root 15 proved in 12.966752443s
+[2024-09-17T16:21:39Z INFO  evm_arithmetization::generation::state] CPU halted after 105818 cycles
+[2024-09-17T16:21:39Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:21:39Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21037, byte_packing_len: 1109, cpu_len: 131072, keccak_len: 15912, keccak_sponge_len: 663, logic_len: 4365, memory_len: 363500 }
+[2024-09-17T16:21:52Z INFO  bench_2]    Tx root 16 proved in 12.902176587s
+[2024-09-17T16:21:52Z INFO  evm_arithmetization::generation::state] CPU halted after 175138 cycles
+[2024-09-17T16:21:52Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:21:52Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 32183, byte_packing_len: 2030, cpu_len: 262144, keccak_len: 21744, keccak_sponge_len: 906, logic_len: 7351, memory_len: 576135 }
+[2024-09-17T16:22:09Z INFO  bench_2]    Tx root 17 proved in 17.563753731s
+[2024-09-17T16:22:10Z INFO  evm_arithmetization::generation::state] CPU halted after 225992 cycles
+[2024-09-17T16:22:10Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:22:10Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40959, byte_packing_len: 2883, cpu_len: 262144, keccak_len: 24192, keccak_sponge_len: 1008, logic_len: 7856, memory_len: 722150 }
+[2024-09-17T16:22:27Z INFO  bench_2]    Tx root 18 proved in 17.784991358s
+[2024-09-17T16:22:27Z INFO  evm_arithmetization::generation::state] CPU halted after 110979 cycles
+[2024-09-17T16:22:27Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:22:27Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21798, byte_packing_len: 1190, cpu_len: 131072, keccak_len: 16200, keccak_sponge_len: 675, logic_len: 4427, memory_len: 378886 }
+[2024-09-17T16:22:40Z INFO  bench_2]    Tx root 19 proved in 12.900504438s
+[2024-09-17T16:22:40Z INFO  evm_arithmetization::generation::state] CPU halted after 110512 cycles
+[2024-09-17T16:22:40Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:22:40Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21697, byte_packing_len: 1186, cpu_len: 131072, keccak_len: 16248, keccak_sponge_len: 677, logic_len: 4430, memory_len: 378082 }
+[2024-09-17T16:22:53Z INFO  bench_2]    Tx root 20 proved in 13.049129499s
+[2024-09-17T16:22:53Z INFO  evm_arithmetization::generation::state] CPU halted after 113790 cycles
+[2024-09-17T16:22:53Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:22:53Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22103, byte_packing_len: 1241, cpu_len: 131072, keccak_len: 16272, keccak_sponge_len: 678, logic_len: 4445, memory_len: 386275 }
+[2024-09-17T16:23:06Z INFO  bench_2]    Tx root 21 proved in 12.917890036s
+[2024-09-17T16:23:06Z INFO  evm_arithmetization::generation::state] CPU halted after 110778 cycles
+[2024-09-17T16:23:06Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:23:06Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21776, byte_packing_len: 1179, cpu_len: 131072, keccak_len: 16224, keccak_sponge_len: 676, logic_len: 4432, memory_len: 378728 }
+[2024-09-17T16:23:19Z INFO  bench_2]    Tx root 22 proved in 12.868345043s
+[2024-09-17T16:23:19Z INFO  evm_arithmetization::generation::state] CPU halted after 217096 cycles
+[2024-09-17T16:23:19Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:23:19Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 39173, byte_packing_len: 2725, cpu_len: 262144, keccak_len: 24144, keccak_sponge_len: 1006, logic_len: 7489, memory_len: 699450 }
+[2024-09-17T16:23:36Z INFO  bench_2]    Tx root 23 proved in 17.68993593s
+[2024-09-17T16:23:37Z INFO  evm_arithmetization::generation::state] CPU halted after 110572 cycles
+[2024-09-17T16:23:37Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:23:37Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21826, byte_packing_len: 1165, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4466, memory_len: 379459 }
+[2024-09-17T16:23:50Z INFO  bench_2]    Tx root 24 proved in 13.981707069s
+[2024-09-17T16:23:51Z INFO  evm_arithmetization::generation::state] CPU halted after 110670 cycles
+[2024-09-17T16:23:51Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:23:51Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21753, byte_packing_len: 1173, cpu_len: 131072, keccak_len: 16272, keccak_sponge_len: 678, logic_len: 4443, memory_len: 378803 }
+[2024-09-17T16:24:03Z INFO  bench_2]    Tx root 25 proved in 12.892998005s
+[2024-09-17T16:24:03Z INFO  evm_arithmetization::generation::state] CPU halted after 111628 cycles
+[2024-09-17T16:24:03Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:24:03Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21908, byte_packing_len: 1201, cpu_len: 131072, keccak_len: 16248, keccak_sponge_len: 677, logic_len: 4429, memory_len: 380913 }
+[2024-09-17T16:24:16Z INFO  bench_2]    Tx root 26 proved in 12.930815856s
+[2024-09-17T16:24:16Z INFO  evm_arithmetization::generation::state] CPU halted after 105542 cycles
+[2024-09-17T16:24:16Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:24:16Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21234, byte_packing_len: 1057, cpu_len: 131072, keccak_len: 16176, keccak_sponge_len: 674, logic_len: 4430, memory_len: 365786 }
+[2024-09-17T16:24:29Z INFO  bench_2]    Tx root 27 proved in 12.903470153s
+[2024-09-17T16:24:29Z INFO  evm_arithmetization::generation::state] CPU halted after 107447 cycles
+[2024-09-17T16:24:29Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:24:29Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21360, byte_packing_len: 1100, cpu_len: 131072, keccak_len: 16200, keccak_sponge_len: 675, logic_len: 4427, memory_len: 370386 }
+[2024-09-17T16:24:42Z INFO  bench_2]    Tx root 28 proved in 12.891646535s
+[2024-09-17T16:24:42Z INFO  evm_arithmetization::generation::state] CPU halted after 162276 cycles
+[2024-09-17T16:24:42Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:24:42Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30457, byte_packing_len: 1888, cpu_len: 262144, keccak_len: 19440, keccak_sponge_len: 810, logic_len: 5619, memory_len: 529236 }
+[2024-09-17T16:24:59Z INFO  bench_2]    Tx root 29 proved in 17.380569986s
+[2024-09-17T16:25:00Z INFO  evm_arithmetization::generation::state] CPU halted after 110270 cycles
+[2024-09-17T16:25:00Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:25:00Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21840, byte_packing_len: 1143, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4476, memory_len: 379361 }
+[2024-09-17T16:25:13Z INFO  bench_2]    Tx root 30 proved in 14.107402823s
+[2024-09-17T16:25:14Z INFO  evm_arithmetization::generation::state] CPU halted after 113302 cycles
+[2024-09-17T16:25:14Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:25:14Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22257, byte_packing_len: 1205, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4495, memory_len: 388018 }
+[2024-09-17T16:25:28Z INFO  bench_2]    Tx root 31 proved in 14.063850489s
+[2024-09-17T16:25:28Z INFO  evm_arithmetization::generation::state] CPU halted after 101775 cycles
+[2024-09-17T16:25:28Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:25:28Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 20578, byte_packing_len: 1005, cpu_len: 131072, keccak_len: 16080, keccak_sponge_len: 670, logic_len: 4392, memory_len: 355478 }
+[2024-09-17T16:25:40Z INFO  bench_2]    Tx root 32 proved in 12.539367738s
+[2024-09-17T16:25:40Z INFO  evm_arithmetization::generation::state] CPU halted after 111149 cycles
+[2024-09-17T16:25:40Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:25:40Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22029, byte_packing_len: 1197, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4481, memory_len: 381033 }
+[2024-09-17T16:25:54Z INFO  bench_2]    Tx root 33 proved in 14.043849211s
+[2024-09-17T16:25:54Z INFO  evm_arithmetization::generation::state] CPU halted after 111313 cycles
+[2024-09-17T16:25:54Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:25:54Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21853, byte_packing_len: 1197, cpu_len: 131072, keccak_len: 16272, keccak_sponge_len: 678, logic_len: 4445, memory_len: 379332 }
+[2024-09-17T16:26:07Z INFO  bench_2]    Tx root 34 proved in 12.869026366s
+[2024-09-17T16:26:07Z INFO  evm_arithmetization::generation::state] CPU halted after 111257 cycles
+[2024-09-17T16:26:07Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:26:07Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21921, byte_packing_len: 1185, cpu_len: 131072, keccak_len: 16320, keccak_sponge_len: 680, logic_len: 4455, memory_len: 380036 }
+[2024-09-17T16:26:20Z INFO  bench_2]    Tx root 35 proved in 12.89369581s
+[2024-09-17T16:26:20Z INFO  evm_arithmetization::generation::state] CPU halted after 110917 cycles
+[2024-09-17T16:26:20Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:26:20Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21865, byte_packing_len: 1181, cpu_len: 131072, keccak_len: 16344, keccak_sponge_len: 681, logic_len: 4458, memory_len: 379162 }
+[2024-09-17T16:26:33Z INFO  bench_2]    Tx root 36 proved in 12.841871701s
+[2024-09-17T16:26:33Z INFO  evm_arithmetization::generation::state] CPU halted after 108343 cycles
+[2024-09-17T16:26:33Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:26:33Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21546, byte_packing_len: 1126, cpu_len: 131072, keccak_len: 16320, keccak_sponge_len: 680, logic_len: 4455, memory_len: 372518 }
+[2024-09-17T16:26:46Z INFO  bench_2]    Tx root 37 proved in 12.927098928s
+[2024-09-17T16:26:46Z INFO  evm_arithmetization::generation::state] CPU halted after 225274 cycles
+[2024-09-17T16:26:46Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:26:46Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40084, byte_packing_len: 2809, cpu_len: 262144, keccak_len: 25272, keccak_sponge_len: 1053, logic_len: 7281, memory_len: 731172 }
+[2024-09-17T16:27:04Z INFO  bench_2]    Tx root 38 proved in 18.115440561s
+[2024-09-17T16:27:04Z INFO  evm_arithmetization::generation::state] CPU halted after 232825 cycles
+[2024-09-17T16:27:04Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:27:04Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 41138, byte_packing_len: 2930, cpu_len: 262144, keccak_len: 25800, keccak_sponge_len: 1075, logic_len: 7391, memory_len: 754027 }
+[2024-09-17T16:27:22Z INFO  bench_2]    Tx root 39 proved in 17.987741466s
+[2024-09-17T16:27:22Z INFO  evm_arithmetization::generation::state] CPU halted after 107257 cycles
+[2024-09-17T16:27:22Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:27:22Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21328, byte_packing_len: 1114, cpu_len: 131072, keccak_len: 16344, keccak_sponge_len: 681, logic_len: 4447, memory_len: 370222 }
+[2024-09-17T16:27:35Z INFO  bench_2]    Tx root 40 proved in 12.927027914s
+[2024-09-17T16:27:35Z INFO  evm_arithmetization::generation::state] CPU halted after 107575 cycles
+[2024-09-17T16:27:35Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:27:35Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21444, byte_packing_len: 1096, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4474, memory_len: 371722 }
+[2024-09-17T16:27:49Z INFO  bench_2]    Tx root 41 proved in 14.074004614s
+[2024-09-17T16:27:49Z INFO  evm_arithmetization::generation::state] CPU halted after 110347 cycles
+[2024-09-17T16:27:49Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:27:49Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21814, byte_packing_len: 1148, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4469, memory_len: 378678 }
+[2024-09-17T16:28:03Z INFO  bench_2]    Tx root 42 proved in 14.200592391s
+[2024-09-17T16:28:03Z INFO  evm_arithmetization::generation::state] CPU halted after 114438 cycles
+[2024-09-17T16:28:03Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:28:03Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22398, byte_packing_len: 1226, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4497, memory_len: 389541 }
+[2024-09-17T16:28:17Z INFO  bench_2]    Tx root 43 proved in 14.06961417s
+[2024-09-17T16:28:17Z INFO  evm_arithmetization::generation::state] CPU halted after 110311 cycles
+[2024-09-17T16:28:17Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:28:17Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21831, byte_packing_len: 1152, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4485, memory_len: 379634 }
+[2024-09-17T16:28:31Z INFO  bench_2]    Tx root 44 proved in 14.08353009s
+[2024-09-17T16:28:31Z INFO  evm_arithmetization::generation::state] CPU halted after 113492 cycles
+[2024-09-17T16:28:31Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:28:31Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22185, byte_packing_len: 1223, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4497, memory_len: 387027 }
+[2024-09-17T16:28:45Z INFO  bench_2]    Tx root 45 proved in 13.97813397s
+[2024-09-17T16:28:45Z INFO  evm_arithmetization::generation::state] CPU halted after 185647 cycles
+[2024-09-17T16:28:45Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:28:45Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 33889, byte_packing_len: 2123, cpu_len: 262144, keccak_len: 21816, keccak_sponge_len: 909, logic_len: 6588, memory_len: 603235 }
+[2024-09-17T16:29:03Z INFO  bench_2]    Tx root 46 proved in 17.651287904s
+[2024-09-17T16:29:03Z INFO  evm_arithmetization::generation::state] CPU halted after 116258 cycles
+[2024-09-17T16:29:03Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:29:03Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22549, byte_packing_len: 1258, cpu_len: 131072, keccak_len: 16608, keccak_sponge_len: 692, logic_len: 4522, memory_len: 395029 }
+[2024-09-17T16:29:17Z INFO  bench_2]    Tx root 47 proved in 14.145447932s
+[2024-09-17T16:29:17Z INFO  evm_arithmetization::generation::state] CPU halted after 229446 cycles
+[2024-09-17T16:29:17Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:29:17Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40683, byte_packing_len: 2870, cpu_len: 262144, keccak_len: 25584, keccak_sponge_len: 1066, logic_len: 7346, memory_len: 745032 }
+[2024-09-17T16:29:35Z INFO  bench_2]    Tx root 48 proved in 18.192452859s
+[2024-09-17T16:29:36Z INFO  evm_arithmetization::generation::state] CPU halted after 237056 cycles
+[2024-09-17T16:29:36Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:29:36Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 41966, byte_packing_len: 3021, cpu_len: 262144, keccak_len: 25944, keccak_sponge_len: 1081, logic_len: 7437, memory_len: 767420 }
+[2024-09-17T16:29:53Z INFO  bench_2]    Tx root 49 proved in 18.025325278s
+[2024-09-17T16:29:53Z INFO  evm_arithmetization::generation::state] CPU halted after 164756 cycles
+[2024-09-17T16:29:53Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:29:53Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30474, byte_packing_len: 1937, cpu_len: 262144, keccak_len: 20352, keccak_sponge_len: 848, logic_len: 5881, memory_len: 539890 }
+[2024-09-17T16:30:11Z INFO  bench_2]    Tx root 50 proved in 17.403979706s
+[2024-09-17T16:30:11Z INFO  evm_arithmetization::generation::state] CPU halted after 110795 cycles
+[2024-09-17T16:30:11Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:30:11Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21842, byte_packing_len: 1176, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4465, memory_len: 379512 }
+[2024-09-17T16:30:25Z INFO  bench_2]    Tx root 51 proved in 14.195259942s
+[2024-09-17T16:30:34Z INFO  evm_arithmetization::generation::state] CPU halted after 3908104 cycles
+[2024-09-17T16:30:34Z INFO  evm_arithmetization::generation] CPU trace padded to 4194304 cycles
+[2024-09-17T16:30:34Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 1345541, byte_packing_len: 16922, cpu_len: 4194304, keccak_len: 42936, keccak_sponge_len: 1789, logic_len: 26657, memory_len: 10234497 }
+[2024-09-17T16:34:23Z INFO  bench_2]    Tx root 52 proved in 238.603384519s
+[2024-09-17T16:34:23Z INFO  evm_arithmetization::generation::state] CPU halted after 114375 cycles
+[2024-09-17T16:34:23Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:34:23Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22235, byte_packing_len: 1251, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4474, memory_len: 388081 }
+[2024-09-17T16:34:38Z INFO  bench_2]    Tx root 53 proved in 14.427464517s
+[2024-09-17T16:34:38Z INFO  evm_arithmetization::generation::state] CPU halted after 113752 cycles
+[2024-09-17T16:34:38Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:34:38Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22223, byte_packing_len: 1233, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4477, memory_len: 387323 }
+[2024-09-17T16:34:52Z INFO  bench_2]    Tx root 54 proved in 14.676913828s
+[2024-09-17T16:34:53Z INFO  evm_arithmetization::generation::state] CPU halted after 114197 cycles
+[2024-09-17T16:34:53Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:34:53Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22201, byte_packing_len: 1247, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4469, memory_len: 388313 }
+[2024-09-17T16:35:07Z INFO  bench_2]    Tx root 55 proved in 14.601444797s
+[2024-09-17T16:35:07Z INFO  evm_arithmetization::generation::state] CPU halted after 110222 cycles
+[2024-09-17T16:35:07Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:35:07Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21766, byte_packing_len: 1148, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4488, memory_len: 379001 }
+[2024-09-17T16:35:21Z INFO  bench_2]    Tx root 56 proved in 14.43452658s
+[2024-09-17T16:35:22Z INFO  evm_arithmetization::generation::state] CPU halted after 113511 cycles
+[2024-09-17T16:35:22Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:35:22Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22241, byte_packing_len: 1204, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4496, memory_len: 386997 }
+[2024-09-17T16:35:36Z INFO  bench_2]    Tx root 57 proved in 14.392133021s
+[2024-09-17T16:35:36Z INFO  evm_arithmetization::generation::state] CPU halted after 110223 cycles
+[2024-09-17T16:35:36Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:35:36Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21795, byte_packing_len: 1145, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4474, memory_len: 379256 }
+[2024-09-17T16:35:50Z INFO  bench_2]    Tx root 58 proved in 14.404658531s
+[2024-09-17T16:35:50Z INFO  evm_arithmetization::generation::state] CPU halted after 110289 cycles
+[2024-09-17T16:35:50Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:35:50Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21841, byte_packing_len: 1154, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4471, memory_len: 379602 }
+[2024-09-17T16:36:05Z INFO  bench_2]    Tx root 59 proved in 14.344721706s
+[2024-09-17T16:36:05Z INFO  evm_arithmetization::generation::state] CPU halted after 240597 cycles
+[2024-09-17T16:36:05Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:36:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 42343, byte_packing_len: 2975, cpu_len: 262144, keccak_len: 25968, keccak_sponge_len: 1082, logic_len: 8171, memory_len: 768850 }
+[2024-09-17T16:36:23Z INFO  bench_2]    Tx root 60 proved in 18.473784149s
+[2024-09-17T16:36:23Z INFO  evm_arithmetization::generation::state] CPU halted after 110480 cycles
+[2024-09-17T16:36:23Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:36:23Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21930, byte_packing_len: 1140, cpu_len: 131072, keccak_len: 16512, keccak_sponge_len: 688, logic_len: 4497, memory_len: 380395 }
+[2024-09-17T16:36:37Z INFO  bench_2]    Tx root 61 proved in 14.370894209s
+[2024-09-17T16:36:38Z INFO  evm_arithmetization::generation::state] CPU halted after 113401 cycles
+[2024-09-17T16:36:38Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:36:38Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22255, byte_packing_len: 1209, cpu_len: 131072, keccak_len: 16584, keccak_sponge_len: 691, logic_len: 4508, memory_len: 387764 }
+[2024-09-17T16:36:52Z INFO  bench_2]    Tx root 62 proved in 14.454398685s
+[2024-09-17T16:36:52Z INFO  evm_arithmetization::generation::state] CPU halted after 104183 cycles
+[2024-09-17T16:36:52Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:36:52Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 20970, byte_packing_len: 1035, cpu_len: 131072, keccak_len: 16272, keccak_sponge_len: 678, logic_len: 4435, memory_len: 363193 }
+[2024-09-17T16:37:05Z INFO  bench_2]    Tx root 63 proved in 13.002113543s
+[2024-09-17T16:37:05Z INFO  evm_arithmetization::generation::state] CPU halted after 172574 cycles
+[2024-09-17T16:37:05Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:37:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 31962, byte_packing_len: 1970, cpu_len: 262144, keccak_len: 20664, keccak_sponge_len: 861, logic_len: 6625, memory_len: 558567 }
+[2024-09-17T16:37:23Z INFO  bench_2]    Tx root 64 proved in 17.743748915s
+[2024-09-17T16:37:23Z INFO  evm_arithmetization::generation::state] CPU halted after 112080 cycles
+[2024-09-17T16:37:23Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:37:23Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22188, byte_packing_len: 1219, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4490, memory_len: 384702 }
+[2024-09-17T16:37:37Z INFO  bench_2]    Tx root 65 proved in 14.322739804s
+[2024-09-17T16:37:37Z INFO  evm_arithmetization::generation::state] CPU halted after 232888 cycles
+[2024-09-17T16:37:37Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:37:37Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 41132, byte_packing_len: 2934, cpu_len: 262144, keccak_len: 25632, keccak_sponge_len: 1068, logic_len: 7355, memory_len: 753590 }
+[2024-09-17T16:37:55Z INFO  bench_2]    Tx root 66 proved in 18.203719589s
+[2024-09-17T16:37:55Z INFO  evm_arithmetization::generation::state] CPU halted after 113476 cycles
+[2024-09-17T16:37:55Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:37:55Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22093, byte_packing_len: 1235, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4465, memory_len: 386254 }
+[2024-09-17T16:38:10Z INFO  bench_2]    Tx root 67 proved in 14.483079965s
+[2024-09-17T16:38:10Z INFO  evm_arithmetization::generation::state] CPU halted after 114558 cycles
+[2024-09-17T16:38:10Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:38:10Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22393, byte_packing_len: 1220, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4477, memory_len: 388660 }
+[2024-09-17T16:38:24Z INFO  bench_2]    Tx root 68 proved in 14.409784997s
+[2024-09-17T16:38:24Z INFO  evm_arithmetization::generation::state] CPU halted after 163118 cycles
+[2024-09-17T16:38:24Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:38:24Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30277, byte_packing_len: 1901, cpu_len: 262144, keccak_len: 19488, keccak_sponge_len: 812, logic_len: 5545, memory_len: 531536 }
+[2024-09-17T16:38:42Z INFO  bench_2]    Tx root 69 proved in 17.722482575s
+[2024-09-17T16:38:42Z INFO  evm_arithmetization::generation::state] CPU halted after 114246 cycles
+[2024-09-17T16:38:42Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:38:42Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22226, byte_packing_len: 1240, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4473, memory_len: 388071 }
+[2024-09-17T16:38:56Z INFO  bench_2]    Tx root 70 proved in 14.374999401s
+[2024-09-17T16:38:56Z INFO  evm_arithmetization::generation::state] CPU halted after 107457 cycles
+[2024-09-17T16:38:56Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:38:56Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21450, byte_packing_len: 1106, cpu_len: 131072, keccak_len: 16344, keccak_sponge_len: 681, logic_len: 4450, memory_len: 371496 }
+[2024-09-17T16:39:09Z INFO  bench_2]    Tx root 71 proved in 13.039274754s
+[2024-09-17T16:39:09Z INFO  evm_arithmetization::generation::state] CPU halted after 113562 cycles
+[2024-09-17T16:39:09Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:39:09Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22207, byte_packing_len: 1215, cpu_len: 131072, keccak_len: 16464, keccak_sponge_len: 686, logic_len: 4491, memory_len: 387178 }
+[2024-09-17T16:39:24Z INFO  bench_2]    Tx root 72 proved in 14.426140008s
+[2024-09-17T16:39:24Z INFO  evm_arithmetization::generation::state] CPU halted after 107240 cycles
+[2024-09-17T16:39:24Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:39:24Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21404, byte_packing_len: 1093, cpu_len: 131072, keccak_len: 16320, keccak_sponge_len: 680, logic_len: 4450, memory_len: 371158 }
+[2024-09-17T16:39:37Z INFO  bench_2]    Tx root 73 proved in 13.031008087s
+[2024-09-17T16:39:37Z INFO  evm_arithmetization::generation::state] CPU halted after 114291 cycles
+[2024-09-17T16:39:37Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:39:37Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22373, byte_packing_len: 1221, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4488, memory_len: 389296 }
+[2024-09-17T16:39:51Z INFO  bench_2]    Tx root 74 proved in 14.408238482s
+[2024-09-17T16:39:51Z INFO  evm_arithmetization::generation::state] CPU halted after 113139 cycles
+[2024-09-17T16:39:51Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:39:51Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22201, byte_packing_len: 1203, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4496, memory_len: 387365 }
+[2024-09-17T16:40:05Z INFO  bench_2]    Tx root 75 proved in 14.373408538s
+[2024-09-17T16:40:06Z INFO  evm_arithmetization::generation::state] CPU halted after 113647 cycles
+[2024-09-17T16:40:06Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:40:06Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22299, byte_packing_len: 1217, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4498, memory_len: 388126 }
+[2024-09-17T16:40:20Z INFO  bench_2]    Tx root 76 proved in 14.318670774s
+[2024-09-17T16:40:20Z INFO  evm_arithmetization::generation::state] CPU halted after 106336 cycles
+[2024-09-17T16:40:20Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:40:20Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21246, byte_packing_len: 1076, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4479, memory_len: 370489 }
+[2024-09-17T16:40:34Z INFO  bench_2]    Tx root 77 proved in 14.345839335s
+[2024-09-17T16:40:34Z INFO  evm_arithmetization::generation::state] CPU halted after 113160 cycles
+[2024-09-17T16:40:34Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:40:34Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22248, byte_packing_len: 1198, cpu_len: 131072, keccak_len: 16632, keccak_sponge_len: 693, logic_len: 4515, memory_len: 387908 }
+[2024-09-17T16:40:48Z INFO  bench_2]    Tx root 78 proved in 14.356439796s
+[2024-09-17T16:40:49Z INFO  evm_arithmetization::generation::state] CPU halted after 231807 cycles
+[2024-09-17T16:40:49Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:40:49Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 41020, byte_packing_len: 2908, cpu_len: 262144, keccak_len: 25776, keccak_sponge_len: 1074, logic_len: 7382, memory_len: 752520 }
+[2024-09-17T16:41:07Z INFO  bench_2]    Tx root 79 proved in 18.378153742s
+[2024-09-17T16:41:07Z INFO  evm_arithmetization::generation::state] CPU halted after 145108 cycles
+[2024-09-17T16:41:07Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:41:07Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 27656, byte_packing_len: 1589, cpu_len: 262144, keccak_len: 18336, keccak_sponge_len: 764, logic_len: 5602, memory_len: 477857 }
+[2024-09-17T16:41:22Z INFO  bench_2]    Tx root 80 proved in 15.526900596s
+[2024-09-17T16:41:23Z INFO  evm_arithmetization::generation::state] CPU halted after 114455 cycles
+[2024-09-17T16:41:23Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:41:23Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22440, byte_packing_len: 1266, cpu_len: 131072, keccak_len: 16584, keccak_sponge_len: 691, logic_len: 4509, memory_len: 391247 }
+[2024-09-17T16:41:37Z INFO  bench_2]    Tx root 81 proved in 14.414163508s
+[2024-09-17T16:41:37Z INFO  evm_arithmetization::generation::state] CPU halted after 114089 cycles
+[2024-09-17T16:41:37Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:41:37Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22216, byte_packing_len: 1251, cpu_len: 131072, keccak_len: 16248, keccak_sponge_len: 677, logic_len: 4440, memory_len: 386950 }
+[2024-09-17T16:41:50Z INFO  bench_2]    Tx root 82 proved in 13.085724652s
+[2024-09-17T16:41:50Z INFO  evm_arithmetization::generation::state] CPU halted after 230538 cycles
+[2024-09-17T16:41:50Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:41:50Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40779, byte_packing_len: 2897, cpu_len: 262144, keccak_len: 25368, keccak_sponge_len: 1057, logic_len: 7307, memory_len: 745131 }
+[2024-09-17T16:42:08Z INFO  bench_2]    Tx root 83 proved in 18.429078292s
+[2024-09-17T16:42:08Z INFO  evm_arithmetization::generation::state] CPU halted after 113460 cycles
+[2024-09-17T16:42:08Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:42:08Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21927, byte_packing_len: 1246, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4465, memory_len: 385768 }
+[2024-09-17T16:42:23Z INFO  bench_2]    Tx root 84 proved in 14.390864824s
+[2024-09-17T16:42:23Z INFO  evm_arithmetization::generation::state] CPU halted after 110792 cycles
+[2024-09-17T16:42:23Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:42:23Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21883, byte_packing_len: 1170, cpu_len: 131072, keccak_len: 16344, keccak_sponge_len: 681, logic_len: 4458, memory_len: 379751 }
+[2024-09-17T16:42:36Z INFO  bench_2]    Tx root 85 proved in 13.045889293s
+[2024-09-17T16:42:36Z INFO  evm_arithmetization::generation::state] CPU halted after 221751 cycles
+[2024-09-17T16:42:36Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:42:36Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40467, byte_packing_len: 2785, cpu_len: 262144, keccak_len: 24288, keccak_sponge_len: 1012, logic_len: 7871, memory_len: 712888 }
+[2024-09-17T16:42:54Z INFO  bench_2]    Tx root 86 proved in 18.005297126s
+[2024-09-17T16:42:54Z INFO  evm_arithmetization::generation::state] CPU halted after 160348 cycles
+[2024-09-17T16:42:54Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:42:54Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 29963, byte_packing_len: 1854, cpu_len: 262144, keccak_len: 19824, keccak_sponge_len: 826, logic_len: 5753, memory_len: 527557 }
+[2024-09-17T16:43:11Z INFO  bench_2]    Tx root 87 proved in 17.673100367s
+[2024-09-17T16:43:12Z INFO  evm_arithmetization::generation::state] CPU halted after 106918 cycles
+[2024-09-17T16:43:12Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:43:12Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21346, byte_packing_len: 1094, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4456, memory_len: 370590 }
+[2024-09-17T16:43:26Z INFO  bench_2]    Tx root 88 proved in 14.368943139s
+[2024-09-17T16:43:26Z INFO  evm_arithmetization::generation::state] CPU halted after 113819 cycles
+[2024-09-17T16:43:26Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:43:26Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22242, byte_packing_len: 1220, cpu_len: 131072, keccak_len: 16560, keccak_sponge_len: 690, logic_len: 4506, memory_len: 388315 }
+[2024-09-17T16:43:40Z INFO  bench_2]    Tx root 89 proved in 14.530297016s
+[2024-09-17T16:43:41Z INFO  evm_arithmetization::generation::state] CPU halted after 229337 cycles
+[2024-09-17T16:43:41Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:43:41Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40781, byte_packing_len: 2854, cpu_len: 262144, keccak_len: 25608, keccak_sponge_len: 1067, logic_len: 7356, memory_len: 744711 }
+[2024-09-17T16:43:59Z INFO  bench_2]    Tx root 90 proved in 18.454058107s
+[2024-09-17T16:43:59Z INFO  evm_arithmetization::generation::state] CPU halted after 151505 cycles
+[2024-09-17T16:43:59Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:43:59Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 28559, byte_packing_len: 1736, cpu_len: 262144, keccak_len: 18984, keccak_sponge_len: 791, logic_len: 5643, memory_len: 498928 }
+[2024-09-17T16:44:14Z INFO  bench_2]    Tx root 91 proved in 15.702474607s
+[2024-09-17T16:44:15Z INFO  evm_arithmetization::generation::state] CPU halted after 162335 cycles
+[2024-09-17T16:44:15Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:44:15Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30409, byte_packing_len: 1868, cpu_len: 262144, keccak_len: 21024, keccak_sponge_len: 876, logic_len: 5882, memory_len: 542194 }
+[2024-09-17T16:44:32Z INFO  bench_2]    Tx root 92 proved in 17.740457029s
+[2024-09-17T16:44:35Z INFO  evm_arithmetization::generation::state] CPU halted after 1205450 cycles
+[2024-09-17T16:44:35Z INFO  evm_arithmetization::generation] CPU trace padded to 2097152 cycles
+[2024-09-17T16:44:35Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 209295, byte_packing_len: 18392, cpu_len: 2097152, keccak_len: 160728, keccak_sponge_len: 6697, logic_len: 59487, memory_len: 3967048 }
+[2024-09-17T16:46:02Z INFO  bench_2]    Tx root 93 proved in 89.623687103s
+[2024-09-17T16:46:03Z INFO  evm_arithmetization::generation::state] CPU halted after 769050 cycles
+[2024-09-17T16:46:03Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T16:46:03Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 134675, byte_packing_len: 12683, cpu_len: 1048576, keccak_len: 72648, keccak_sponge_len: 3027, logic_len: 33078, memory_len: 2384426 }
+[2024-09-17T16:46:54Z INFO  bench_2]    Tx root 94 proved in 52.320170862s
+[2024-09-17T16:46:55Z INFO  evm_arithmetization::generation::state] CPU halted after 594423 cycles
+[2024-09-17T16:46:55Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T16:46:55Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 101609, byte_packing_len: 8438, cpu_len: 1048576, keccak_len: 63144, keccak_sponge_len: 2631, logic_len: 27545, memory_len: 1865939 }
+[2024-09-17T16:47:30Z INFO  bench_2]    Tx root 95 proved in 35.648199713s
+[2024-09-17T16:47:31Z INFO  evm_arithmetization::generation::state] CPU halted after 1031997 cycles
+[2024-09-17T16:47:31Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T16:47:31Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 180855, byte_packing_len: 15979, cpu_len: 1048576, keccak_len: 87024, keccak_sponge_len: 3626, logic_len: 41180, memory_len: 3119681 }
+[2024-09-17T16:48:24Z INFO  bench_2]    Tx root 96 proved in 53.890183965s
+[2024-09-17T16:48:24Z INFO  evm_arithmetization::generation::state] CPU halted after 153286 cycles
+[2024-09-17T16:48:24Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:48:24Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 28866, byte_packing_len: 2031, cpu_len: 262144, keccak_len: 20400, keccak_sponge_len: 850, logic_len: 5891, memory_len: 522731 }
+[2024-09-17T16:48:39Z INFO  bench_2]    Tx root 97 proved in 15.555243523s
+[2024-09-17T16:48:40Z INFO  evm_arithmetization::generation::state] CPU halted after 800826 cycles
+[2024-09-17T16:48:40Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T16:48:40Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 138780, byte_packing_len: 12589, cpu_len: 1048576, keccak_len: 94680, keccak_sponge_len: 3945, logic_len: 38257, memory_len: 2584563 }
+[2024-09-17T16:49:33Z INFO  bench_2]    Tx root 98 proved in 53.632316552s
+[2024-09-17T16:49:33Z INFO  evm_arithmetization::generation::state] CPU halted after 335964 cycles
+[2024-09-17T16:49:33Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T16:49:33Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 59048, byte_packing_len: 4318, cpu_len: 524288, keccak_len: 33216, keccak_sponge_len: 1384, logic_len: 11101, memory_len: 1046573 }
+[2024-09-17T16:50:00Z INFO  bench_2]    Tx root 99 proved in 26.981954126s
+[2024-09-17T16:50:01Z INFO  evm_arithmetization::generation::state] CPU halted after 822710 cycles
+[2024-09-17T16:50:01Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T16:50:01Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 141747, byte_packing_len: 13221, cpu_len: 1048576, keccak_len: 78144, keccak_sponge_len: 3256, logic_len: 43214, memory_len: 2503055 }
+[2024-09-17T16:50:53Z INFO  bench_2]    Tx root 100 proved in 53.214830489s
+[2024-09-17T16:50:54Z INFO  evm_arithmetization::generation::state] CPU halted after 461596 cycles
+[2024-09-17T16:50:54Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T16:50:54Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 81097, byte_packing_len: 6440, cpu_len: 524288, keccak_len: 50280, keccak_sponge_len: 2095, logic_len: 22511, memory_len: 1459076 }
+[2024-09-17T16:51:23Z INFO  bench_2]    Tx root 101 proved in 30.101297865s
+[2024-09-17T16:51:24Z INFO  evm_arithmetization::generation::state] CPU halted after 568095 cycles
+[2024-09-17T16:51:24Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T16:51:24Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 99046, byte_packing_len: 7878, cpu_len: 1048576, keccak_len: 53184, keccak_sponge_len: 2216, logic_len: 23350, memory_len: 1741720 }
+[2024-09-17T16:51:58Z INFO  bench_2]    Tx root 102 proved in 34.984173969s
+[2024-09-17T16:51:59Z INFO  evm_arithmetization::generation::state] CPU halted after 461616 cycles
+[2024-09-17T16:51:59Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T16:51:59Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 79992, byte_packing_len: 6289, cpu_len: 524288, keccak_len: 41928, keccak_sponge_len: 1747, logic_len: 14549, memory_len: 1443723 }
+[2024-09-17T16:52:27Z INFO  bench_2]    Tx root 103 proved in 29.02312416s
+[2024-09-17T16:52:27Z INFO  evm_arithmetization::generation::state] CPU halted after 140918 cycles
+[2024-09-17T16:52:27Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:52:27Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 26431, byte_packing_len: 1610, cpu_len: 262144, keccak_len: 21216, keccak_sponge_len: 884, logic_len: 6678, memory_len: 483637 }
+[2024-09-17T16:52:43Z INFO  bench_2]    Tx root 104 proved in 15.60522398s
+[2024-09-17T16:52:43Z INFO  evm_arithmetization::generation::state] CPU halted after 125855 cycles
+[2024-09-17T16:52:43Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:52:43Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 24443, byte_packing_len: 1367, cpu_len: 131072, keccak_len: 20184, keccak_sponge_len: 841, logic_len: 5485, memory_len: 439642 }
+[2024-09-17T16:52:57Z INFO  bench_2]    Tx root 105 proved in 14.419748124s
+[2024-09-17T16:52:58Z INFO  evm_arithmetization::generation::state] CPU halted after 650348 cycles
+[2024-09-17T16:52:58Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T16:52:58Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 111961, byte_packing_len: 8949, cpu_len: 1048576, keccak_len: 62352, keccak_sponge_len: 2598, logic_len: 22866, memory_len: 2017146 }
+[2024-09-17T16:53:32Z INFO  bench_2]    Tx root 106 proved in 35.117126283s
+[2024-09-17T16:53:33Z INFO  evm_arithmetization::generation::state] CPU halted after 130827 cycles
+[2024-09-17T16:53:33Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T16:53:33Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 25232, byte_packing_len: 1431, cpu_len: 131072, keccak_len: 18696, keccak_sponge_len: 779, logic_len: 5463, memory_len: 444448 }
+[2024-09-17T16:53:47Z INFO  bench_2]    Tx root 107 proved in 14.406731021s
+[2024-09-17T16:53:47Z INFO  evm_arithmetization::generation::state] CPU halted after 160759 cycles
+[2024-09-17T16:53:47Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:53:47Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30007, byte_packing_len: 1878, cpu_len: 262144, keccak_len: 21240, keccak_sponge_len: 885, logic_len: 6239, memory_len: 536455 }
+[2024-09-17T16:54:04Z INFO  bench_2]    Tx root 108 proved in 17.592462991s
+[2024-09-17T16:54:05Z INFO  evm_arithmetization::generation::state] CPU halted after 800809 cycles
+[2024-09-17T16:54:05Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T16:54:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 141326, byte_packing_len: 10764, cpu_len: 1048576, keccak_len: 83856, keccak_sponge_len: 3494, logic_len: 33256, memory_len: 2521351 }
+[2024-09-17T16:54:57Z INFO  bench_2]    Tx root 109 proved in 53.038246058s
+[2024-09-17T16:54:58Z INFO  evm_arithmetization::generation::state] CPU halted after 274627 cycles
+[2024-09-17T16:54:58Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T16:54:58Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 49685, byte_packing_len: 3799, cpu_len: 524288, keccak_len: 28824, keccak_sponge_len: 1201, logic_len: 11132, memory_len: 877907 }
+[2024-09-17T16:55:18Z INFO  bench_2]    Tx root 110 proved in 20.654307363s
+[2024-09-17T16:55:19Z INFO  evm_arithmetization::generation::state] CPU halted after 665327 cycles
+[2024-09-17T16:55:19Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T16:55:19Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 114284, byte_packing_len: 9257, cpu_len: 1048576, keccak_len: 73872, keccak_sponge_len: 3078, logic_len: 26628, memory_len: 2124338 }
+[2024-09-17T16:56:08Z INFO  bench_2]    Tx root 111 proved in 49.871972616s
+[2024-09-17T16:56:08Z INFO  evm_arithmetization::generation::state] CPU halted after 225296 cycles
+[2024-09-17T16:56:08Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:56:08Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40305, byte_packing_len: 2774, cpu_len: 262144, keccak_len: 25464, keccak_sponge_len: 1061, logic_len: 7331, memory_len: 733465 }
+[2024-09-17T16:56:26Z INFO  bench_2]    Tx root 112 proved in 18.208619166s
+[2024-09-17T16:56:27Z INFO  evm_arithmetization::generation::state] CPU halted after 359867 cycles
+[2024-09-17T16:56:27Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T16:56:27Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 64383, byte_packing_len: 4786, cpu_len: 524288, keccak_len: 29160, keccak_sponge_len: 1215, logic_len: 11014, memory_len: 1106791 }
+[2024-09-17T16:56:51Z INFO  bench_2]    Tx root 113 proved in 25.100364116s
+[2024-09-17T16:56:52Z INFO  evm_arithmetization::generation::state] CPU halted after 390573 cycles
+[2024-09-17T16:56:52Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T16:56:52Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 67756, byte_packing_len: 5099, cpu_len: 524288, keccak_len: 40488, keccak_sponge_len: 1687, logic_len: 13629, memory_len: 1236682 }
+[2024-09-17T16:57:20Z INFO  bench_2]    Tx root 114 proved in 28.818731869s
+[2024-09-17T16:57:20Z INFO  evm_arithmetization::generation::state] CPU halted after 136238 cycles
+[2024-09-17T16:57:20Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:57:20Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 25889, byte_packing_len: 1502, cpu_len: 262144, keccak_len: 18792, keccak_sponge_len: 783, logic_len: 6114, memory_len: 458076 }
+[2024-09-17T16:57:36Z INFO  bench_2]    Tx root 115 proved in 15.5082307s
+[2024-09-17T16:57:36Z INFO  evm_arithmetization::generation::state] CPU halted after 142285 cycles
+[2024-09-17T16:57:36Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:57:36Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 26654, byte_packing_len: 1615, cpu_len: 262144, keccak_len: 18960, keccak_sponge_len: 790, logic_len: 6158, memory_len: 473893 }
+[2024-09-17T16:57:51Z INFO  bench_2]    Tx root 116 proved in 15.522455879s
+[2024-09-17T16:57:54Z INFO  evm_arithmetization::generation::state] CPU halted after 1326303 cycles
+[2024-09-17T16:57:54Z INFO  evm_arithmetization::generation] CPU trace padded to 2097152 cycles
+[2024-09-17T16:57:54Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 228901, byte_packing_len: 20215, cpu_len: 2097152, keccak_len: 167232, keccak_sponge_len: 6968, logic_len: 64675, memory_len: 4369655 }
+[2024-09-17T16:59:46Z INFO  bench_2]    Tx root 117 proved in 114.975930723s
+[2024-09-17T16:59:46Z INFO  evm_arithmetization::generation::state] CPU halted after 155827 cycles
+[2024-09-17T16:59:46Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T16:59:46Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 28844, byte_packing_len: 1804, cpu_len: 262144, keccak_len: 18864, keccak_sponge_len: 786, logic_len: 5880, memory_len: 507358 }
+[2024-09-17T17:00:02Z INFO  bench_2]    Tx root 118 proved in 15.495399341s
+[2024-09-17T17:00:03Z INFO  evm_arithmetization::generation::state] CPU halted after 1011714 cycles
+[2024-09-17T17:00:03Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T17:00:03Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 193298, byte_packing_len: 16772, cpu_len: 1048576, keccak_len: 74832, keccak_sponge_len: 3118, logic_len: 28588, memory_len: 3068861 }
+[2024-09-17T17:00:56Z INFO  bench_2]    Tx root 119 proved in 54.082056339s
+[2024-09-17T17:00:56Z INFO  evm_arithmetization::generation::state] CPU halted after 106743 cycles
+[2024-09-17T17:00:56Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T17:00:56Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21370, byte_packing_len: 1082, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4485, memory_len: 370887 }
+[2024-09-17T17:01:10Z INFO  bench_2]    Tx root 120 proved in 14.253562491s
+[2024-09-17T17:01:10Z INFO  evm_arithmetization::generation::state] CPU halted after 177071 cycles
+[2024-09-17T17:01:10Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T17:01:10Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 32515, byte_packing_len: 2115, cpu_len: 262144, keccak_len: 22392, keccak_sponge_len: 933, logic_len: 6634, memory_len: 587608 }
+[2024-09-17T17:01:28Z INFO  bench_2]    Tx root 121 proved in 17.917527797s
+[2024-09-17T17:01:28Z INFO  evm_arithmetization::generation::state] CPU halted after 135836 cycles
+[2024-09-17T17:01:28Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T17:01:28Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 25990, byte_packing_len: 1504, cpu_len: 262144, keccak_len: 18048, keccak_sponge_len: 752, logic_len: 5283, memory_len: 454196 }
+[2024-09-17T17:01:43Z INFO  bench_2]    Tx root 122 proved in 15.565839771s
+[2024-09-17T17:01:44Z INFO  evm_arithmetization::generation::state] CPU halted after 721829 cycles
+[2024-09-17T17:01:44Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T17:01:44Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 129087, byte_packing_len: 9906, cpu_len: 1048576, keccak_len: 69960, keccak_sponge_len: 2915, logic_len: 28249, memory_len: 2230252 }
+[2024-09-17T17:02:34Z INFO  bench_2]    Tx root 123 proved in 51.13526032s
+[2024-09-17T17:02:38Z INFO  evm_arithmetization::generation::state] CPU halted after 1877342 cycles
+[2024-09-17T17:02:38Z INFO  evm_arithmetization::generation] CPU trace padded to 2097152 cycles
+[2024-09-17T17:02:38Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 311823, byte_packing_len: 29350, cpu_len: 2097152, keccak_len: 314856, keccak_sponge_len: 13119, logic_len: 96008, memory_len: 6558315 }
+[2024-09-17T17:04:49Z INFO  bench_2]    Tx root 124 proved in 134.852404419s
+[2024-09-17T17:04:50Z INFO  evm_arithmetization::generation::state] CPU halted after 478744 cycles
+[2024-09-17T17:04:50Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T17:04:50Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 84586, byte_packing_len: 6952, cpu_len: 524288, keccak_len: 71904, keccak_sponge_len: 2996, logic_len: 26615, memory_len: 1634577 }
+[2024-09-17T17:05:25Z INFO  bench_2]    Tx root 125 proved in 35.877607592s
+[2024-09-17T17:05:26Z INFO  evm_arithmetization::generation::state] CPU halted after 793497 cycles
+[2024-09-17T17:05:26Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T17:05:26Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 145631, byte_packing_len: 11667, cpu_len: 1048576, keccak_len: 64200, keccak_sponge_len: 2675, logic_len: 31260, memory_len: 2427276 }
+[2024-09-17T17:06:12Z INFO  bench_2]    Tx root 126 proved in 47.03340133s
+[2024-09-17T17:06:13Z INFO  evm_arithmetization::generation::state] CPU halted after 351848 cycles
+[2024-09-17T17:06:13Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T17:06:13Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 63149, byte_packing_len: 4603, cpu_len: 524288, keccak_len: 28872, keccak_sponge_len: 1203, logic_len: 10948, memory_len: 1083855 }
+[2024-09-17T17:06:37Z INFO  bench_2]    Tx root 127 proved in 25.124474844s
+[2024-09-17T17:06:42Z INFO  bench_2]  **** Level summary ****
+[2024-09-17T17:06:42Z INFO  bench_2]  - Number of transactions: 128
+[2024-09-17T17:06:42Z INFO  bench_2]  - Total proof size: 58.592014 MB
+[2024-09-17T17:06:42Z INFO  bench_2]    Average proof size: 0.4577501 MB
+[2024-09-17T17:06:42Z INFO  bench_2]  - Total prover time: 2974.200105977s
+[2024-09-17T17:06:42Z INFO  bench_2]    Average prover time: 23.235939 s.
+[2024-09-17T17:06:42Z INFO  bench_2]  - Total verifier time: 896.980322ms
+[2024-09-17T17:06:42Z INFO  bench_2]    Average verifier time: 0.007007659 s.
+[2024-09-17T17:06:42Z INFO  bench_2] 
+    
+    ******** Level 2: Two levels of recursion ********
+[2024-09-17T17:06:42Z INFO  bench_2] Starky config:
+    StarkConfig { security_bits: 100, num_challenges: 2, fri_config: FriConfig { rate_bits: 1, cap_height: 4, proof_of_work_bits: 16, reduction_strategy: ConstantArityBits(4, 5), num_query_rounds: 84 } }
+[2024-09-17T17:06:43Z INFO  bench_2]    Aggregation 0 proved in 858.048445ms
+[2024-09-17T17:06:44Z INFO  bench_2]    Aggregation 1 proved in 836.774084ms
+[2024-09-17T17:06:45Z INFO  bench_2]    Aggregation 2 proved in 832.59575ms
+[2024-09-17T17:06:45Z INFO  bench_2]    Aggregation 3 proved in 838.900161ms
+[2024-09-17T17:06:46Z INFO  bench_2]    Aggregation 4 proved in 845.200255ms
+[2024-09-17T17:06:47Z INFO  bench_2]    Aggregation 5 proved in 840.336685ms
+[2024-09-17T17:06:48Z INFO  bench_2]    Aggregation 6 proved in 840.430356ms
+[2024-09-17T17:06:49Z INFO  bench_2]    Aggregation 7 proved in 829.199209ms
+[2024-09-17T17:06:50Z INFO  bench_2]    Aggregation 8 proved in 848.476181ms
+[2024-09-17T17:06:50Z INFO  bench_2]    Aggregation 9 proved in 842.256618ms
+[2024-09-17T17:06:51Z INFO  bench_2]    Aggregation 10 proved in 853.17759ms
+[2024-09-17T17:06:52Z INFO  bench_2]    Aggregation 11 proved in 849.015704ms
+[2024-09-17T17:06:53Z INFO  bench_2]    Aggregation 12 proved in 835.15999ms
+[2024-09-17T17:06:54Z INFO  bench_2]    Aggregation 13 proved in 836.274165ms
+[2024-09-17T17:06:55Z INFO  bench_2]    Aggregation 14 proved in 840.219147ms
+[2024-09-17T17:06:56Z INFO  bench_2]    Aggregation 15 proved in 835.034625ms
+[2024-09-17T17:06:56Z INFO  bench_2]    Aggregation 16 proved in 843.883007ms
+[2024-09-17T17:06:57Z INFO  bench_2]    Aggregation 17 proved in 835.261135ms
+[2024-09-17T17:06:58Z INFO  bench_2]    Aggregation 18 proved in 841.861696ms
+[2024-09-17T17:06:59Z INFO  bench_2]    Aggregation 19 proved in 840.314177ms
+[2024-09-17T17:07:00Z INFO  bench_2]    Aggregation 20 proved in 839.198208ms
+[2024-09-17T17:07:01Z INFO  bench_2]    Aggregation 21 proved in 843.686628ms
+[2024-09-17T17:07:01Z INFO  bench_2]    Aggregation 22 proved in 835.592934ms
+[2024-09-17T17:07:02Z INFO  bench_2]    Aggregation 23 proved in 839.008141ms
+[2024-09-17T17:07:03Z INFO  bench_2]    Aggregation 24 proved in 831.280777ms
+[2024-09-17T17:07:04Z INFO  bench_2]    Aggregation 25 proved in 836.043369ms
+[2024-09-17T17:07:05Z INFO  bench_2]    Aggregation 26 proved in 856.553433ms
+[2024-09-17T17:07:06Z INFO  bench_2]    Aggregation 27 proved in 832.259225ms
+[2024-09-17T17:07:06Z INFO  bench_2]    Aggregation 28 proved in 853.581678ms
+[2024-09-17T17:07:07Z INFO  bench_2]    Aggregation 29 proved in 848.245961ms
+[2024-09-17T17:07:08Z INFO  bench_2]    Aggregation 30 proved in 834.368818ms
+[2024-09-17T17:07:09Z INFO  bench_2]    Aggregation 31 proved in 845.749463ms
+[2024-09-17T17:07:10Z INFO  bench_2]    Aggregation 32 proved in 825.481875ms
+[2024-09-17T17:07:11Z INFO  bench_2]    Aggregation 33 proved in 833.214045ms
+[2024-09-17T17:07:11Z INFO  bench_2]    Aggregation 34 proved in 831.318735ms
+[2024-09-17T17:07:12Z INFO  bench_2]    Aggregation 35 proved in 825.880873ms
+[2024-09-17T17:07:13Z INFO  bench_2]    Aggregation 36 proved in 810.316837ms
+[2024-09-17T17:07:14Z INFO  bench_2]    Aggregation 37 proved in 818.290245ms
+[2024-09-17T17:07:15Z INFO  bench_2]    Aggregation 38 proved in 819.909931ms
+[2024-09-17T17:07:16Z INFO  bench_2]    Aggregation 39 proved in 827.090713ms
+[2024-09-17T17:07:16Z INFO  bench_2]    Aggregation 40 proved in 831.066381ms
+[2024-09-17T17:07:17Z INFO  bench_2]    Aggregation 41 proved in 829.084951ms
+[2024-09-17T17:07:18Z INFO  bench_2]    Aggregation 42 proved in 826.382899ms
+[2024-09-17T17:07:19Z INFO  bench_2]    Aggregation 43 proved in 832.064589ms
+[2024-09-17T17:07:20Z INFO  bench_2]    Aggregation 44 proved in 822.637872ms
+[2024-09-17T17:07:21Z INFO  bench_2]    Aggregation 45 proved in 821.735204ms
+[2024-09-17T17:07:21Z INFO  bench_2]    Aggregation 46 proved in 824.023226ms
+[2024-09-17T17:07:22Z INFO  bench_2]    Aggregation 47 proved in 822.634725ms
+[2024-09-17T17:07:23Z INFO  bench_2]    Aggregation 48 proved in 835.524471ms
+[2024-09-17T17:07:24Z INFO  bench_2]    Aggregation 49 proved in 833.9817ms
+[2024-09-17T17:07:25Z INFO  bench_2]    Aggregation 50 proved in 814.220048ms
+[2024-09-17T17:07:26Z INFO  bench_2]    Aggregation 51 proved in 833.563137ms
+[2024-09-17T17:07:26Z INFO  bench_2]    Aggregation 52 proved in 837.39589ms
+[2024-09-17T17:07:27Z INFO  bench_2]    Aggregation 53 proved in 832.716677ms
+[2024-09-17T17:07:28Z INFO  bench_2]    Aggregation 54 proved in 835.634079ms
+[2024-09-17T17:07:29Z INFO  bench_2]    Aggregation 55 proved in 831.63151ms
+[2024-09-17T17:07:30Z INFO  bench_2]    Aggregation 56 proved in 832.655527ms
+[2024-09-17T17:07:31Z INFO  bench_2]    Aggregation 57 proved in 836.696357ms
+[2024-09-17T17:07:31Z INFO  bench_2]    Aggregation 58 proved in 830.472915ms
+[2024-09-17T17:07:32Z INFO  bench_2]    Aggregation 59 proved in 838.569101ms
+[2024-09-17T17:07:33Z INFO  bench_2]    Aggregation 60 proved in 825.352099ms
+[2024-09-17T17:07:34Z INFO  bench_2]    Aggregation 61 proved in 822.622745ms
+[2024-09-17T17:07:35Z INFO  bench_2]    Aggregation 62 proved in 827.020589ms
+[2024-09-17T17:07:36Z INFO  bench_2]    Aggregation 63 proved in 843.605902ms
+[2024-09-17T17:07:38Z INFO  bench_2]  **** Level summary ****
+[2024-09-17T17:07:38Z INFO  bench_2]  - Number of transactions: 128
+[2024-09-17T17:07:38Z INFO  bench_2]  - Total proof size: 29.295149 MB
+[2024-09-17T17:07:38Z INFO  bench_2]    Average proof size: 0.22886835 MB
+[2024-09-17T17:07:38Z INFO  bench_2]  - Total prover time: 3027.687361563s
+[2024-09-17T17:07:38Z INFO  bench_2]    Average prover time: 23.653807 s.
+[2024-09-17T17:07:38Z INFO  bench_2]  - Total verifier time: 454.411435ms
+[2024-09-17T17:07:38Z INFO  bench_2]    Average verifier time: 0.0035500892 s.
+[2024-09-17T17:07:38Z INFO  bench_2] 
+    
+    ******** Full aggregation ********
+thread 'main' panicked at /home/tester/.cargo/git/checkouts/plonky2-0aad67b528880c89/2a1a8c4/plonky2/src/iop/witness.rs:324:13:
+assertion `left == right` failed: Partition containing Wire(Wire { row: 2975, column: 50 }) was set twice with different values: 0 != 1
+  left: 1
+ right: 0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

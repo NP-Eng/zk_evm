@@ -1,0 +1,1322 @@
+[2024-09-17T14:16:21Z INFO  bench_1::common] Loaded block input from JSON
+[2024-09-17T14:16:24Z INFO  bench_1] Number of transactions: 201
+
+
+******** Transaction 0 ********
+[2024-09-17T14:16:26Z INFO  evm_arithmetization::generation::state] CPU halted after 141217 cycles
+[2024-09-17T14:16:26Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:16:26Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 26552, byte_packing_len: 1597, cpu_len: 262144, keccak_len: 18360, keccak_sponge_len: 765, logic_len: 4915, memory_len: 470948 }
+[2024-09-17T14:16:40Z INFO  plonky2::util::timing] 15.6817s to prove
+Proof size: 11430 KB
+[2024-09-17T14:16:40Z INFO  plonky2::util::timing] 0.1662s to verify
+
+
+******** Transaction 1 ********
+[2024-09-17T14:16:41Z INFO  evm_arithmetization::generation::state] CPU halted after 379795 cycles
+[2024-09-17T14:16:41Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T14:16:41Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 65788, byte_packing_len: 5133, cpu_len: 524288, keccak_len: 37824, keccak_sponge_len: 1576, logic_len: 12905, memory_len: 1209085 }
+[2024-09-17T14:17:17Z INFO  plonky2::util::timing] 36.2874s to prove
+Proof size: 11999 KB
+[2024-09-17T14:17:18Z INFO  plonky2::util::timing] 0.1867s to verify
+
+
+******** Transaction 2 ********
+[2024-09-17T14:17:18Z INFO  evm_arithmetization::generation::state] CPU halted after 145921 cycles
+[2024-09-17T14:17:18Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:17:18Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 27746, byte_packing_len: 1705, cpu_len: 262144, keccak_len: 18528, keccak_sponge_len: 772, logic_len: 5423, memory_len: 482605 }
+[2024-09-17T14:17:31Z INFO  plonky2::util::timing] 13.2302s to prove
+Proof size: 11461 KB
+[2024-09-17T14:17:32Z INFO  plonky2::util::timing] 0.1722s to verify
+
+
+******** Transaction 3 ********
+[2024-09-17T14:17:32Z INFO  evm_arithmetization::generation::state] CPU halted after 111660 cycles
+[2024-09-17T14:17:32Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:17:32Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21851, byte_packing_len: 1198, cpu_len: 131072, keccak_len: 16152, keccak_sponge_len: 673, logic_len: 4429, memory_len: 379799 }
+[2024-09-17T14:17:41Z INFO  plonky2::util::timing] 9.0487s to prove
+Proof size: 11276 KB
+[2024-09-17T14:17:41Z INFO  plonky2::util::timing] 0.1545s to verify
+
+
+******** Transaction 4 ********
+[2024-09-17T14:17:42Z INFO  evm_arithmetization::generation::state] CPU halted after 114709 cycles
+[2024-09-17T14:17:42Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:17:42Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22273, byte_packing_len: 1252, cpu_len: 131072, keccak_len: 16248, keccak_sponge_len: 677, logic_len: 4454, memory_len: 387970 }
+[2024-09-17T14:17:50Z INFO  plonky2::util::timing] 9.1687s to prove
+Proof size: 11276 KB
+[2024-09-17T14:17:51Z INFO  plonky2::util::timing] 0.1542s to verify
+
+
+******** Transaction 5 ********
+[2024-09-17T14:17:52Z INFO  evm_arithmetization::generation::state] CPU halted after 151367 cycles
+[2024-09-17T14:17:52Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:17:52Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 28457, byte_packing_len: 1727, cpu_len: 262144, keccak_len: 18960, keccak_sponge_len: 790, logic_len: 5718, memory_len: 496266 }
+[2024-09-17T14:18:04Z INFO  plonky2::util::timing] 13.1011s to prove
+Proof size: 11458 KB
+[2024-09-17T14:18:05Z INFO  plonky2::util::timing] 0.1572s to verify
+
+
+******** Transaction 6 ********
+[2024-09-17T14:18:05Z INFO  evm_arithmetization::generation::state] CPU halted after 166469 cycles
+[2024-09-17T14:18:05Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:18:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30788, byte_packing_len: 1949, cpu_len: 262144, keccak_len: 20304, keccak_sponge_len: 846, logic_len: 6082, memory_len: 545113 }
+[2024-09-17T14:18:21Z INFO  plonky2::util::timing] 15.8992s to prove
+Proof size: 11511 KB
+[2024-09-17T14:18:22Z INFO  plonky2::util::timing] 0.1582s to verify
+
+
+******** Transaction 7 ********
+[2024-09-17T14:18:22Z INFO  evm_arithmetization::generation::state] CPU halted after 161592 cycles
+[2024-09-17T14:18:22Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:18:22Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30178, byte_packing_len: 1912, cpu_len: 262144, keccak_len: 20016, keccak_sponge_len: 834, logic_len: 5748, memory_len: 530867 }
+[2024-09-17T14:18:38Z INFO  plonky2::util::timing] 16.0476s to prove
+Proof size: 11513 KB
+[2024-09-17T14:18:39Z INFO  plonky2::util::timing] 0.1584s to verify
+
+
+******** Transaction 8 ********
+[2024-09-17T14:18:39Z INFO  evm_arithmetization::generation::state] CPU halted after 372173 cycles
+[2024-09-17T14:18:39Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T14:18:39Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 66509, byte_packing_len: 4682, cpu_len: 524288, keccak_len: 38424, keccak_sponge_len: 1601, logic_len: 11705, memory_len: 1170037 }
+[2024-09-17T14:19:14Z INFO  plonky2::util::timing] 35.4852s to prove
+Proof size: 12001 KB
+[2024-09-17T14:19:15Z INFO  plonky2::util::timing] 0.1784s to verify
+
+
+******** Transaction 9 ********
+[2024-09-17T14:19:16Z INFO  evm_arithmetization::generation::state] CPU halted after 329112 cycles
+[2024-09-17T14:19:16Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T14:19:16Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 58252, byte_packing_len: 4099, cpu_len: 524288, keccak_len: 31008, keccak_sponge_len: 1292, logic_len: 9792, memory_len: 1023662 }
+[2024-09-17T14:19:35Z INFO  plonky2::util::timing] 20.5504s to prove
+Proof size: 11846 KB
+[2024-09-17T14:19:36Z INFO  plonky2::util::timing] 0.2284s to verify
+
+
+******** Transaction 10 ********
+[2024-09-17T14:19:36Z INFO  evm_arithmetization::generation::state] CPU halted after 110400 cycles
+[2024-09-17T14:19:36Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:19:36Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21746, byte_packing_len: 1160, cpu_len: 131072, keccak_len: 16296, keccak_sponge_len: 679, logic_len: 4448, memory_len: 377955 }
+[2024-09-17T14:19:45Z INFO  plonky2::util::timing] 9.0730s to prove
+Proof size: 11277 KB
+[2024-09-17T14:19:46Z INFO  plonky2::util::timing] 0.1545s to verify
+
+
+******** Transaction 11 ********
+[2024-09-17T14:19:46Z INFO  evm_arithmetization::generation::state] CPU halted after 108021 cycles
+[2024-09-17T14:19:46Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:19:46Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21294, byte_packing_len: 1153, cpu_len: 131072, keccak_len: 16056, keccak_sponge_len: 669, logic_len: 4387, memory_len: 370177 }
+[2024-09-17T14:19:55Z INFO  plonky2::util::timing] 9.1117s to prove
+Proof size: 11272 KB
+[2024-09-17T14:19:56Z INFO  plonky2::util::timing] 0.1554s to verify
+
+
+******** Transaction 12 ********
+[2024-09-17T14:19:56Z INFO  evm_arithmetization::generation::state] CPU halted after 111284 cycles
+[2024-09-17T14:19:56Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:19:56Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21874, byte_packing_len: 1178, cpu_len: 131072, keccak_len: 16152, keccak_sponge_len: 673, logic_len: 4429, memory_len: 379062 }
+[2024-09-17T14:20:05Z INFO  plonky2::util::timing] 8.9890s to prove
+Proof size: 11274 KB
+[2024-09-17T14:20:06Z INFO  plonky2::util::timing] 0.1549s to verify
+
+
+******** Transaction 13 ********
+[2024-09-17T14:20:06Z INFO  evm_arithmetization::generation::state] CPU halted after 155754 cycles
+[2024-09-17T14:20:06Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:20:06Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 29114, byte_packing_len: 1749, cpu_len: 262144, keccak_len: 18888, keccak_sponge_len: 787, logic_len: 6295, memory_len: 507201 }
+[2024-09-17T14:20:19Z INFO  plonky2::util::timing] 13.2342s to prove
+Proof size: 11457 KB
+[2024-09-17T14:20:20Z INFO  plonky2::util::timing] 0.1578s to verify
+
+
+******** Transaction 14 ********
+[2024-09-17T14:20:20Z INFO  evm_arithmetization::generation::state] CPU halted after 110717 cycles
+[2024-09-17T14:20:20Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:20:20Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21882, byte_packing_len: 1167, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4473, memory_len: 380046 }
+[2024-09-17T14:20:31Z INFO  plonky2::util::timing] 11.5803s to prove
+Proof size: 11378 KB
+[2024-09-17T14:20:32Z INFO  plonky2::util::timing] 0.1576s to verify
+
+
+******** Transaction 15 ********
+[2024-09-17T14:20:32Z INFO  evm_arithmetization::generation::state] CPU halted after 110933 cycles
+[2024-09-17T14:20:32Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:20:32Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21757, byte_packing_len: 1191, cpu_len: 131072, keccak_len: 16296, keccak_sponge_len: 679, logic_len: 4444, memory_len: 378982 }
+[2024-09-17T14:20:41Z INFO  plonky2::util::timing] 9.1408s to prove
+Proof size: 11278 KB
+[2024-09-17T14:20:42Z INFO  plonky2::util::timing] 0.1553s to verify
+
+
+******** Transaction 16 ********
+[2024-09-17T14:20:42Z INFO  evm_arithmetization::generation::state] CPU halted after 105818 cycles
+[2024-09-17T14:20:42Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:20:42Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21037, byte_packing_len: 1109, cpu_len: 131072, keccak_len: 15912, keccak_sponge_len: 663, logic_len: 4365, memory_len: 363500 }
+[2024-09-17T14:20:51Z INFO  plonky2::util::timing] 9.0566s to prove
+Proof size: 11275 KB
+[2024-09-17T14:20:52Z INFO  plonky2::util::timing] 0.1546s to verify
+
+
+******** Transaction 17 ********
+[2024-09-17T14:20:52Z INFO  evm_arithmetization::generation::state] CPU halted after 175138 cycles
+[2024-09-17T14:20:52Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:20:52Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 32183, byte_packing_len: 2030, cpu_len: 262144, keccak_len: 21744, keccak_sponge_len: 906, logic_len: 7351, memory_len: 576135 }
+[2024-09-17T14:21:08Z INFO  plonky2::util::timing] 16.1306s to prove
+Proof size: 11515 KB
+[2024-09-17T14:21:08Z INFO  plonky2::util::timing] 0.1582s to verify
+
+
+******** Transaction 18 ********
+[2024-09-17T14:21:09Z INFO  evm_arithmetization::generation::state] CPU halted after 225992 cycles
+[2024-09-17T14:21:09Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:21:09Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40959, byte_packing_len: 2883, cpu_len: 262144, keccak_len: 24192, keccak_sponge_len: 1008, logic_len: 7856, memory_len: 722150 }
+[2024-09-17T14:21:25Z INFO  plonky2::util::timing] 16.5316s to prove
+Proof size: 11554 KB
+[2024-09-17T14:21:26Z INFO  plonky2::util::timing] 0.1592s to verify
+
+
+******** Transaction 19 ********
+[2024-09-17T14:21:26Z INFO  evm_arithmetization::generation::state] CPU halted after 110979 cycles
+[2024-09-17T14:21:26Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:21:26Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21798, byte_packing_len: 1190, cpu_len: 131072, keccak_len: 16200, keccak_sponge_len: 675, logic_len: 4427, memory_len: 378886 }
+[2024-09-17T14:21:35Z INFO  plonky2::util::timing] 9.2054s to prove
+Proof size: 11275 KB
+[2024-09-17T14:21:36Z INFO  plonky2::util::timing] 0.1547s to verify
+
+
+******** Transaction 20 ********
+[2024-09-17T14:21:36Z INFO  evm_arithmetization::generation::state] CPU halted after 110512 cycles
+[2024-09-17T14:21:36Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:21:36Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21697, byte_packing_len: 1186, cpu_len: 131072, keccak_len: 16248, keccak_sponge_len: 677, logic_len: 4430, memory_len: 378082 }
+[2024-09-17T14:21:45Z INFO  plonky2::util::timing] 9.1312s to prove
+Proof size: 11275 KB
+[2024-09-17T14:21:46Z INFO  plonky2::util::timing] 0.1657s to verify
+
+
+******** Transaction 21 ********
+[2024-09-17T14:21:46Z INFO  evm_arithmetization::generation::state] CPU halted after 113790 cycles
+[2024-09-17T14:21:46Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:21:46Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22103, byte_packing_len: 1241, cpu_len: 131072, keccak_len: 16272, keccak_sponge_len: 678, logic_len: 4445, memory_len: 386275 }
+[2024-09-17T14:21:55Z INFO  plonky2::util::timing] 9.1529s to prove
+Proof size: 11276 KB
+[2024-09-17T14:21:56Z INFO  plonky2::util::timing] 0.1554s to verify
+
+
+******** Transaction 22 ********
+[2024-09-17T14:21:56Z INFO  evm_arithmetization::generation::state] CPU halted after 110778 cycles
+[2024-09-17T14:21:56Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:21:56Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21776, byte_packing_len: 1179, cpu_len: 131072, keccak_len: 16224, keccak_sponge_len: 676, logic_len: 4432, memory_len: 378728 }
+[2024-09-17T14:22:05Z INFO  plonky2::util::timing] 9.2141s to prove
+Proof size: 11277 KB
+[2024-09-17T14:22:05Z INFO  plonky2::util::timing] 0.1548s to verify
+
+
+******** Transaction 23 ********
+[2024-09-17T14:22:06Z INFO  evm_arithmetization::generation::state] CPU halted after 217096 cycles
+[2024-09-17T14:22:06Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:22:06Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 39173, byte_packing_len: 2725, cpu_len: 262144, keccak_len: 24144, keccak_sponge_len: 1006, logic_len: 7489, memory_len: 699450 }
+[2024-09-17T14:22:22Z INFO  plonky2::util::timing] 16.5788s to prove
+Proof size: 11554 KB
+[2024-09-17T14:22:23Z INFO  plonky2::util::timing] 0.1592s to verify
+
+
+******** Transaction 24 ********
+[2024-09-17T14:22:23Z INFO  evm_arithmetization::generation::state] CPU halted after 110572 cycles
+[2024-09-17T14:22:23Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:22:23Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21826, byte_packing_len: 1165, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4466, memory_len: 379459 }
+[2024-09-17T14:22:34Z INFO  plonky2::util::timing] 11.5404s to prove
+Proof size: 11376 KB
+[2024-09-17T14:22:35Z INFO  plonky2::util::timing] 0.1566s to verify
+
+
+******** Transaction 25 ********
+[2024-09-17T14:22:35Z INFO  evm_arithmetization::generation::state] CPU halted after 110670 cycles
+[2024-09-17T14:22:35Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:22:35Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21753, byte_packing_len: 1173, cpu_len: 131072, keccak_len: 16272, keccak_sponge_len: 678, logic_len: 4443, memory_len: 378803 }
+[2024-09-17T14:22:44Z INFO  plonky2::util::timing] 9.0633s to prove
+Proof size: 11275 KB
+[2024-09-17T14:22:45Z INFO  plonky2::util::timing] 0.1669s to verify
+
+
+******** Transaction 26 ********
+[2024-09-17T14:22:45Z INFO  evm_arithmetization::generation::state] CPU halted after 111628 cycles
+[2024-09-17T14:22:45Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:22:45Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21908, byte_packing_len: 1201, cpu_len: 131072, keccak_len: 16248, keccak_sponge_len: 677, logic_len: 4429, memory_len: 380913 }
+[2024-09-17T14:22:54Z INFO  plonky2::util::timing] 9.1327s to prove
+Proof size: 11276 KB
+[2024-09-17T14:22:55Z INFO  plonky2::util::timing] 0.1552s to verify
+
+
+******** Transaction 27 ********
+[2024-09-17T14:22:55Z INFO  evm_arithmetization::generation::state] CPU halted after 105542 cycles
+[2024-09-17T14:22:55Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:22:55Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21234, byte_packing_len: 1057, cpu_len: 131072, keccak_len: 16176, keccak_sponge_len: 674, logic_len: 4430, memory_len: 365786 }
+[2024-09-17T14:23:04Z INFO  plonky2::util::timing] 9.1460s to prove
+Proof size: 11275 KB
+[2024-09-17T14:23:05Z INFO  plonky2::util::timing] 0.1608s to verify
+
+
+******** Transaction 28 ********
+[2024-09-17T14:23:05Z INFO  evm_arithmetization::generation::state] CPU halted after 107447 cycles
+[2024-09-17T14:23:05Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:23:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21360, byte_packing_len: 1100, cpu_len: 131072, keccak_len: 16200, keccak_sponge_len: 675, logic_len: 4427, memory_len: 370386 }
+[2024-09-17T14:23:14Z INFO  plonky2::util::timing] 9.1439s to prove
+Proof size: 11276 KB
+[2024-09-17T14:23:15Z INFO  plonky2::util::timing] 0.1547s to verify
+
+
+******** Transaction 29 ********
+[2024-09-17T14:23:15Z INFO  evm_arithmetization::generation::state] CPU halted after 162276 cycles
+[2024-09-17T14:23:15Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:23:15Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30457, byte_packing_len: 1888, cpu_len: 262144, keccak_len: 19440, keccak_sponge_len: 810, logic_len: 5619, memory_len: 529236 }
+[2024-09-17T14:23:31Z INFO  plonky2::util::timing] 16.0658s to prove
+Proof size: 11513 KB
+[2024-09-17T14:23:31Z INFO  plonky2::util::timing] 0.1589s to verify
+
+
+******** Transaction 30 ********
+[2024-09-17T14:23:32Z INFO  evm_arithmetization::generation::state] CPU halted after 110270 cycles
+[2024-09-17T14:23:32Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:23:32Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21840, byte_packing_len: 1143, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4476, memory_len: 379361 }
+[2024-09-17T14:23:43Z INFO  plonky2::util::timing] 11.4392s to prove
+Proof size: 11376 KB
+[2024-09-17T14:23:44Z INFO  plonky2::util::timing] 0.1568s to verify
+
+
+******** Transaction 31 ********
+[2024-09-17T14:23:44Z INFO  evm_arithmetization::generation::state] CPU halted after 113302 cycles
+[2024-09-17T14:23:44Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:23:44Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22257, byte_packing_len: 1205, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4495, memory_len: 388018 }
+[2024-09-17T14:23:55Z INFO  plonky2::util::timing] 11.4718s to prove
+Proof size: 11375 KB
+[2024-09-17T14:23:56Z INFO  plonky2::util::timing] 0.1567s to verify
+
+
+******** Transaction 32 ********
+[2024-09-17T14:23:56Z INFO  evm_arithmetization::generation::state] CPU halted after 101775 cycles
+[2024-09-17T14:23:56Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:23:56Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 20578, byte_packing_len: 1005, cpu_len: 131072, keccak_len: 16080, keccak_sponge_len: 670, logic_len: 4392, memory_len: 355478 }
+[2024-09-17T14:24:05Z INFO  plonky2::util::timing] 9.0516s to prove
+Proof size: 11184 KB
+[2024-09-17T14:24:06Z INFO  plonky2::util::timing] 0.1529s to verify
+
+
+******** Transaction 33 ********
+[2024-09-17T14:24:06Z INFO  evm_arithmetization::generation::state] CPU halted after 111149 cycles
+[2024-09-17T14:24:06Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:24:06Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22029, byte_packing_len: 1197, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4481, memory_len: 381033 }
+[2024-09-17T14:24:17Z INFO  plonky2::util::timing] 11.5302s to prove
+Proof size: 11377 KB
+[2024-09-17T14:24:18Z INFO  plonky2::util::timing] 0.1565s to verify
+
+
+******** Transaction 34 ********
+[2024-09-17T14:24:18Z INFO  evm_arithmetization::generation::state] CPU halted after 111313 cycles
+[2024-09-17T14:24:18Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:24:18Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21853, byte_packing_len: 1197, cpu_len: 131072, keccak_len: 16272, keccak_sponge_len: 678, logic_len: 4445, memory_len: 379332 }
+[2024-09-17T14:24:27Z INFO  plonky2::util::timing] 9.0275s to prove
+Proof size: 11275 KB
+[2024-09-17T14:24:28Z INFO  plonky2::util::timing] 0.1547s to verify
+
+
+******** Transaction 35 ********
+[2024-09-17T14:24:28Z INFO  evm_arithmetization::generation::state] CPU halted after 111257 cycles
+[2024-09-17T14:24:28Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:24:28Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21921, byte_packing_len: 1185, cpu_len: 131072, keccak_len: 16320, keccak_sponge_len: 680, logic_len: 4455, memory_len: 380036 }
+[2024-09-17T14:24:37Z INFO  plonky2::util::timing] 9.1066s to prove
+Proof size: 11275 KB
+[2024-09-17T14:24:37Z INFO  plonky2::util::timing] 0.1553s to verify
+
+
+******** Transaction 36 ********
+[2024-09-17T14:24:38Z INFO  evm_arithmetization::generation::state] CPU halted after 110917 cycles
+[2024-09-17T14:24:38Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:24:38Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21865, byte_packing_len: 1181, cpu_len: 131072, keccak_len: 16344, keccak_sponge_len: 681, logic_len: 4458, memory_len: 379162 }
+[2024-09-17T14:24:47Z INFO  plonky2::util::timing] 9.0551s to prove
+Proof size: 11275 KB
+[2024-09-17T14:24:47Z INFO  plonky2::util::timing] 0.1546s to verify
+
+
+******** Transaction 37 ********
+[2024-09-17T14:24:47Z INFO  evm_arithmetization::generation::state] CPU halted after 108343 cycles
+[2024-09-17T14:24:47Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:24:47Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21546, byte_packing_len: 1126, cpu_len: 131072, keccak_len: 16320, keccak_sponge_len: 680, logic_len: 4455, memory_len: 372518 }
+[2024-09-17T14:24:56Z INFO  plonky2::util::timing] 9.0718s to prove
+Proof size: 11279 KB
+[2024-09-17T14:24:57Z INFO  plonky2::util::timing] 0.1667s to verify
+
+
+******** Transaction 38 ********
+[2024-09-17T14:24:58Z INFO  evm_arithmetization::generation::state] CPU halted after 225274 cycles
+[2024-09-17T14:24:58Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:24:58Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40084, byte_packing_len: 2809, cpu_len: 262144, keccak_len: 25272, keccak_sponge_len: 1053, logic_len: 7281, memory_len: 731172 }
+[2024-09-17T14:25:14Z INFO  plonky2::util::timing] 16.6332s to prove
+Proof size: 11643 KB
+[2024-09-17T14:25:15Z INFO  plonky2::util::timing] 0.2042s to verify
+
+
+******** Transaction 39 ********
+[2024-09-17T14:25:15Z INFO  evm_arithmetization::generation::state] CPU halted after 232825 cycles
+[2024-09-17T14:25:15Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:25:15Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 41138, byte_packing_len: 2930, cpu_len: 262144, keccak_len: 25800, keccak_sponge_len: 1075, logic_len: 7391, memory_len: 754027 }
+[2024-09-17T14:25:31Z INFO  plonky2::util::timing] 16.6324s to prove
+Proof size: 11644 KB
+[2024-09-17T14:25:32Z INFO  plonky2::util::timing] 0.1625s to verify
+
+
+******** Transaction 40 ********
+[2024-09-17T14:25:32Z INFO  evm_arithmetization::generation::state] CPU halted after 107257 cycles
+[2024-09-17T14:25:32Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:25:32Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21328, byte_packing_len: 1114, cpu_len: 131072, keccak_len: 16344, keccak_sponge_len: 681, logic_len: 4447, memory_len: 370222 }
+[2024-09-17T14:25:41Z INFO  plonky2::util::timing] 9.1253s to prove
+Proof size: 11273 KB
+[2024-09-17T14:25:42Z INFO  plonky2::util::timing] 0.1551s to verify
+
+
+******** Transaction 41 ********
+[2024-09-17T14:25:42Z INFO  evm_arithmetization::generation::state] CPU halted after 107575 cycles
+[2024-09-17T14:25:42Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:25:42Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21444, byte_packing_len: 1096, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4474, memory_len: 371722 }
+[2024-09-17T14:25:53Z INFO  plonky2::util::timing] 11.4751s to prove
+Proof size: 11375 KB
+[2024-09-17T14:25:54Z INFO  plonky2::util::timing] 0.1573s to verify
+
+
+******** Transaction 42 ********
+[2024-09-17T14:25:54Z INFO  evm_arithmetization::generation::state] CPU halted after 110347 cycles
+[2024-09-17T14:25:54Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:25:54Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21814, byte_packing_len: 1148, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4469, memory_len: 378678 }
+[2024-09-17T14:26:05Z INFO  plonky2::util::timing] 11.3653s to prove
+Proof size: 11379 KB
+[2024-09-17T14:26:06Z INFO  plonky2::util::timing] 0.1564s to verify
+
+
+******** Transaction 43 ********
+[2024-09-17T14:26:06Z INFO  evm_arithmetization::generation::state] CPU halted after 114438 cycles
+[2024-09-17T14:26:06Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:26:06Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22398, byte_packing_len: 1226, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4497, memory_len: 389541 }
+[2024-09-17T14:26:18Z INFO  plonky2::util::timing] 11.4352s to prove
+Proof size: 11375 KB
+[2024-09-17T14:26:18Z INFO  plonky2::util::timing] 0.1569s to verify
+
+
+******** Transaction 44 ********
+[2024-09-17T14:26:19Z INFO  evm_arithmetization::generation::state] CPU halted after 110311 cycles
+[2024-09-17T14:26:19Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:26:19Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21831, byte_packing_len: 1152, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4485, memory_len: 379634 }
+[2024-09-17T14:26:30Z INFO  plonky2::util::timing] 11.4528s to prove
+Proof size: 11375 KB
+[2024-09-17T14:26:31Z INFO  plonky2::util::timing] 0.1624s to verify
+
+
+******** Transaction 45 ********
+[2024-09-17T14:26:31Z INFO  evm_arithmetization::generation::state] CPU halted after 113492 cycles
+[2024-09-17T14:26:31Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:26:31Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22185, byte_packing_len: 1223, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4497, memory_len: 387027 }
+[2024-09-17T14:26:42Z INFO  plonky2::util::timing] 11.4491s to prove
+Proof size: 11373 KB
+[2024-09-17T14:26:43Z INFO  plonky2::util::timing] 0.1640s to verify
+
+
+******** Transaction 46 ********
+[2024-09-17T14:26:43Z INFO  evm_arithmetization::generation::state] CPU halted after 185647 cycles
+[2024-09-17T14:26:43Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:26:43Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 33889, byte_packing_len: 2123, cpu_len: 262144, keccak_len: 21816, keccak_sponge_len: 909, logic_len: 6588, memory_len: 603235 }
+[2024-09-17T14:26:59Z INFO  plonky2::util::timing] 16.2649s to prove
+Proof size: 11552 KB
+[2024-09-17T14:27:00Z INFO  plonky2::util::timing] 0.1593s to verify
+
+
+******** Transaction 47 ********
+[2024-09-17T14:27:00Z INFO  evm_arithmetization::generation::state] CPU halted after 116258 cycles
+[2024-09-17T14:27:00Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:27:00Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22549, byte_packing_len: 1258, cpu_len: 131072, keccak_len: 16608, keccak_sponge_len: 692, logic_len: 4522, memory_len: 395029 }
+[2024-09-17T14:27:11Z INFO  plonky2::util::timing] 11.4027s to prove
+Proof size: 11374 KB
+[2024-09-17T14:27:12Z INFO  plonky2::util::timing] 0.1573s to verify
+
+
+******** Transaction 48 ********
+[2024-09-17T14:27:12Z INFO  evm_arithmetization::generation::state] CPU halted after 229446 cycles
+[2024-09-17T14:27:12Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:27:12Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40683, byte_packing_len: 2870, cpu_len: 262144, keccak_len: 25584, keccak_sponge_len: 1066, logic_len: 7346, memory_len: 745032 }
+[2024-09-17T14:27:29Z INFO  plonky2::util::timing] 16.6159s to prove
+Proof size: 11643 KB
+[2024-09-17T14:27:29Z INFO  plonky2::util::timing] 0.1610s to verify
+
+
+******** Transaction 49 ********
+[2024-09-17T14:27:30Z INFO  evm_arithmetization::generation::state] CPU halted after 237056 cycles
+[2024-09-17T14:27:30Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:27:30Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 41966, byte_packing_len: 3021, cpu_len: 262144, keccak_len: 25944, keccak_sponge_len: 1081, logic_len: 7437, memory_len: 767420 }
+[2024-09-17T14:27:46Z INFO  plonky2::util::timing] 16.4888s to prove
+Proof size: 11645 KB
+[2024-09-17T14:27:47Z INFO  plonky2::util::timing] 0.1611s to verify
+
+
+******** Transaction 50 ********
+[2024-09-17T14:27:47Z INFO  evm_arithmetization::generation::state] CPU halted after 164756 cycles
+[2024-09-17T14:27:47Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:27:47Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30474, byte_packing_len: 1937, cpu_len: 262144, keccak_len: 20352, keccak_sponge_len: 848, logic_len: 5881, memory_len: 539890 }
+[2024-09-17T14:28:03Z INFO  plonky2::util::timing] 16.1443s to prove
+Proof size: 11513 KB
+[2024-09-17T14:28:03Z INFO  plonky2::util::timing] 0.1587s to verify
+
+
+******** Transaction 51 ********
+[2024-09-17T14:28:04Z INFO  evm_arithmetization::generation::state] CPU halted after 110795 cycles
+[2024-09-17T14:28:04Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:28:04Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21842, byte_packing_len: 1176, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4465, memory_len: 379512 }
+[2024-09-17T14:28:15Z INFO  plonky2::util::timing] 11.4605s to prove
+Proof size: 11375 KB
+[2024-09-17T14:28:16Z INFO  plonky2::util::timing] 0.1566s to verify
+
+
+******** Transaction 52 ********
+[2024-09-17T14:28:24Z INFO  evm_arithmetization::generation::state] CPU halted after 3908104 cycles
+[2024-09-17T14:28:25Z INFO  evm_arithmetization::generation] CPU trace padded to 4194304 cycles
+[2024-09-17T14:28:25Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 1345541, byte_packing_len: 16922, cpu_len: 4194304, keccak_len: 42936, keccak_sponge_len: 1789, logic_len: 26657, memory_len: 10234497 }
+[2024-09-17T14:33:09Z INFO  plonky2::util::timing] 293.4779s to prove
+Proof size: 12934 KB
+[2024-09-17T14:33:10Z INFO  plonky2::util::timing] 0.1878s to verify
+
+
+******** Transaction 53 ********
+[2024-09-17T14:33:10Z INFO  evm_arithmetization::generation::state] CPU halted after 114375 cycles
+[2024-09-17T14:33:10Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:33:10Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22235, byte_packing_len: 1251, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4474, memory_len: 388081 }
+[2024-09-17T14:33:21Z INFO  plonky2::util::timing] 10.9490s to prove
+Proof size: 11379 KB
+[2024-09-17T14:33:22Z INFO  plonky2::util::timing] 0.1717s to verify
+
+
+******** Transaction 54 ********
+[2024-09-17T14:33:22Z INFO  evm_arithmetization::generation::state] CPU halted after 113752 cycles
+[2024-09-17T14:33:22Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:33:22Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22223, byte_packing_len: 1233, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4477, memory_len: 387323 }
+[2024-09-17T14:33:33Z INFO  plonky2::util::timing] 11.4599s to prove
+Proof size: 11377 KB
+[2024-09-17T14:33:34Z INFO  plonky2::util::timing] 0.2161s to verify
+
+
+******** Transaction 55 ********
+[2024-09-17T14:33:34Z INFO  evm_arithmetization::generation::state] CPU halted after 114197 cycles
+[2024-09-17T14:33:34Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:33:34Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22201, byte_packing_len: 1247, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4469, memory_len: 388313 }
+[2024-09-17T14:33:45Z INFO  plonky2::util::timing] 11.4798s to prove
+Proof size: 11378 KB
+[2024-09-17T14:33:46Z INFO  plonky2::util::timing] 0.1571s to verify
+
+
+******** Transaction 56 ********
+[2024-09-17T14:33:46Z INFO  evm_arithmetization::generation::state] CPU halted after 110222 cycles
+[2024-09-17T14:33:46Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:33:46Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21766, byte_packing_len: 1148, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4488, memory_len: 379001 }
+[2024-09-17T14:33:58Z INFO  plonky2::util::timing] 11.5790s to prove
+Proof size: 11373 KB
+[2024-09-17T14:33:59Z INFO  plonky2::util::timing] 0.1586s to verify
+
+
+******** Transaction 57 ********
+[2024-09-17T14:33:59Z INFO  evm_arithmetization::generation::state] CPU halted after 113511 cycles
+[2024-09-17T14:33:59Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:33:59Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22241, byte_packing_len: 1204, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4496, memory_len: 386997 }
+[2024-09-17T14:34:10Z INFO  plonky2::util::timing] 11.3936s to prove
+Proof size: 11373 KB
+[2024-09-17T14:34:11Z INFO  plonky2::util::timing] 0.1575s to verify
+
+
+******** Transaction 58 ********
+[2024-09-17T14:34:11Z INFO  evm_arithmetization::generation::state] CPU halted after 110223 cycles
+[2024-09-17T14:34:11Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:34:11Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21795, byte_packing_len: 1145, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4474, memory_len: 379256 }
+[2024-09-17T14:34:22Z INFO  plonky2::util::timing] 11.3468s to prove
+Proof size: 11373 KB
+[2024-09-17T14:34:23Z INFO  plonky2::util::timing] 0.1569s to verify
+
+
+******** Transaction 59 ********
+[2024-09-17T14:34:23Z INFO  evm_arithmetization::generation::state] CPU halted after 110289 cycles
+[2024-09-17T14:34:23Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:34:23Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21841, byte_packing_len: 1154, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4471, memory_len: 379602 }
+[2024-09-17T14:34:34Z INFO  plonky2::util::timing] 11.4539s to prove
+Proof size: 11374 KB
+[2024-09-17T14:34:35Z INFO  plonky2::util::timing] 0.1576s to verify
+
+
+******** Transaction 60 ********
+[2024-09-17T14:34:36Z INFO  evm_arithmetization::generation::state] CPU halted after 240597 cycles
+[2024-09-17T14:34:36Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:34:36Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 42343, byte_packing_len: 2975, cpu_len: 262144, keccak_len: 25968, keccak_sponge_len: 1082, logic_len: 8171, memory_len: 768850 }
+[2024-09-17T14:34:52Z INFO  plonky2::util::timing] 16.5495s to prove
+Proof size: 11649 KB
+[2024-09-17T14:34:52Z INFO  plonky2::util::timing] 0.2021s to verify
+
+
+******** Transaction 61 ********
+[2024-09-17T14:34:53Z INFO  evm_arithmetization::generation::state] CPU halted after 110480 cycles
+[2024-09-17T14:34:53Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:34:53Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21930, byte_packing_len: 1140, cpu_len: 131072, keccak_len: 16512, keccak_sponge_len: 688, logic_len: 4497, memory_len: 380395 }
+[2024-09-17T14:35:04Z INFO  plonky2::util::timing] 11.5044s to prove
+Proof size: 11373 KB
+[2024-09-17T14:35:05Z INFO  plonky2::util::timing] 0.1569s to verify
+
+
+******** Transaction 62 ********
+[2024-09-17T14:35:05Z INFO  evm_arithmetization::generation::state] CPU halted after 113401 cycles
+[2024-09-17T14:35:05Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:35:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22255, byte_packing_len: 1209, cpu_len: 131072, keccak_len: 16584, keccak_sponge_len: 691, logic_len: 4508, memory_len: 387764 }
+[2024-09-17T14:35:16Z INFO  plonky2::util::timing] 11.5943s to prove
+Proof size: 11372 KB
+[2024-09-17T14:35:17Z INFO  plonky2::util::timing] 0.1625s to verify
+
+
+******** Transaction 63 ********
+[2024-09-17T14:35:17Z INFO  evm_arithmetization::generation::state] CPU halted after 104183 cycles
+[2024-09-17T14:35:17Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:35:17Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 20970, byte_packing_len: 1035, cpu_len: 131072, keccak_len: 16272, keccak_sponge_len: 678, logic_len: 4435, memory_len: 363193 }
+[2024-09-17T14:35:26Z INFO  plonky2::util::timing] 9.1389s to prove
+Proof size: 11274 KB
+[2024-09-17T14:35:27Z INFO  plonky2::util::timing] 0.1732s to verify
+
+
+******** Transaction 64 ********
+[2024-09-17T14:35:27Z INFO  evm_arithmetization::generation::state] CPU halted after 172574 cycles
+[2024-09-17T14:35:27Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:35:27Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 31962, byte_packing_len: 1970, cpu_len: 262144, keccak_len: 20664, keccak_sponge_len: 861, logic_len: 6625, memory_len: 558567 }
+[2024-09-17T14:35:43Z INFO  plonky2::util::timing] 16.1115s to prove
+Proof size: 11514 KB
+[2024-09-17T14:35:44Z INFO  plonky2::util::timing] 0.2263s to verify
+
+
+******** Transaction 65 ********
+[2024-09-17T14:35:44Z INFO  evm_arithmetization::generation::state] CPU halted after 112080 cycles
+[2024-09-17T14:35:44Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:35:44Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22188, byte_packing_len: 1219, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4490, memory_len: 384702 }
+[2024-09-17T14:35:55Z INFO  plonky2::util::timing] 11.5298s to prove
+Proof size: 11379 KB
+[2024-09-17T14:35:56Z INFO  plonky2::util::timing] 0.1567s to verify
+
+
+******** Transaction 66 ********
+[2024-09-17T14:35:57Z INFO  evm_arithmetization::generation::state] CPU halted after 232888 cycles
+[2024-09-17T14:35:57Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:35:57Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 41132, byte_packing_len: 2934, cpu_len: 262144, keccak_len: 25632, keccak_sponge_len: 1068, logic_len: 7355, memory_len: 753590 }
+[2024-09-17T14:36:13Z INFO  plonky2::util::timing] 16.7874s to prove
+Proof size: 11643 KB
+[2024-09-17T14:36:14Z INFO  plonky2::util::timing] 0.1611s to verify
+
+
+******** Transaction 67 ********
+[2024-09-17T14:36:14Z INFO  evm_arithmetization::generation::state] CPU halted after 113476 cycles
+[2024-09-17T14:36:14Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:36:14Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22093, byte_packing_len: 1235, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4465, memory_len: 386254 }
+[2024-09-17T14:36:25Z INFO  plonky2::util::timing] 11.6221s to prove
+Proof size: 11374 KB
+[2024-09-17T14:36:26Z INFO  plonky2::util::timing] 0.1583s to verify
+
+
+******** Transaction 68 ********
+[2024-09-17T14:36:26Z INFO  evm_arithmetization::generation::state] CPU halted after 114558 cycles
+[2024-09-17T14:36:26Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:36:26Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22393, byte_packing_len: 1220, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4477, memory_len: 388660 }
+[2024-09-17T14:36:38Z INFO  plonky2::util::timing] 11.5543s to prove
+Proof size: 11379 KB
+[2024-09-17T14:36:38Z INFO  plonky2::util::timing] 0.1575s to verify
+
+
+******** Transaction 69 ********
+[2024-09-17T14:36:39Z INFO  evm_arithmetization::generation::state] CPU halted after 163118 cycles
+[2024-09-17T14:36:39Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:36:39Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30277, byte_packing_len: 1901, cpu_len: 262144, keccak_len: 19488, keccak_sponge_len: 812, logic_len: 5545, memory_len: 531536 }
+[2024-09-17T14:36:55Z INFO  plonky2::util::timing] 16.2845s to prove
+Proof size: 11513 KB
+[2024-09-17T14:36:55Z INFO  plonky2::util::timing] 0.1585s to verify
+
+
+******** Transaction 70 ********
+[2024-09-17T14:36:56Z INFO  evm_arithmetization::generation::state] CPU halted after 114246 cycles
+[2024-09-17T14:36:56Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:36:56Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22226, byte_packing_len: 1240, cpu_len: 131072, keccak_len: 16440, keccak_sponge_len: 685, logic_len: 4473, memory_len: 388071 }
+[2024-09-17T14:37:07Z INFO  plonky2::util::timing] 11.4874s to prove
+Proof size: 11376 KB
+[2024-09-17T14:37:08Z INFO  plonky2::util::timing] 0.1567s to verify
+
+
+******** Transaction 71 ********
+[2024-09-17T14:37:08Z INFO  evm_arithmetization::generation::state] CPU halted after 107457 cycles
+[2024-09-17T14:37:08Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:37:08Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21450, byte_packing_len: 1106, cpu_len: 131072, keccak_len: 16344, keccak_sponge_len: 681, logic_len: 4450, memory_len: 371496 }
+[2024-09-17T14:37:17Z INFO  plonky2::util::timing] 9.2278s to prove
+Proof size: 11273 KB
+[2024-09-17T14:37:18Z INFO  plonky2::util::timing] 0.1711s to verify
+
+
+******** Transaction 72 ********
+[2024-09-17T14:37:18Z INFO  evm_arithmetization::generation::state] CPU halted after 113562 cycles
+[2024-09-17T14:37:18Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:37:18Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22207, byte_packing_len: 1215, cpu_len: 131072, keccak_len: 16464, keccak_sponge_len: 686, logic_len: 4491, memory_len: 387178 }
+[2024-09-17T14:37:29Z INFO  plonky2::util::timing] 11.5631s to prove
+Proof size: 11374 KB
+[2024-09-17T14:37:30Z INFO  plonky2::util::timing] 0.1575s to verify
+
+
+******** Transaction 73 ********
+[2024-09-17T14:37:30Z INFO  evm_arithmetization::generation::state] CPU halted after 107240 cycles
+[2024-09-17T14:37:30Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:37:30Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21404, byte_packing_len: 1093, cpu_len: 131072, keccak_len: 16320, keccak_sponge_len: 680, logic_len: 4450, memory_len: 371158 }
+[2024-09-17T14:37:39Z INFO  plonky2::util::timing] 9.1470s to prove
+Proof size: 11272 KB
+[2024-09-17T14:37:40Z INFO  plonky2::util::timing] 0.1550s to verify
+
+
+******** Transaction 74 ********
+[2024-09-17T14:37:40Z INFO  evm_arithmetization::generation::state] CPU halted after 114291 cycles
+[2024-09-17T14:37:40Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:37:40Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22373, byte_packing_len: 1221, cpu_len: 131072, keccak_len: 16488, keccak_sponge_len: 687, logic_len: 4488, memory_len: 389296 }
+[2024-09-17T14:37:51Z INFO  plonky2::util::timing] 11.4897s to prove
+Proof size: 11378 KB
+[2024-09-17T14:37:52Z INFO  plonky2::util::timing] 0.1575s to verify
+
+
+******** Transaction 75 ********
+[2024-09-17T14:37:52Z INFO  evm_arithmetization::generation::state] CPU halted after 113139 cycles
+[2024-09-17T14:37:52Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:37:52Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22201, byte_packing_len: 1203, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4496, memory_len: 387365 }
+[2024-09-17T14:38:04Z INFO  plonky2::util::timing] 11.5401s to prove
+Proof size: 11374 KB
+[2024-09-17T14:38:04Z INFO  plonky2::util::timing] 0.1566s to verify
+
+
+******** Transaction 76 ********
+[2024-09-17T14:38:05Z INFO  evm_arithmetization::generation::state] CPU halted after 113647 cycles
+[2024-09-17T14:38:05Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:38:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22299, byte_packing_len: 1217, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4498, memory_len: 388126 }
+[2024-09-17T14:38:16Z INFO  plonky2::util::timing] 11.4375s to prove
+Proof size: 11375 KB
+[2024-09-17T14:38:17Z INFO  plonky2::util::timing] 0.1622s to verify
+
+
+******** Transaction 77 ********
+[2024-09-17T14:38:17Z INFO  evm_arithmetization::generation::state] CPU halted after 106336 cycles
+[2024-09-17T14:38:17Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:38:17Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21246, byte_packing_len: 1076, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4479, memory_len: 370489 }
+[2024-09-17T14:38:28Z INFO  plonky2::util::timing] 11.4258s to prove
+Proof size: 11374 KB
+[2024-09-17T14:38:29Z INFO  plonky2::util::timing] 0.1569s to verify
+
+
+******** Transaction 78 ********
+[2024-09-17T14:38:29Z INFO  evm_arithmetization::generation::state] CPU halted after 113160 cycles
+[2024-09-17T14:38:29Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:38:29Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22248, byte_packing_len: 1198, cpu_len: 131072, keccak_len: 16632, keccak_sponge_len: 693, logic_len: 4515, memory_len: 387908 }
+[2024-09-17T14:38:40Z INFO  plonky2::util::timing] 11.4128s to prove
+Proof size: 11374 KB
+[2024-09-17T14:38:41Z INFO  plonky2::util::timing] 0.1578s to verify
+
+
+******** Transaction 79 ********
+[2024-09-17T14:38:41Z INFO  evm_arithmetization::generation::state] CPU halted after 231807 cycles
+[2024-09-17T14:38:41Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:38:41Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 41020, byte_packing_len: 2908, cpu_len: 262144, keccak_len: 25776, keccak_sponge_len: 1074, logic_len: 7382, memory_len: 752520 }
+[2024-09-17T14:38:57Z INFO  plonky2::util::timing] 16.6201s to prove
+Proof size: 11646 KB
+[2024-09-17T14:38:58Z INFO  plonky2::util::timing] 0.1621s to verify
+
+
+******** Transaction 80 ********
+[2024-09-17T14:38:59Z INFO  evm_arithmetization::generation::state] CPU halted after 145108 cycles
+[2024-09-17T14:38:59Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:38:59Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 27656, byte_packing_len: 1589, cpu_len: 262144, keccak_len: 18336, keccak_sponge_len: 764, logic_len: 5602, memory_len: 477857 }
+[2024-09-17T14:39:12Z INFO  plonky2::util::timing] 13.3650s to prove
+Proof size: 11458 KB
+[2024-09-17T14:39:12Z INFO  plonky2::util::timing] 0.1579s to verify
+
+
+******** Transaction 81 ********
+[2024-09-17T14:39:13Z INFO  evm_arithmetization::generation::state] CPU halted after 114455 cycles
+[2024-09-17T14:39:13Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:39:13Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22440, byte_packing_len: 1266, cpu_len: 131072, keccak_len: 16584, keccak_sponge_len: 691, logic_len: 4509, memory_len: 391247 }
+[2024-09-17T14:39:24Z INFO  plonky2::util::timing] 11.5273s to prove
+Proof size: 11377 KB
+[2024-09-17T14:39:25Z INFO  plonky2::util::timing] 0.1855s to verify
+
+
+******** Transaction 82 ********
+[2024-09-17T14:39:25Z INFO  evm_arithmetization::generation::state] CPU halted after 114089 cycles
+[2024-09-17T14:39:25Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:39:25Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22216, byte_packing_len: 1251, cpu_len: 131072, keccak_len: 16248, keccak_sponge_len: 677, logic_len: 4440, memory_len: 386950 }
+[2024-09-17T14:39:34Z INFO  plonky2::util::timing] 9.2105s to prove
+Proof size: 11276 KB
+[2024-09-17T14:39:35Z INFO  plonky2::util::timing] 0.1548s to verify
+
+
+******** Transaction 83 ********
+[2024-09-17T14:39:35Z INFO  evm_arithmetization::generation::state] CPU halted after 230538 cycles
+[2024-09-17T14:39:35Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:39:35Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40779, byte_packing_len: 2897, cpu_len: 262144, keccak_len: 25368, keccak_sponge_len: 1057, logic_len: 7307, memory_len: 745131 }
+[2024-09-17T14:39:51Z INFO  plonky2::util::timing] 16.7786s to prove
+Proof size: 11643 KB
+[2024-09-17T14:39:52Z INFO  plonky2::util::timing] 0.1618s to verify
+
+
+******** Transaction 84 ********
+[2024-09-17T14:39:52Z INFO  evm_arithmetization::generation::state] CPU halted after 113460 cycles
+[2024-09-17T14:39:52Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:39:52Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21927, byte_packing_len: 1246, cpu_len: 131072, keccak_len: 16416, keccak_sponge_len: 684, logic_len: 4465, memory_len: 385768 }
+[2024-09-17T14:40:04Z INFO  plonky2::util::timing] 11.4676s to prove
+Proof size: 11374 KB
+[2024-09-17T14:40:04Z INFO  plonky2::util::timing] 0.1574s to verify
+
+
+******** Transaction 85 ********
+[2024-09-17T14:40:05Z INFO  evm_arithmetization::generation::state] CPU halted after 110792 cycles
+[2024-09-17T14:40:05Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:40:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21883, byte_packing_len: 1170, cpu_len: 131072, keccak_len: 16344, keccak_sponge_len: 681, logic_len: 4458, memory_len: 379751 }
+[2024-09-17T14:40:14Z INFO  plonky2::util::timing] 9.2690s to prove
+Proof size: 11274 KB
+[2024-09-17T14:40:14Z INFO  plonky2::util::timing] 0.1550s to verify
+
+
+******** Transaction 86 ********
+[2024-09-17T14:40:15Z INFO  evm_arithmetization::generation::state] CPU halted after 221751 cycles
+[2024-09-17T14:40:15Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:40:15Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40467, byte_packing_len: 2785, cpu_len: 262144, keccak_len: 24288, keccak_sponge_len: 1012, logic_len: 7871, memory_len: 712888 }
+[2024-09-17T14:40:31Z INFO  plonky2::util::timing] 16.7398s to prove
+Proof size: 11555 KB
+[2024-09-17T14:40:32Z INFO  plonky2::util::timing] 0.1597s to verify
+
+
+******** Transaction 87 ********
+[2024-09-17T14:40:32Z INFO  evm_arithmetization::generation::state] CPU halted after 160348 cycles
+[2024-09-17T14:40:32Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:40:32Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 29963, byte_packing_len: 1854, cpu_len: 262144, keccak_len: 19824, keccak_sponge_len: 826, logic_len: 5753, memory_len: 527557 }
+[2024-09-17T14:40:48Z INFO  plonky2::util::timing] 16.2134s to prove
+Proof size: 11513 KB
+[2024-09-17T14:40:49Z INFO  plonky2::util::timing] 0.1592s to verify
+
+
+******** Transaction 88 ********
+[2024-09-17T14:40:49Z INFO  evm_arithmetization::generation::state] CPU halted after 106918 cycles
+[2024-09-17T14:40:49Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:40:49Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21346, byte_packing_len: 1094, cpu_len: 131072, keccak_len: 16392, keccak_sponge_len: 683, logic_len: 4456, memory_len: 370590 }
+[2024-09-17T14:41:00Z INFO  plonky2::util::timing] 11.5732s to prove
+Proof size: 11374 KB
+[2024-09-17T14:41:01Z INFO  plonky2::util::timing] 0.1569s to verify
+
+
+******** Transaction 89 ********
+[2024-09-17T14:41:01Z INFO  evm_arithmetization::generation::state] CPU halted after 113819 cycles
+[2024-09-17T14:41:01Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:41:01Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22242, byte_packing_len: 1220, cpu_len: 131072, keccak_len: 16560, keccak_sponge_len: 690, logic_len: 4506, memory_len: 388315 }
+[2024-09-17T14:41:13Z INFO  plonky2::util::timing] 11.6921s to prove
+Proof size: 11375 KB
+[2024-09-17T14:41:14Z INFO  plonky2::util::timing] 0.1574s to verify
+
+
+******** Transaction 90 ********
+[2024-09-17T14:41:14Z INFO  evm_arithmetization::generation::state] CPU halted after 229337 cycles
+[2024-09-17T14:41:14Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:41:14Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40781, byte_packing_len: 2854, cpu_len: 262144, keccak_len: 25608, keccak_sponge_len: 1067, logic_len: 7356, memory_len: 744711 }
+[2024-09-17T14:41:31Z INFO  plonky2::util::timing] 16.9898s to prove
+Proof size: 11647 KB
+[2024-09-17T14:41:31Z INFO  plonky2::util::timing] 0.1621s to verify
+
+
+******** Transaction 91 ********
+[2024-09-17T14:41:32Z INFO  evm_arithmetization::generation::state] CPU halted after 151505 cycles
+[2024-09-17T14:41:32Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:41:32Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 28559, byte_packing_len: 1736, cpu_len: 262144, keccak_len: 18984, keccak_sponge_len: 791, logic_len: 5643, memory_len: 498928 }
+[2024-09-17T14:41:45Z INFO  plonky2::util::timing] 13.5308s to prove
+Proof size: 11459 KB
+[2024-09-17T14:41:46Z INFO  plonky2::util::timing] 0.1583s to verify
+
+
+******** Transaction 92 ********
+[2024-09-17T14:41:46Z INFO  evm_arithmetization::generation::state] CPU halted after 162335 cycles
+[2024-09-17T14:41:46Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:41:46Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30409, byte_packing_len: 1868, cpu_len: 262144, keccak_len: 21024, keccak_sponge_len: 876, logic_len: 5882, memory_len: 542194 }
+[2024-09-17T14:42:02Z INFO  plonky2::util::timing] 16.2344s to prove
+Proof size: 11511 KB
+[2024-09-17T14:42:03Z INFO  plonky2::util::timing] 0.1594s to verify
+
+
+******** Transaction 93 ********
+[2024-09-17T14:42:05Z INFO  evm_arithmetization::generation::state] CPU halted after 1205450 cycles
+[2024-09-17T14:42:05Z INFO  evm_arithmetization::generation] CPU trace padded to 2097152 cycles
+[2024-09-17T14:42:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 209295, byte_packing_len: 18392, cpu_len: 2097152, keccak_len: 160728, keccak_sponge_len: 6697, logic_len: 59487, memory_len: 3967048 }
+[2024-09-17T14:44:02Z INFO  plonky2::util::timing] 119.6351s to prove
+Proof size: 12718 KB
+[2024-09-17T14:44:04Z INFO  plonky2::util::timing] 0.7526s to verify
+
+
+******** Transaction 94 ********
+[2024-09-17T14:44:05Z INFO  evm_arithmetization::generation::state] CPU halted after 769050 cycles
+[2024-09-17T14:44:05Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T14:44:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 134675, byte_packing_len: 12683, cpu_len: 1048576, keccak_len: 72648, keccak_sponge_len: 3027, logic_len: 33078, memory_len: 2384426 }
+[2024-09-17T14:45:17Z INFO  plonky2::util::timing] 73.5771s to prove
+Proof size: 12454 KB
+[2024-09-17T14:45:18Z INFO  plonky2::util::timing] 0.3671s to verify
+
+
+******** Transaction 95 ********
+[2024-09-17T14:45:20Z INFO  evm_arithmetization::generation::state] CPU halted after 594423 cycles
+[2024-09-17T14:45:20Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T14:45:20Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 101609, byte_packing_len: 8438, cpu_len: 1048576, keccak_len: 63144, keccak_sponge_len: 2631, logic_len: 27545, memory_len: 1865939 }
+[2024-09-17T14:46:03Z INFO  plonky2::util::timing] 44.5573s to prove
+Proof size: 12250 KB
+[2024-09-17T14:46:04Z INFO  plonky2::util::timing] 0.2139s to verify
+
+
+******** Transaction 96 ********
+[2024-09-17T14:46:06Z INFO  evm_arithmetization::generation::state] CPU halted after 1031997 cycles
+[2024-09-17T14:46:06Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T14:46:06Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 180855, byte_packing_len: 15979, cpu_len: 1048576, keccak_len: 87024, keccak_sponge_len: 3626, logic_len: 41180, memory_len: 3119681 }
+[2024-09-17T14:47:18Z INFO  plonky2::util::timing] 74.3035s to prove
+Proof size: 12462 KB
+[2024-09-17T14:47:19Z INFO  plonky2::util::timing] 0.2104s to verify
+
+
+******** Transaction 97 ********
+[2024-09-17T14:47:19Z INFO  evm_arithmetization::generation::state] CPU halted after 153286 cycles
+[2024-09-17T14:47:19Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:47:19Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 28866, byte_packing_len: 2031, cpu_len: 262144, keccak_len: 20400, keccak_sponge_len: 850, logic_len: 5891, memory_len: 522731 }
+[2024-09-17T14:47:32Z INFO  plonky2::util::timing] 13.3583s to prove
+Proof size: 11458 KB
+[2024-09-17T14:47:33Z INFO  plonky2::util::timing] 0.1736s to verify
+
+
+******** Transaction 98 ********
+[2024-09-17T14:47:35Z INFO  evm_arithmetization::generation::state] CPU halted after 800826 cycles
+[2024-09-17T14:47:35Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T14:47:35Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 138780, byte_packing_len: 12589, cpu_len: 1048576, keccak_len: 94680, keccak_sponge_len: 3945, logic_len: 38257, memory_len: 2584563 }
+[2024-09-17T14:48:47Z INFO  plonky2::util::timing] 73.8705s to prove
+Proof size: 12457 KB
+[2024-09-17T14:48:48Z INFO  plonky2::util::timing] 0.1924s to verify
+
+
+******** Transaction 99 ********
+[2024-09-17T14:48:49Z INFO  evm_arithmetization::generation::state] CPU halted after 335964 cycles
+[2024-09-17T14:48:49Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T14:48:49Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 59048, byte_packing_len: 4318, cpu_len: 524288, keccak_len: 33216, keccak_sponge_len: 1384, logic_len: 11101, memory_len: 1046573 }
+[2024-09-17T14:49:22Z INFO  plonky2::util::timing] 33.7180s to prove
+Proof size: 11955 KB
+[2024-09-17T14:49:22Z INFO  plonky2::util::timing] 0.1774s to verify
+
+
+******** Transaction 100 ********
+[2024-09-17T14:49:24Z INFO  evm_arithmetization::generation::state] CPU halted after 822710 cycles
+[2024-09-17T14:49:24Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T14:49:24Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 141747, byte_packing_len: 13221, cpu_len: 1048576, keccak_len: 78144, keccak_sponge_len: 3256, logic_len: 43214, memory_len: 2503055 }
+[2024-09-17T14:50:36Z INFO  plonky2::util::timing] 73.8384s to prove
+Proof size: 12451 KB
+[2024-09-17T14:50:37Z INFO  plonky2::util::timing] 0.2116s to verify
+
+
+******** Transaction 101 ********
+[2024-09-17T14:50:38Z INFO  evm_arithmetization::generation::state] CPU halted after 461596 cycles
+[2024-09-17T14:50:38Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T14:50:38Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 81097, byte_packing_len: 6440, cpu_len: 524288, keccak_len: 50280, keccak_sponge_len: 2095, logic_len: 22511, memory_len: 1459076 }
+[2024-09-17T14:51:14Z INFO  plonky2::util::timing] 36.9203s to prove
+Proof size: 12150 KB
+[2024-09-17T14:51:15Z INFO  plonky2::util::timing] 0.1800s to verify
+
+
+******** Transaction 102 ********
+[2024-09-17T14:51:16Z INFO  evm_arithmetization::generation::state] CPU halted after 568095 cycles
+[2024-09-17T14:51:16Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T14:51:16Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 99046, byte_packing_len: 7878, cpu_len: 1048576, keccak_len: 53184, keccak_sponge_len: 2216, logic_len: 23350, memory_len: 1741720 }
+[2024-09-17T14:52:00Z INFO  plonky2::util::timing] 44.7880s to prove
+Proof size: 12205 KB
+[2024-09-17T14:52:00Z INFO  plonky2::util::timing] 0.1714s to verify
+
+
+******** Transaction 103 ********
+[2024-09-17T14:52:01Z INFO  evm_arithmetization::generation::state] CPU halted after 461616 cycles
+[2024-09-17T14:52:01Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T14:52:01Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 79992, byte_packing_len: 6289, cpu_len: 524288, keccak_len: 41928, keccak_sponge_len: 1747, logic_len: 14549, memory_len: 1443723 }
+[2024-09-17T14:52:36Z INFO  plonky2::util::timing] 36.0791s to prove
+Proof size: 11998 KB
+[2024-09-17T14:52:37Z INFO  plonky2::util::timing] 0.1706s to verify
+
+
+******** Transaction 104 ********
+[2024-09-17T14:52:38Z INFO  evm_arithmetization::generation::state] CPU halted after 140918 cycles
+[2024-09-17T14:52:38Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:52:38Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 26431, byte_packing_len: 1610, cpu_len: 262144, keccak_len: 21216, keccak_sponge_len: 884, logic_len: 6678, memory_len: 483637 }
+[2024-09-17T14:52:51Z INFO  plonky2::util::timing] 13.3496s to prove
+Proof size: 11455 KB
+[2024-09-17T14:52:51Z INFO  plonky2::util::timing] 0.1698s to verify
+
+
+******** Transaction 105 ********
+[2024-09-17T14:52:52Z INFO  evm_arithmetization::generation::state] CPU halted after 125855 cycles
+[2024-09-17T14:52:52Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:52:52Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 24443, byte_packing_len: 1367, cpu_len: 131072, keccak_len: 20184, keccak_sponge_len: 841, logic_len: 5485, memory_len: 439642 }
+[2024-09-17T14:53:03Z INFO  plonky2::util::timing] 11.7656s to prove
+Proof size: 11402 KB
+[2024-09-17T14:53:04Z INFO  plonky2::util::timing] 0.1586s to verify
+
+
+******** Transaction 106 ********
+[2024-09-17T14:53:05Z INFO  evm_arithmetization::generation::state] CPU halted after 650348 cycles
+[2024-09-17T14:53:05Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T14:53:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 111961, byte_packing_len: 8949, cpu_len: 1048576, keccak_len: 62352, keccak_sponge_len: 2598, logic_len: 22866, memory_len: 2017146 }
+[2024-09-17T14:53:49Z INFO  plonky2::util::timing] 45.2227s to prove
+Proof size: 12249 KB
+[2024-09-17T14:53:50Z INFO  plonky2::util::timing] 0.1798s to verify
+
+
+******** Transaction 107 ********
+[2024-09-17T14:53:50Z INFO  evm_arithmetization::generation::state] CPU halted after 130827 cycles
+[2024-09-17T14:53:50Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T14:53:50Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 25232, byte_packing_len: 1431, cpu_len: 131072, keccak_len: 18696, keccak_sponge_len: 779, logic_len: 5463, memory_len: 444448 }
+[2024-09-17T14:54:02Z INFO  plonky2::util::timing] 11.7114s to prove
+Proof size: 11404 KB
+[2024-09-17T14:54:02Z INFO  plonky2::util::timing] 0.1621s to verify
+
+
+******** Transaction 108 ********
+[2024-09-17T14:54:03Z INFO  evm_arithmetization::generation::state] CPU halted after 160759 cycles
+[2024-09-17T14:54:03Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:54:03Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 30007, byte_packing_len: 1878, cpu_len: 262144, keccak_len: 21240, keccak_sponge_len: 885, logic_len: 6239, memory_len: 536455 }
+[2024-09-17T14:54:19Z INFO  plonky2::util::timing] 16.2198s to prove
+Proof size: 11512 KB
+[2024-09-17T14:54:19Z INFO  plonky2::util::timing] 0.1619s to verify
+
+
+******** Transaction 109 ********
+[2024-09-17T14:54:21Z INFO  evm_arithmetization::generation::state] CPU halted after 800809 cycles
+[2024-09-17T14:54:21Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T14:54:21Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 141326, byte_packing_len: 10764, cpu_len: 1048576, keccak_len: 83856, keccak_sponge_len: 3494, logic_len: 33256, memory_len: 2521351 }
+[2024-09-17T14:55:34Z INFO  plonky2::util::timing] 74.4409s to prove
+Proof size: 12462 KB
+[2024-09-17T14:55:35Z INFO  plonky2::util::timing] 0.1930s to verify
+
+
+******** Transaction 110 ********
+[2024-09-17T14:55:35Z INFO  evm_arithmetization::generation::state] CPU halted after 274627 cycles
+[2024-09-17T14:55:36Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T14:55:36Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 49685, byte_packing_len: 3799, cpu_len: 524288, keccak_len: 28824, keccak_sponge_len: 1201, logic_len: 11132, memory_len: 877907 }
+[2024-09-17T14:55:55Z INFO  plonky2::util::timing] 20.6553s to prove
+Proof size: 11820 KB
+[2024-09-17T14:55:56Z INFO  plonky2::util::timing] 0.1693s to verify
+
+
+******** Transaction 111 ********
+[2024-09-17T14:55:57Z INFO  evm_arithmetization::generation::state] CPU halted after 665327 cycles
+[2024-09-17T14:55:58Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T14:55:58Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 114284, byte_packing_len: 9257, cpu_len: 1048576, keccak_len: 73872, keccak_sponge_len: 3078, logic_len: 26628, memory_len: 2124338 }
+[2024-09-17T14:57:05Z INFO  plonky2::util::timing] 68.6322s to prove
+Proof size: 12357 KB
+[2024-09-17T14:57:06Z INFO  plonky2::util::timing] 0.1964s to verify
+
+
+******** Transaction 112 ********
+[2024-09-17T14:57:06Z INFO  evm_arithmetization::generation::state] CPU halted after 225296 cycles
+[2024-09-17T14:57:06Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:57:06Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 40305, byte_packing_len: 2774, cpu_len: 262144, keccak_len: 25464, keccak_sponge_len: 1061, logic_len: 7331, memory_len: 733465 }
+[2024-09-17T14:57:22Z INFO  plonky2::util::timing] 16.8293s to prove
+Proof size: 11645 KB
+[2024-09-17T14:57:23Z INFO  plonky2::util::timing] 0.2371s to verify
+
+
+******** Transaction 113 ********
+[2024-09-17T14:57:24Z INFO  evm_arithmetization::generation::state] CPU halted after 359867 cycles
+[2024-09-17T14:57:24Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T14:57:24Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 64383, byte_packing_len: 4786, cpu_len: 524288, keccak_len: 29160, keccak_sponge_len: 1215, logic_len: 11014, memory_len: 1106791 }
+[2024-09-17T14:57:52Z INFO  plonky2::util::timing] 29.1080s to prove
+Proof size: 11908 KB
+[2024-09-17T14:57:53Z INFO  plonky2::util::timing] 0.1698s to verify
+
+
+******** Transaction 114 ********
+[2024-09-17T14:57:54Z INFO  evm_arithmetization::generation::state] CPU halted after 390573 cycles
+[2024-09-17T14:57:54Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T14:57:54Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 67756, byte_packing_len: 5099, cpu_len: 524288, keccak_len: 40488, keccak_sponge_len: 1687, logic_len: 13629, memory_len: 1236682 }
+[2024-09-17T14:58:29Z INFO  plonky2::util::timing] 35.6161s to prove
+Proof size: 12002 KB
+[2024-09-17T14:58:30Z INFO  plonky2::util::timing] 0.1696s to verify
+
+
+******** Transaction 115 ********
+[2024-09-17T14:58:30Z INFO  evm_arithmetization::generation::state] CPU halted after 136238 cycles
+[2024-09-17T14:58:30Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:58:30Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 25889, byte_packing_len: 1502, cpu_len: 262144, keccak_len: 18792, keccak_sponge_len: 783, logic_len: 6114, memory_len: 458076 }
+[2024-09-17T14:58:43Z INFO  plonky2::util::timing] 13.2979s to prove
+Proof size: 11449 KB
+[2024-09-17T14:58:44Z INFO  plonky2::util::timing] 0.1626s to verify
+
+
+******** Transaction 116 ********
+[2024-09-17T14:58:44Z INFO  evm_arithmetization::generation::state] CPU halted after 142285 cycles
+[2024-09-17T14:58:44Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T14:58:44Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 26654, byte_packing_len: 1615, cpu_len: 262144, keccak_len: 18960, keccak_sponge_len: 790, logic_len: 6158, memory_len: 473893 }
+[2024-09-17T14:58:57Z INFO  plonky2::util::timing] 13.2630s to prove
+Proof size: 11450 KB
+[2024-09-17T14:58:58Z INFO  plonky2::util::timing] 0.1638s to verify
+
+
+******** Transaction 117 ********
+[2024-09-17T14:59:00Z INFO  evm_arithmetization::generation::state] CPU halted after 1326303 cycles
+[2024-09-17T14:59:00Z INFO  evm_arithmetization::generation] CPU trace padded to 2097152 cycles
+[2024-09-17T14:59:00Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 228901, byte_packing_len: 20215, cpu_len: 2097152, keccak_len: 167232, keccak_sponge_len: 6968, logic_len: 64675, memory_len: 4369655 }
+[2024-09-17T15:01:27Z INFO  plonky2::util::timing] 149.3503s to prove
+Proof size: 12829 KB
+[2024-09-17T15:01:28Z INFO  plonky2::util::timing] 0.3251s to verify
+
+
+******** Transaction 118 ********
+[2024-09-17T15:01:29Z INFO  evm_arithmetization::generation::state] CPU halted after 155827 cycles
+[2024-09-17T15:01:29Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T15:01:29Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 28844, byte_packing_len: 1804, cpu_len: 262144, keccak_len: 18864, keccak_sponge_len: 786, logic_len: 5880, memory_len: 507358 }
+[2024-09-17T15:01:42Z INFO  plonky2::util::timing] 13.5664s to prove
+Proof size: 11458 KB
+[2024-09-17T15:01:42Z INFO  plonky2::util::timing] 0.1792s to verify
+
+
+******** Transaction 119 ********
+[2024-09-17T15:01:45Z INFO  evm_arithmetization::generation::state] CPU halted after 1011714 cycles
+[2024-09-17T15:01:45Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T15:01:45Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 193298, byte_packing_len: 16772, cpu_len: 1048576, keccak_len: 74832, keccak_sponge_len: 3118, logic_len: 28588, memory_len: 3068861 }
+[2024-09-17T15:02:57Z INFO  plonky2::util::timing] 74.3403s to prove
+Proof size: 12507 KB
+[2024-09-17T15:02:58Z INFO  plonky2::util::timing] 0.2127s to verify
+
+
+******** Transaction 120 ********
+[2024-09-17T15:02:58Z INFO  evm_arithmetization::generation::state] CPU halted after 106743 cycles
+[2024-09-17T15:02:58Z INFO  evm_arithmetization::generation] CPU trace padded to 131072 cycles
+[2024-09-17T15:02:58Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 21370, byte_packing_len: 1082, cpu_len: 131072, keccak_len: 16536, keccak_sponge_len: 689, logic_len: 4485, memory_len: 370887 }
+[2024-09-17T15:03:10Z INFO  plonky2::util::timing] 12.0846s to prove
+Proof size: 11375 KB
+[2024-09-17T15:03:10Z INFO  plonky2::util::timing] 0.1709s to verify
+
+
+******** Transaction 121 ********
+[2024-09-17T15:03:11Z INFO  evm_arithmetization::generation::state] CPU halted after 177071 cycles
+[2024-09-17T15:03:11Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T15:03:11Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 32515, byte_packing_len: 2115, cpu_len: 262144, keccak_len: 22392, keccak_sponge_len: 933, logic_len: 6634, memory_len: 587608 }
+[2024-09-17T15:03:27Z INFO  plonky2::util::timing] 16.4496s to prove
+Proof size: 11549 KB
+[2024-09-17T15:03:28Z INFO  plonky2::util::timing] 0.1759s to verify
+
+
+******** Transaction 122 ********
+[2024-09-17T15:03:28Z INFO  evm_arithmetization::generation::state] CPU halted after 135836 cycles
+[2024-09-17T15:03:28Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T15:03:28Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 25990, byte_packing_len: 1504, cpu_len: 262144, keccak_len: 18048, keccak_sponge_len: 752, logic_len: 5283, memory_len: 454196 }
+[2024-09-17T15:03:41Z INFO  plonky2::util::timing] 13.2892s to prove
+Proof size: 11450 KB
+[2024-09-17T15:03:42Z INFO  plonky2::util::timing] 0.1576s to verify
+
+
+******** Transaction 123 ********
+[2024-09-17T15:03:43Z INFO  evm_arithmetization::generation::state] CPU halted after 721829 cycles
+[2024-09-17T15:03:43Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T15:03:43Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 129087, byte_packing_len: 9906, cpu_len: 1048576, keccak_len: 69960, keccak_sponge_len: 2915, logic_len: 28249, memory_len: 2230252 }
+[2024-09-17T15:04:52Z INFO  plonky2::util::timing] 69.7631s to prove
+Proof size: 12362 KB
+[2024-09-17T15:04:52Z INFO  plonky2::util::timing] 0.1807s to verify
+
+
+******** Transaction 124 ********
+[2024-09-17T15:04:56Z INFO  evm_arithmetization::generation::state] CPU halted after 1877342 cycles
+[2024-09-17T15:04:57Z INFO  evm_arithmetization::generation] CPU trace padded to 2097152 cycles
+[2024-09-17T15:04:57Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 311823, byte_packing_len: 29350, cpu_len: 2097152, keccak_len: 314856, keccak_sponge_len: 13119, logic_len: 96008, memory_len: 6558315 }
+[2024-09-17T15:08:03Z INFO  plonky2::util::timing] 190.1474s to prove
+Proof size: 13141 KB
+[2024-09-17T15:08:04Z INFO  plonky2::util::timing] 0.3397s to verify
+
+
+******** Transaction 125 ********
+[2024-09-17T15:08:05Z INFO  evm_arithmetization::generation::state] CPU halted after 478744 cycles
+[2024-09-17T15:08:05Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:08:05Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 84586, byte_packing_len: 6952, cpu_len: 524288, keccak_len: 71904, keccak_sponge_len: 2996, logic_len: 26615, memory_len: 1634577 }
+[2024-09-17T15:08:51Z INFO  plonky2::util::timing] 47.1215s to prove
+Proof size: 12196 KB
+[2024-09-17T15:08:52Z INFO  plonky2::util::timing] 0.1970s to verify
+
+
+******** Transaction 126 ********
+[2024-09-17T15:08:53Z INFO  evm_arithmetization::generation::state] CPU halted after 793497 cycles
+[2024-09-17T15:08:53Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T15:08:53Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 145631, byte_packing_len: 11667, cpu_len: 1048576, keccak_len: 64200, keccak_sponge_len: 2675, logic_len: 31260, memory_len: 2427276 }
+[2024-09-17T15:09:55Z INFO  plonky2::util::timing] 63.2913s to prove
+Proof size: 12353 KB
+[2024-09-17T15:09:56Z INFO  plonky2::util::timing] 0.2178s to verify
+
+
+******** Transaction 127 ********
+[2024-09-17T15:09:57Z INFO  evm_arithmetization::generation::state] CPU halted after 351848 cycles
+[2024-09-17T15:09:57Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:09:57Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 63149, byte_packing_len: 4603, cpu_len: 524288, keccak_len: 28872, keccak_sponge_len: 1203, logic_len: 10948, memory_len: 1083855 }
+[2024-09-17T15:10:25Z INFO  plonky2::util::timing] 29.0882s to prove
+Proof size: 11908 KB
+[2024-09-17T15:10:26Z INFO  plonky2::util::timing] 0.2102s to verify
+
+
+******** Transaction 128 ********
+[2024-09-17T15:10:27Z INFO  evm_arithmetization::generation::state] CPU halted after 455359 cycles
+[2024-09-17T15:10:27Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:10:27Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 82301, byte_packing_len: 5935, cpu_len: 524288, keccak_len: 43536, keccak_sponge_len: 1814, logic_len: 16553, memory_len: 1422497 }
+[2024-09-17T15:11:02Z INFO  plonky2::util::timing] 36.3900s to prove
+Proof size: 12105 KB
+[2024-09-17T15:11:03Z INFO  plonky2::util::timing] 0.1699s to verify
+
+
+******** Transaction 129 ********
+[2024-09-17T15:11:03Z INFO  evm_arithmetization::generation::state] CPU halted after 258638 cycles
+[2024-09-17T15:11:03Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T15:11:03Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 46737, byte_packing_len: 3516, cpu_len: 262144, keccak_len: 28152, keccak_sponge_len: 1173, logic_len: 10486, memory_len: 832345 }
+[2024-09-17T15:11:20Z INFO  plonky2::util::timing] 17.1887s to prove
+Proof size: 11699 KB
+[2024-09-17T15:11:21Z INFO  plonky2::util::timing] 0.1640s to verify
+
+
+******** Transaction 130 ********
+[2024-09-17T15:11:21Z INFO  evm_arithmetization::generation::state] CPU halted after 206150 cycles
+[2024-09-17T15:11:21Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T15:11:21Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 37415, byte_packing_len: 2792, cpu_len: 262144, keccak_len: 24504, keccak_sponge_len: 1021, logic_len: 7372, memory_len: 673937 }
+[2024-09-17T15:11:37Z INFO  plonky2::util::timing] 16.3874s to prove
+Proof size: 11551 KB
+[2024-09-17T15:11:38Z INFO  plonky2::util::timing] 0.1693s to verify
+
+
+******** Transaction 131 ********
+[2024-09-17T15:11:40Z INFO  evm_arithmetization::generation::state] CPU halted after 1159438 cycles
+[2024-09-17T15:11:41Z INFO  evm_arithmetization::generation] CPU trace padded to 2097152 cycles
+[2024-09-17T15:11:41Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 195077, byte_packing_len: 17170, cpu_len: 2097152, keccak_len: 133704, keccak_sponge_len: 5571, logic_len: 47804, memory_len: 3729357 }
+[2024-09-17T15:13:39Z INFO  plonky2::util::timing] 121.0492s to prove
+Proof size: 12717 KB
+[2024-09-17T15:13:40Z INFO  plonky2::util::timing] 0.1987s to verify
+
+
+******** Transaction 132 ********
+[2024-09-17T15:13:41Z INFO  evm_arithmetization::generation::state] CPU halted after 465080 cycles
+[2024-09-17T15:13:41Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:13:41Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 83495, byte_packing_len: 6093, cpu_len: 524288, keccak_len: 43872, keccak_sponge_len: 1828, logic_len: 16624, memory_len: 1446872 }
+[2024-09-17T15:14:17Z INFO  plonky2::util::timing] 37.1910s to prove
+Proof size: 12103 KB
+[2024-09-17T15:14:18Z INFO  plonky2::util::timing] 0.1693s to verify
+
+
+******** Transaction 133 ********
+[2024-09-17T15:14:19Z INFO  evm_arithmetization::generation::state] CPU halted after 462463 cycles
+[2024-09-17T15:14:19Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:14:19Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 83150, byte_packing_len: 6046, cpu_len: 524288, keccak_len: 43800, keccak_sponge_len: 1825, logic_len: 16610, memory_len: 1439413 }
+[2024-09-17T15:14:54Z INFO  plonky2::util::timing] 36.4783s to prove
+Proof size: 12102 KB
+[2024-09-17T15:14:55Z INFO  plonky2::util::timing] 0.1800s to verify
+
+
+******** Transaction 134 ********
+[2024-09-17T15:14:55Z INFO  evm_arithmetization::generation::state] CPU halted after 139637 cycles
+[2024-09-17T15:14:56Z INFO  evm_arithmetization::generation] CPU trace padded to 262144 cycles
+[2024-09-17T15:14:56Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 26550, byte_packing_len: 1571, cpu_len: 262144, keccak_len: 18000, keccak_sponge_len: 750, logic_len: 5281, memory_len: 462393 }
+[2024-09-17T15:15:08Z INFO  plonky2::util::timing] 13.3316s to prove
+Proof size: 11458 KB
+[2024-09-17T15:15:09Z INFO  plonky2::util::timing] 0.1705s to verify
+
+
+******** Transaction 135 ********
+[2024-09-17T15:15:10Z INFO  evm_arithmetization::generation::state] CPU halted after 507900 cycles
+[2024-09-17T15:15:10Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:15:10Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 87885, byte_packing_len: 7111, cpu_len: 524288, keccak_len: 58728, keccak_sponge_len: 2447, logic_len: 21439, memory_len: 1630833 }
+[2024-09-17T15:15:46Z INFO  plonky2::util::timing] 36.9310s to prove
+Proof size: 12155 KB
+[2024-09-17T15:15:47Z INFO  plonky2::util::timing] 0.1703s to verify
+
+
+******** Transaction 136 ********
+[2024-09-17T15:15:48Z INFO  evm_arithmetization::generation::state] CPU halted after 473748 cycles
+[2024-09-17T15:15:48Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:15:48Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 84925, byte_packing_len: 6198, cpu_len: 524288, keccak_len: 44280, keccak_sponge_len: 1845, logic_len: 16738, memory_len: 1470806 }
+[2024-09-17T15:16:24Z INFO  plonky2::util::timing] 36.6508s to prove
+Proof size: 12104 KB
+[2024-09-17T15:16:24Z INFO  plonky2::util::timing] 0.1690s to verify
+
+
+******** Transaction 137 ********
+[2024-09-17T15:16:26Z INFO  evm_arithmetization::generation::state] CPU halted after 1019331 cycles
+[2024-09-17T15:16:26Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T15:16:26Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 175770, byte_packing_len: 16311, cpu_len: 1048576, keccak_len: 129720, keccak_sponge_len: 5405, logic_len: 54699, memory_len: 3351192 }
+[2024-09-17T15:17:42Z INFO  plonky2::util::timing] 77.0343s to prove
+Proof size: 12511 KB
+[2024-09-17T15:17:42Z INFO  plonky2::util::timing] 0.2010s to verify
+
+
+******** Transaction 138 ********
+[2024-09-17T15:17:44Z INFO  evm_arithmetization::generation::state] CPU halted after 474308 cycles
+[2024-09-17T15:17:44Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:17:44Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 84943, byte_packing_len: 6229, cpu_len: 524288, keccak_len: 44112, keccak_sponge_len: 1838, logic_len: 16705, memory_len: 1471666 }
+[2024-09-17T15:18:19Z INFO  plonky2::util::timing] 36.5814s to prove
+Proof size: 12104 KB
+[2024-09-17T15:18:20Z INFO  plonky2::util::timing] 0.1700s to verify
+
+
+******** Transaction 139 ********
+[2024-09-17T15:18:21Z INFO  evm_arithmetization::generation::state] CPU halted after 464515 cycles
+[2024-09-17T15:18:21Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:18:21Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 83544, byte_packing_len: 6058, cpu_len: 524288, keccak_len: 43992, keccak_sponge_len: 1833, logic_len: 16648, memory_len: 1447661 }
+[2024-09-17T15:18:56Z INFO  plonky2::util::timing] 36.1128s to prove
+Proof size: 12101 KB
+[2024-09-17T15:18:57Z INFO  plonky2::util::timing] 0.1692s to verify
+
+
+******** Transaction 140 ********
+[2024-09-17T15:18:57Z INFO  evm_arithmetization::generation::state] CPU halted after 342255 cycles
+[2024-09-17T15:18:57Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:18:57Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 59689, byte_packing_len: 4591, cpu_len: 524288, keccak_len: 37800, keccak_sponge_len: 1575, logic_len: 12843, memory_len: 1102969 }
+[2024-09-17T15:19:30Z INFO  plonky2::util::timing] 33.4176s to prove
+Proof size: 11957 KB
+[2024-09-17T15:19:31Z INFO  plonky2::util::timing] 0.2158s to verify
+
+
+******** Transaction 141 ********
+[2024-09-17T15:19:32Z INFO  evm_arithmetization::generation::state] CPU halted after 294000 cycles
+[2024-09-17T15:19:32Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:19:32Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 51170, byte_packing_len: 3639, cpu_len: 524288, keccak_len: 32424, keccak_sponge_len: 1351, logic_len: 10489, memory_len: 942259 }
+[2024-09-17T15:19:52Z INFO  plonky2::util::timing] 20.7479s to prove
+Proof size: 11806 KB
+[2024-09-17T15:19:52Z INFO  plonky2::util::timing] 0.1639s to verify
+
+
+******** Transaction 142 ********
+[2024-09-17T15:19:53Z INFO  evm_arithmetization::generation::state] CPU halted after 457890 cycles
+[2024-09-17T15:19:53Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:19:53Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 82512, byte_packing_len: 5946, cpu_len: 524288, keccak_len: 43656, keccak_sponge_len: 1819, logic_len: 16585, memory_len: 1426934 }
+[2024-09-17T15:20:29Z INFO  plonky2::util::timing] 36.2993s to prove
+Proof size: 12106 KB
+[2024-09-17T15:20:30Z INFO  plonky2::util::timing] 0.1692s to verify
+
+
+******** Transaction 143 ********
+[2024-09-17T15:20:30Z INFO  evm_arithmetization::generation::state] CPU halted after 342551 cycles
+[2024-09-17T15:20:30Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:20:30Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 59874, byte_packing_len: 4585, cpu_len: 524288, keccak_len: 37848, keccak_sponge_len: 1577, logic_len: 12860, memory_len: 1104509 }
+[2024-09-17T15:21:03Z INFO  plonky2::util::timing] 33.3607s to prove
+Proof size: 11958 KB
+[2024-09-17T15:21:04Z INFO  plonky2::util::timing] 0.1686s to verify
+
+
+******** Transaction 144 ********
+[2024-09-17T15:21:06Z INFO  evm_arithmetization::generation::state] CPU halted after 871427 cycles
+[2024-09-17T15:21:06Z INFO  evm_arithmetization::generation] CPU trace padded to 1048576 cycles
+[2024-09-17T15:21:06Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 154215, byte_packing_len: 12097, cpu_len: 1048576, keccak_len: 85056, keccak_sponge_len: 3544, logic_len: 31358, memory_len: 2719883 }
+[2024-09-17T15:22:17Z INFO  plonky2::util::timing] 73.6705s to prove
+Proof size: 12405 KB
+[2024-09-17T15:22:18Z INFO  plonky2::util::timing] 0.1756s to verify
+
+
+******** Transaction 145 ********
+[2024-09-17T15:22:19Z INFO  evm_arithmetization::generation::state] CPU halted after 485292 cycles
+[2024-09-17T15:22:19Z INFO  evm_arithmetization::generation] CPU trace padded to 524288 cycles
+[2024-09-17T15:22:19Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 88890, byte_packing_len: 7066, cpu_len: 524288, keccak_len: 50760, keccak_sponge_len: 2115, logic_len: 21047, memory_len: 1555283 }
+[2024-09-17T15:22:55Z INFO  plonky2::util::timing] 36.8338s to prove
+Proof size: 12148 KB
+[2024-09-17T15:22:56Z INFO  plonky2::util::timing] 0.1711s to verify
+
+
+******** Transaction 146 ********
+[2024-09-17T15:24:56Z INFO  evm_arithmetization::generation::state] CPU halted after 87255387 cycles
+[2024-09-17T15:25:09Z INFO  evm_arithmetization::generation] CPU trace padded to 134217728 cycles
+[2024-09-17T15:25:09Z INFO  evm_arithmetization::generation] Trace lengths (before padding): TraceCheckpoint { arithmetic_len: 22844643, byte_packing_len: 2342601, cpu_len: 134217728, keccak_len: 190104, keccak_sponge_len: 7921, logic_len: 9208042, memory_len: 228913889 }
