@@ -13,7 +13,7 @@ const TMP_PATH: &str = "np_explorations/data/bench_2/tmp.json";
 
 ////////////////////////////////////////////////////////////////////////////////
 // Configurable parameters
-const BENCH_LEVEL_0: bool = true;
+const BENCH_LEVEL_0: bool = false;
 // The pow-of-2-trimmed block will be truncated to 1/2^SHRINKING_FACTOR_LOG of
 // its original size. For instance, 2 indicates that only 1/4 of the (trimmed)
 // block will be used.
