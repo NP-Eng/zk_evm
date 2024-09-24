@@ -80,6 +80,21 @@ def process_files(files):
     # Filter out rows where any of the proving time columns is null
     merged_df = merged_df.dropna(subset=["no_recursion_poseidon_proving_time", "no_recursion_keccak_proving_time", "level_1_proving_time"])
 
+    # Add a new column for the difference between level-1 and keccak proving times
+    merged_df['time_difference'] = merged_df['level_1_proving_time'] - merged_df['no_recursion_keccak_proving_time']
+
+    # Calculate averages
+    avg_difference = merged_df['time_difference'].mean()
+    avg_keccak_time = merged_df['no_recursion_keccak_proving_time'].mean()
+
+    # Calculate the ratio as a percentage
+    ratio_percentage = (avg_difference / avg_keccak_time) * 100
+
+    # Print the results
+    print(f"Average difference (level-1 - keccak): {avg_difference:.2f} seconds")
+    print(f"Average keccak proving time: {avg_keccak_time:.2f} seconds")
+    print(f"Ratio of difference to keccak proving time: {ratio_percentage:.2f}%")
+
     return merged_df
 
 # List of files with their respective parser functions and labels
@@ -94,6 +109,3 @@ df = process_files(files)
 
 # Save the result into a CSV file
 df.to_csv("proving_cost_analysis_side_by_side.csv", index=False)
-
-# Display the result
-print(df[["transaction", "no_recursion_poseidon_proving_time", "no_recursion_keccak_proving_time", "level_1_proving_time"]])
