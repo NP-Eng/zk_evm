@@ -1,5 +1,3 @@
-   Compiling np_explorations v0.4.0 (/home/tester/zk_evm/np_explorations)
-    Finished `release` profile [optimized] target(s) in 9.47s
      Running `target/release/bench_2`
 [2024-09-17T16:15:39Z INFO  bench_2::common] Loaded block input from JSON
 [2024-09-17T16:15:42Z INFO  bench_2] 
