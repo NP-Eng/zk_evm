@@ -17,7 +17,7 @@ const BENCH_LEVEL_0: bool = false;
 // The pow-of-2-trimmed block will be truncated to 1/2^SHRINKING_FACTOR_LOG of
 // its original size. For instance, 2 indicates that only 1/4 of the (trimmed)
 // block will be used.
-const SHRINKING_FACTOR_LOG: Option<usize> = None;
+const SHRINKING_FACTOR_LOG: Option<usize> = Some(1);
 // The hard limit on the number of transactions to be proved
 const HARD_LIMIT: Option<usize> = None;
 const USE_SAVED_ROOT_PROOFS: bool = false;
