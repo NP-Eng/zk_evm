@@ -177,6 +177,7 @@ fn main() {
 
     if SAVE_ROOT_PROOFS {
         log::info!("Saving all root proofs");
+        std::fs::create_dir_all("np_explorations/data/bench_2/root_proofs").unwrap();
     }
 
     let mut total_size = 0;
