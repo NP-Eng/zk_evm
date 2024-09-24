@@ -8,9 +8,7 @@ use itertools::Itertools;
 use plonky2::{plonk::proof::ProofWithPublicInputs, util::timing::TimingTree};
 
 mod common;
-use common::{
-    get_generation_inputs_from_json, D, F, KC, PC, STARKY_PROVER_CONFIG, STARKY_VERIFIER_CONFIG,
-};
+use common::{get_generation_inputs_from_json, D, F, KC, PC, STARKY_PROVER_CONFIG};
 const TMP_PATH: &str = "np_explorations/data/bench_2/tmp.json";
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +58,7 @@ fn main() {
         // First measurement: no recursion (7 starky proofs + 1 CTL per transaction)
         log::info!(" ******** Level 0: No recursion ********");
 
-        log::info!("Starky config:\n{:?}", STARKY_VERIFIER_CONFIG);
+        log::info!("Starky config:\n{:?}", STARKY_PROVER_CONFIG);
 
         // Measure prover time
         let block_l0 = block.clone();
@@ -72,7 +70,7 @@ fn main() {
                 let inner_timer = std::time::Instant::now();
                 let proof = prove::<F, KC, D>(
                     &all_stark,
-                    &STARKY_VERIFIER_CONFIG,
+                    &STARKY_PROVER_CONFIG,
                     generation_inputs,
                     &mut timing_tree,
                     None,
